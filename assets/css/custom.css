@@ -1,0 +1,6 @@
+.biography-custom {
+    margin-top: 2rem; /* Reduce the upper margin for smaller spacing */
+    margin-bottom: 6rem; /* Increase the lower margin to avoid text overlap */
+    padding-bottom: 2rem; /* Optional: Add extra padding inside the block */
+  }
+  

@@ -11,7 +11,7 @@ last_name: Mauer
 
 # Status emoji
 status:
-  icon: ☕️
+  icon: 💻
 
 # Is this the primary user of the site?
 superuser: true
@@ -53,18 +53,20 @@ interests:
 
 education:
   - area: BaSC Computer Engineering
-    institution: University of British Columbia
+    institution: University of British Columbia (graduated December 2024)
     date_start: 2020-09-01
     date_end: 2024-12-31
     summary: |
       GPA: 84.5/100
       Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
+      - CPEN 512: Parallel and Configurable Computer Architecture
+      - CPEN 411: Computer Architecture
+      - CPEN 331: Oerating Systems
+      - ELEC 421: Digital Signal Processing
+      - STAT 305: Statistical Inference
+    # button:
+    #   text: 'Read Thesis'
+    #   url: 'https://example.com'
   # - area: MEng Artificial Intelligence
   #   institution: Massachusetts Institute of Technology
   #   date_start: 2016-01-01
@@ -93,37 +95,32 @@ work:
     date_end: 2023-08-25
     summary: |
       Responsibilities include:
-      - Scripting
-      - 2 features implemented in System Verilog
-      - Interconnect
+      - Worked with the interconnect team at AMD on low-power, high-bandwidth interconnect logic
+      - Implemented and delivered 2 features in System Verilog from Architecture design documents
+      - Scripted for automating synthesis and testing processses, using tcl, bash, perl etc.
   - position: Operations Officer
     company_name: IDF
-    company_url: https://www.idf.il/en/
+    company_url: 'https://www.idf.il/en/'
     company_logo: ''
     date_start: 2014-01-01
     date_end: 2020-12-31
-    summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
   - name: Technical Skills
     items:
-      - name: Python
+      - name: System Verilog
         description: ''
         percent: 80
         icon: code-bracket
-      - name: Data Science
+      - name: C
         description: ''
-        percent: 100
+        percent: 90
         icon: chart-bar
-      - name: SQL
+      - name: CUDA
         description: ''
-        percent: 40
+        percent: 75
         icon: circle-stack
   - name: Hobbies
     color: '#eeac02'
@@ -133,21 +130,23 @@ skills:
         description: ''
         percent: 60
         icon: person-simple-walk
-      - name: Cats
+      - name: Reading
         description: ''
         percent: 100
-        icon: cat
-      - name: Photography
+        icon: book
+      - name: Friends
         description: ''
         percent: 80
-        icon: camera
+        icon: friends
 
 languages:
   - name: English
     percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
+  - name: Hebrew
+    percent: 100
+  - name: Spanish
+    percent: 30
+  - name: Arabic
     percent: 25
 
 # Awards.
@@ -155,33 +154,39 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: Neural Networks and Deep Learning
-    url: https://www.coursera.org/learn/neural-networks-deep-learning
-    date: '2023-11-25'
-    awarder: Coursera
-    icon: coursera
+  - title: CPEN 391 (3rd year project course) 1st place project
+    url: https://www.youtube.com/watch?v=kbrSmiwQhu4
+    date: '2023-04-25'
+    awarder: UBC ECE
+    icon: computer
     summary: |
-      I studied the foundational concept of neural networks and deep learning. By the end, I was familiar with the significant technological trends driving the rise of deep learning; build, train, and apply fully connected deep neural networks; implement efficient (vectorized) neural networks; identify key parameters in a neural network’s architecture; and apply deep learning to your own applications.
+      We built a physical LED cube (8x8x8) from scratch, and create a digital logic hardware on an FPGA as a custom hardware block integrated into a NIOS softcore processor as a custom intruction. The FPGA driver was then connected to a Android app via ESP32-bluetooth, where a user can control the cude from an interface. The cube can either show cool patterns (pre-made), or open the phone's camera, point at a person, and a pose detecting algorithm creates a simulated stick person figure in real-time, transmits it to the cube where to show the person and their movement live. WON FIRST PLACE! See video.
   - title: Blockchain Fundamentals
-    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
+    url: 
     date: '2023-07-01'
-    awarder: edX
-    icon: edx
+    awarder: UBC
+    icon: computer
     summary: |
       Learned:
-      - Synthesize your own blockchain solutions
-      - Gain an in-depth understanding of the specific mechanics of Bitcoin
-      - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
-  - title: 'Object-Oriented Programming in R'
-    url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
-    certificate_url: https://www.datacamp.com
-    date: '2023-01-21'
-    awarder: datacamp
-    icon: datacamp
-    summary: |
-      Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
+      - Build solderboard from scratch. LED cube electronics.
+      - Design of hardware driver.
+      - Integration of custom hardware components to softcore processor (NIOS) as custom intructions.
+      - ESP32-Bluetooth
+      - Integrate and use ML pose estimation algo
+      - Communication protocols (UART, Bluetooth)
+      - Create GIFs
+  # - title: 'Object-Oriented Programming in R'
+  #   url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
+  #   certificate_url: https://www.datacamp.com
+  #   date: '2023-01-21'
+  #   awarder: datacamp
+  #   icon: datacamp
+  #   summary: |
+  #     Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
 ---
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I recently (December 2024) graduated from UBC with a BaSC of Computer Engineering. Currently, I am employed as a Digital Design Engineer at AMD-Vancouver, working on designing digital hardware for their chip's  low-power high-bandwidth interconnect logic.
+
+Ultimately, I am driven and interested in working on innovating to solve hard problems and help advance our technologies. In order to innovate and actually have an impact, my sens is that one needs a strong technical and theoretical foundations in engineering and mathematics.
