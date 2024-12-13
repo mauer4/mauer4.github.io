@@ -19,25 +19,71 @@
     <line x1="720" y1="0" x2="720" y2="540" />
     <line x1="840" y1="0" x2="840" y2="540" />
   </g>
-  
-  <!-- Waveform Pattern -->
-  <path d="M0 350 Q120 420, 240 350 T480 350 T720 350 T960 350" fill="none" stroke="#00ffcc" stroke-width="3" opacity="0.8" />
-  <path d="M0 380 Q120 450, 240 380 T480 380 T720 380 T960 380" fill="none" stroke="#00ffcc" stroke-width="3" opacity="0.8" />
-  
-  <!-- Circuit Node Pattern -->
-  <circle cx="120" cy="350" r="8" fill="#ffcc00" />
-  <circle cx="240" cy="380" r="8" fill="#ffcc00" />
-  <circle cx="360" cy="350" r="8" fill="#ffcc00" />
-  <circle cx="480" cy="380" r="8" fill="#ffcc00" />
-  <circle cx="600" cy="350" r="8" fill="#ffcc00" />
-  <circle cx="720" cy="380" r="8" fill="#ffcc00" />
-  <circle cx="840" cy="350" r="8" fill="#ffcc00" />
-  
-  <!-- Interconnections -->
-  <line x1="120" y1="350" x2="240" y2="380" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
-  <line x1="240" y1="380" x2="360" y2="350" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
-  <line x1="360" y1="350" x2="480" y2="380" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
-  <line x1="480" y1="380" x2="600" y2="350" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
-  <line x1="600" y1="350" x2="720" y2="380" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
-  <line x1="720" y1="380" x2="840" y2="350" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
+
+  <!-- Y-Offset for Waveforms and Circuit -->
+  <g transform="translate(0, 500)">
+    <!-- Waveform Pattern -->
+    <path d="M0 0 Q120 50, 240 0 T480 0 T720 0 T960 0" fill="none" stroke="#00ffcc" stroke-width="3" opacity="0.8" />
+    <path d="M0 0 Q120 -50, 240 0 T480 0 T720 0 T960 0" fill="none" stroke="#00ffcc" stroke-width="3" opacity="0.8" />
+
+    <!-- Circuit Node Pattern -->
+    <circle cx="120" cy="0" r="8" fill="#ffcc00" />
+    <circle cx="240" cy="0" r="8" fill="#ffcc00" />
+    <circle cx="360" cy="0" r="8" fill="#ffcc00" />
+    <circle cx="480" cy="0" r="8" fill="#ffcc00" />
+    <circle cx="600" cy="0" r="8" fill="#ffcc00" />
+    <circle cx="720" cy="0" r="8" fill="#ffcc00" />
+    <circle cx="840" cy="0" r="8" fill="#ffcc00" />
+
+    <!-- Interconnections -->
+    <line x1="120" y1="0" x2="240" y2="0" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
+    <line x1="240" y1="0" x2="360" y2="0" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
+    <line x1="360" y1="0" x2="480" y2="0" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
+    <line x1="480" y1="0" x2="600" y2="0" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
+    <line x1="600" y1="0" x2="720" y2="0" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
+    <line x1="720" y1="0" x2="840" y2="0" stroke="#ffcc00" stroke-width="2" opacity="0.8" />
+  </g>
+
+  <!-- Additional Symbolic Features -->
+  <g transform="translate(50, 350)">
+    <!-- Left Margin Feature: Neural Network Representation -->
+    <!-- Input Layer -->
+    <circle cx="20" cy="-40" r="8" fill="#00ff55" />
+    <circle cx="20" cy="00" r="8" fill="#00ff55" />
+    <circle cx="20" cy="40" r="8" fill="#00ff55" />
+
+    <!-- Hidden Layer -->
+    <circle cx="60" cy="-20" r="8" fill="#ffcc00" />
+    <circle cx="60" cy="20" r="8" fill="#ffcc00" />
+
+    <!-- Output Layer -->
+    <circle cx="100" cy="00" r="8" fill="#ff0066" />
+
+    <!-- Connections -->
+    <line x1="20" y1="-40" x2="60" y2="-20" stroke="#00ff55" stroke-width="2" />
+    <line x1="20" y1="-40" x2="60" y2="20" stroke="#00ff55" stroke-width="2" />
+    <line x1="20" y1="00" x2="60" y2="-20" stroke="#00ff55" stroke-width="2" />
+    <line x1="20" y1="00" x2="60" y2="20" stroke="#00ff55" stroke-width="2" />
+    <line x1="20" y1="40" x2="60" y2="-20" stroke="#00ff55" stroke-width="2" />
+    <line x1="20" y1="40" x2="60" y2="20" stroke="#00ff55" stroke-width="2" />
+    <line x1="60" y1="-20" x2="100" y2="00" stroke="#ffcc00" stroke-width="2" />
+    <line x1="60" y1="20" x2="100" y2="00" stroke="#ffcc00" stroke-width="2" />
+  </g>
+
+  <g transform="translate(900, 350)">
+    <!-- Right Margin Feature: Processor Symbol -->
+    <rect x="-40" y="0" width="40" height="40" fill="#ffcc00" opacity="0.5" />
+    <line x1="-20" y1="0" x2="-20" y2="-5" stroke="#ffcc00" stroke-width="2" />
+    <line x1="-40" y1="20" x2="-45" y2="20" stroke="#ffcc00" stroke-width="2" />
+    <line x1="-20" y1="40" x2="-20" y2="45" stroke="#ffcc00" stroke-width="2" />
+    <line x1="0" y1="20" x2="5" y2="20" stroke="#ffcc00" stroke-width="2" />
+    <line x1="-25" y1="0" x2="-25" y2="-5" stroke="#ffcc00" stroke-width="2" />
+    <line x1="-40" y1="25" x2="-45" y2="25" stroke="#ffcc00" stroke-width="2" />
+    <line x1="-25" y1="40" x2="-25" y2="45" stroke="#ffcc00" stroke-width="2" />
+    <line x1="0" y1="25" x2="5" y2="25" stroke="#ffcc00" stroke-width="2" />
+    <line x1="-15" y1="0" x2="-15" y2="-5" stroke="#ffcc00" stroke-width="2" />
+    <line x1="-40" y1="15" x2="-45" y2="15" stroke="#ffcc00" stroke-width="2" />
+    <line x1="-15" y1="40" x2="-15" y2="45" stroke="#ffcc00" stroke-width="2" />
+    <line x1="0" y1="15" x2="5" y2="15" stroke="#ffcc00" stroke-width="2" />
+  </g>
 </svg>
