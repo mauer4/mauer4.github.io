@@ -20,7 +20,7 @@ sections:
         url: uploads/resume.pdf
     design:
       css_class: dark
-      css_style: "margin-top: 2rem; margin-bottom: 6rem; padding-bottom: 6rem;"
+      css_style: "margin-top: 0rem; margin-bottom: 6rem; padding-bottom: 12rem; padding-top: 0rem;"
       background:
         color: black
         image:
