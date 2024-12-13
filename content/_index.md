@@ -1,6 +1,6 @@
 ---
 # Leave the homepage title empty to use the site title
-title: ""
+title: "Adin's Portfolio"
 date: 2022-10-24
 type: landing
 
@@ -20,26 +20,27 @@ sections:
         url: uploads/resume.pdf
     design:
       css_class: dark
+      css_style: "margin-top: 2rem; margin-bottom: 6rem; padding-bottom: 6rem;"
       background:
         color: black
         image:
           # Add your image background to `assets/media/`.
-          filename: stacked-peaks.svg
+          filename: signal_background.svg
           filters:
             brightness: 1.0
           size: cover
           position: center
           parallax: false
+
+
   - block: markdown
     content:
-      title: '📚 My Research'
+      title: '📚 My Interests'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        Adin is continuously curious and learning more about the technical topics that are of interest for him, including developments in the world of Computer Architecture, and Machine Learning. Adin believes that well-rounded knowledge and understanding of a broad variety of technical and theoretical topics in order to be truly innovative and contribute to solving any big problems in today's world. Intuitively, it is important to have excellent foundations in mathematics (probability, statistics, linear algebra, multivariable calculus and complex analysis), signal processing, and computer architecture.
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
-        
-        Please reach out to collaborate 😃
+        In Adin's last semester of his undergraduate degree, Adin took a graduate level course (CPEN512 - Parallel and Configurable Computer architecture). In this course, various historical and currrent innovations in accelarated computing were studied. In the course's assignments, students had to implement dense linear algebra algorithms (matmul, LU decomp) in various parallel computer programming paradigms, including OpenMPI, pthreads, CUDA, Bluespec, Vectorblox. For the final project, Adin implemented Cooley-Tukey FFT using CUDA and OpenMPI.
     design:
       columns: '1'
   - block: collection
