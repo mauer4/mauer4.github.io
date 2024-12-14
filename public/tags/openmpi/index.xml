@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenMPI | Adin Mauer Portfolio Website</title>
-    <link>http://localhost:42205/tags/openmpi/</link>
-      <atom:link href="http://localhost:42205/tags/openmpi/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:45857/tags/openmpi/</link>
+      <atom:link href="http://localhost:45857/tags/openmpi/index.xml" rel="self" type="application/rss+xml" />
     <description>OpenMPI</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 11 Dec 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:42205/media/icon_hu4060597685561840127.png</url>
+      <url>http://localhost:45857/media/icon_hu4060597685561840127.png</url>
       <title>OpenMPI</title>
-      <link>http://localhost:42205/tags/openmpi/</link>
+      <link>http://localhost:45857/tags/openmpi/</link>
     </image>
     
     <item>
       <title>📡 💽 Implement FFT with Cooley-Tukey multi-radix forms on parallel programming paradigms CUDA &amp; OpenMPI</title>
-      <link>http://localhost:42205/post/fft/</link>
+      <link>http://localhost:45857/post/fft/</link>
       <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:42205/post/fft/</guid>
+      <guid>http://localhost:45857/post/fft/</guid>
       <description>&lt;p&gt;Welcome 👋&lt;/p&gt;
 
 
