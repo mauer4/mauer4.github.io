@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Adin Mauer Portfolio Website</title>
-    <link>http://localhost:38783/project/</link>
-      <atom:link href="http://localhost:38783/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:38795/project/</link>
+      <atom:link href="http://localhost:38795/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:38783/media/icon_hu7729264130191091259.png</url>
+      <url>http://localhost:38795/media/icon_hu7729264130191091259.png</url>
       <title>Projects</title>
-      <link>http://localhost:38783/project/</link>
+      <link>http://localhost:38795/project/</link>
     </image>
     
     <item>
       <title>CUDA LU decomp.</title>
-      <link>http://localhost:38783/project/gaussian_elimination/</link>
+      <link>http://localhost:38795/project/gaussian_elimination/</link>
       <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38783/project/gaussian_elimination/</guid>
+      <guid>http://localhost:38795/project/gaussian_elimination/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EEG CNN</title>
-      <link>http://localhost:38783/project/eeg_cnn/</link>
+      <link>http://localhost:38795/project/eeg_cnn/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38783/project/eeg_cnn/</guid>
+      <guid>http://localhost:38795/project/eeg_cnn/</guid>
       <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>LED Cube</title>
-      <link>http://localhost:38783/project/led_cube/</link>
+      <link>http://localhost:38795/project/led_cube/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38783/project/led_cube/</guid>
+      <guid>http://localhost:38795/project/led_cube/</guid>
       <description>&lt;h3 id=&#34;led-cube-project--real-time-video-pose-projection&#34;&gt;LED Cube project + real-time video pose projection&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=kbrSmiwQhu4&#34; title=&#34;LED Cube&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
 
@@ -59,9 +59,9 @@
     
     <item>
       <title>Parallel FFT (CUDA / OpenMPI)</title>
-      <link>http://localhost:38783/project/parallel_fft/</link>
+      <link>http://localhost:38795/project/parallel_fft/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38783/project/parallel_fft/</guid>
+      <guid>http://localhost:38795/project/parallel_fft/</guid>
       <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
     </item>
     
