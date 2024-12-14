@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Signal Processing | Adin Mauer Portfolio Website</title>
-    <link>http://localhost:45857/tags/signal-processing/</link>
-      <atom:link href="http://localhost:45857/tags/signal-processing/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:45335/tags/signal-processing/</link>
+      <atom:link href="http://localhost:45335/tags/signal-processing/index.xml" rel="self" type="application/rss+xml" />
     <description>Signal Processing</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 11 Dec 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:45857/media/icon_hu4060597685561840127.png</url>
+      <url>http://localhost:45335/media/icon_hu4060597685561840127.png</url>
       <title>Signal Processing</title>
-      <link>http://localhost:45857/tags/signal-processing/</link>
+      <link>http://localhost:45335/tags/signal-processing/</link>
     </image>
     
     <item>
       <title>Parallel FFT (CUDA / OpenMPI)</title>
-      <link>http://localhost:45857/project/parallel_fft/</link>
+      <link>http://localhost:45335/project/parallel_fft/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45857/project/parallel_fft/</guid>
+      <guid>http://localhost:45335/project/parallel_fft/</guid>
       <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>EEG CNN</title>
-      <link>http://localhost:45857/project/eeg_cnn/</link>
+      <link>http://localhost:45335/project/eeg_cnn/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45857/project/eeg_cnn/</guid>
+      <guid>http://localhost:45335/project/eeg_cnn/</guid>
       <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>📡 💽 Implement FFT with Cooley-Tukey multi-radix forms on parallel programming paradigms CUDA &amp; OpenMPI</title>
-      <link>http://localhost:45857/post/fft/</link>
+      <link>http://localhost:45335/post/fft/</link>
       <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45857/post/fft/</guid>
+      <guid>http://localhost:45335/post/fft/</guid>
       <description>&lt;p&gt;Welcome 👋&lt;/p&gt;
 
 

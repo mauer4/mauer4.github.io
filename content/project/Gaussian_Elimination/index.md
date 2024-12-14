@@ -25,6 +25,7 @@ tags:
 featured: true
 weight: 120
 
+outputs: [HTML, RSS]
 ---
 
 <!--more-->
