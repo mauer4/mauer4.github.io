@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Adin Mauer Portfolio Website</title>
-    <link>http://localhost:45659/tags/</link>
-      <atom:link href="http://localhost:45659/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:38783/tags/</link>
+      <atom:link href="http://localhost:38783/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 11 Dec 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:45659/media/icon_hu7729264130191091259.png</url>
+      <url>http://localhost:38783/media/icon_hu7729264130191091259.png</url>
       <title>Tags</title>
-      <link>http://localhost:45659/tags/</link>
+      <link>http://localhost:38783/tags/</link>
     </image>
     
   </channel>

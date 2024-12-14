@@ -1,7 +1,6 @@
 ---
 title: LED Cube
 date: 2023-10-26
-external_link: https://github.com/pandas-dev/pandas
 tags:
   - FPGA
   - ML
@@ -11,6 +10,10 @@ featured: true
 
 ---
 
-Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.
+### LED Cube project + real-time video pose projection
+
+[![LED CUBE](http://img.youtube.com/vi/kbrSmiwQhu4/0.jpg)](https://www.youtube.com/watch?v=kbrSmiwQhu4 "LED Cube")
+
+
 
 <!--more-->
