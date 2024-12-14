@@ -32,6 +32,17 @@ sections:
           position: center
           parallax: false
 
+  - block: collection
+    id: sel_projects
+    content:
+      title: Selected Projects
+      filters:
+        folders:
+          - project
+        featured_only: true
+    design:
+      view: article-grid
+      columns: 2
 
   - block: markdown
     content:
@@ -43,17 +54,6 @@ sections:
         In Adin's last semester of his undergraduate degree, Adin took a graduate level course (CPEN512 - Parallel and Configurable Computer architecture). In this course, various historical and currrent innovations in accelarated computing were studied. In the course's assignments, students had to implement dense linear algebra algorithms (matmul, LU decomp) in various parallel computer programming paradigms, including OpenMPI, pthreads, CUDA, Bluespec, Vectorblox. For the final project, Adin implemented Cooley-Tukey FFT using CUDA and OpenMPI.
     design:
       columns: '1'
-  - block: collection
-    id: papers
-    content:
-      title: Featured Publications
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: article-grid
-      columns: 2
   - block: collection
     content:
       title: Recent Publications
