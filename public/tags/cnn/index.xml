@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CNN | Adin Mauer Portfolio Website</title>
-    <link>http://localhost:34671/tags/cnn/</link>
-      <atom:link href="http://localhost:34671/tags/cnn/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:42205/tags/cnn/</link>
+      <atom:link href="http://localhost:42205/tags/cnn/index.xml" rel="self" type="application/rss+xml" />
     <description>CNN</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 26 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:34671/media/icon_hu7729264130191091259.png</url>
+      <url>http://localhost:42205/media/icon_hu4060597685561840127.png</url>
       <title>CNN</title>
-      <link>http://localhost:34671/tags/cnn/</link>
+      <link>http://localhost:42205/tags/cnn/</link>
     </image>
     
     <item>
       <title>EEG CNN</title>
-      <link>http://localhost:34671/project/eeg_cnn/</link>
+      <link>http://localhost:42205/project/eeg_cnn/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34671/project/eeg_cnn/</guid>
+      <guid>http://localhost:42205/project/eeg_cnn/</guid>
       <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
     </item>
     

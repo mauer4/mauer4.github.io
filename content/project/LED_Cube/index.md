@@ -7,7 +7,7 @@ tags:
   - Hardware Design (System verilog)
   - Communication
 featured: true
-
+weight: 90
 ---
 
 ### LED Cube project + real-time video pose projection
