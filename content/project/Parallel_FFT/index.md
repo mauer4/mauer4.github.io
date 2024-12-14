@@ -8,7 +8,7 @@ tags:
   - CUDA
   - Signal Processing
 featured: true
-
+weight: 100
 ---
 
 Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.

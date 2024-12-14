@@ -23,6 +23,7 @@ tags:
   - Dense Linear Algebra
   - Parallel Computing
 featured: true
+weight: 120
 
 ---
 
