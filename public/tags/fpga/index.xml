@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FPGA | Adin Mauer Portfolio Website</title>
-    <link>http://localhost:45335/tags/fpga/</link>
-      <atom:link href="http://localhost:45335/tags/fpga/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:35641/tags/fpga/</link>
+      <atom:link href="http://localhost:35641/tags/fpga/index.xml" rel="self" type="application/rss+xml" />
     <description>FPGA</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 26 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:45335/media/icon_hu4060597685561840127.png</url>
+      <url>http://localhost:35641/media/icon_hu4060597685561840127.png</url>
       <title>FPGA</title>
-      <link>http://localhost:45335/tags/fpga/</link>
+      <link>http://localhost:35641/tags/fpga/</link>
     </image>
     
     <item>
       <title>LED Cube Project</title>
-      <link>http://localhost:45335/project/led_cube/</link>
+      <link>http://localhost:35641/project/led_cube/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45335/project/led_cube/</guid>
+      <guid>http://localhost:35641/project/led_cube/</guid>
       <description>&lt;h3 id=&#34;led-cube--fpga-driver--real-time-video-pose-projection-android&#34;&gt;LED Cube + FPGA driver + real-time video pose projection (Android)&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=kbrSmiwQhu4&#34; title=&#34;LED Cube&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
 
