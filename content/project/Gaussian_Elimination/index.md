@@ -1,5 +1,5 @@
 ---
-title: CUDA LU decomp.
+title: CUDA LU Decomposition
 info:
   icon: brands/github
   url: https://github.com/mauer4
