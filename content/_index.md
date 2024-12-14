@@ -4,6 +4,8 @@ title: "Adin's Portfolio"
 date: 2022-10-24
 type: landing
 
+outputs: [HTML, RSS]
+
 design:
   # Default section spacing
   spacing: "6rem"

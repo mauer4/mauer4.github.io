@@ -3,6 +3,8 @@ title: 'Experience'
 date: 2023-10-24
 type: landing
 
+outputs: [HTML, RSS]
+
 design:
   spacing: '5rem'
 

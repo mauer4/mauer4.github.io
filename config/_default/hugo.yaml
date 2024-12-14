@@ -36,8 +36,8 @@ permalinks:
 disableAliases: true
 outputs:
   home: [HTML, RSS, headers, redirects, backlinks]
-  section: [HTML, RSS]
-  taxonomy: [HTML, RSS]
+  section: [HTML, RSS, headers, redirects, backlinks]
+  taxonomy: [HTML, RSS, headers, redirects, backlinks]
 imaging:
   resampleFilter: lanczos
   quality: 80
