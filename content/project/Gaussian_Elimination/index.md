@@ -28,4 +28,6 @@ weight: 120
 outputs: [HTML, RSS]
 ---
 
+Placeholder text
+
 <!--more-->
