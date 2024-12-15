@@ -187,6 +187,6 @@ awards:
 
 ## About Me
 
-I recently (December 2024) graduated from **UBC** with a BaSC of Computer Engineering. Currently, I am employed as a **Digital Design Engineer** at **AMD**-Vancouver, working on designing digital hardware for their chip's  low-power high-bandwidth interconnect logic.
+I recently (December 2024) graduated from **UBC** with a BASc of Computer Engineering. Currently, I am employed as a **Digital Design Engineer** at **AMD**-Vancouver, working on designing digital hardware for their chip's  low-power high-bandwidth interconnect logic.
 
-Ultimately, I am driven and interested in working on innovating to solve hard problems and help advance our technologies. In order to innovate and actually have an impact, my sense is that one needs strong technical and theoretical foundations in a broad range of topics in **engineering and mathematics**.
+Ultimately, I am driven and interested in innovating and solving hard problems that can help advance our technologies. In order to innovate and actually have an impact, my sense is that one needs strong technical and theoretical foundations in a broad range of topics in **engineering and mathematics**.
