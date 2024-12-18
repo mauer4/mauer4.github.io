@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MPI | Adin Mauer Portfolio Website</title>
-    <link>http://localhost:34817/tags/mpi/</link>
-      <atom:link href="http://localhost:34817/tags/mpi/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/tags/mpi/</link>
+      <atom:link href="http://localhost:1313/tags/mpi/index.xml" rel="self" type="application/rss+xml" />
     <description>MPI</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 26 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:34817/media/icon_hu4060597685561840127.png</url>
+      <url>http://localhost:1313/media/icon_hu4060597685561840127.png</url>
       <title>MPI</title>
-      <link>http://localhost:34817/tags/mpi/</link>
+      <link>http://localhost:1313/tags/mpi/</link>
     </image>
     
     <item>
       <title>Parallel FFT (CUDA / OpenMPI)</title>
-      <link>http://localhost:34817/project/parallel_fft/</link>
+      <link>http://localhost:1313/project/parallel_fft/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34817/project/parallel_fft/</guid>
+      <guid>http://localhost:1313/project/parallel_fft/</guid>
       <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
     </item>
     

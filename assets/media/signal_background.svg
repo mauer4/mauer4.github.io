@@ -45,7 +45,7 @@
   </g>
 
   <!-- Additional Symbolic Features -->
-  <g transform="translate(100, 350)">
+  <g transform="translate(140, 345)">
     <!-- Left Margin Feature: Neural Network Representation -->
     <!-- Input Layer -->
     <circle cx="20" cy="-40" r="8" fill="#00ff55" />
@@ -70,7 +70,7 @@
     <line x1="60" y1="20" x2="100" y2="00" stroke="#ffcc00" stroke-width="2" />
   </g>
 
-  <g transform="translate(850, 350)">
+  <g transform="translate(315, 325)">
     <!-- Right Margin Feature: Processor Symbol -->
     <rect x="-40" y="0" width="40" height="40" fill="#ffcc00" opacity="0.5" />
     <line x1="-20" y1="0" x2="-20" y2="-5" stroke="#ffcc00" stroke-width="2" />
