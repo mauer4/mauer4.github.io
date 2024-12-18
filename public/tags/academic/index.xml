@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Academic | Adin Mauer Portfolio Website</title>
-    <link>http://localhost:34817/tags/academic/</link>
-      <atom:link href="http://localhost:34817/tags/academic/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/tags/academic/</link>
+      <atom:link href="http://localhost:1313/tags/academic/index.xml" rel="self" type="application/rss+xml" />
     <description>Academic</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 11 Dec 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:34817/media/icon_hu4060597685561840127.png</url>
+      <url>http://localhost:1313/media/icon_hu4060597685561840127.png</url>
       <title>Academic</title>
-      <link>http://localhost:34817/tags/academic/</link>
+      <link>http://localhost:1313/tags/academic/</link>
     </image>
     
     <item>
       <title>📡 💽 Implement FFT with Cooley-Tukey multi-radix forms on parallel programming paradigms CUDA &amp; OpenMPI</title>
-      <link>http://localhost:34817/post/fft/</link>
+      <link>http://localhost:1313/post/fft/</link>
       <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34817/post/fft/</guid>
+      <guid>http://localhost:1313/post/fft/</guid>
       <description>&lt;p&gt;Welcome 👋&lt;/p&gt;
 
 
@@ -100,9 +100,9 @@
     
     <item>
       <title>🎉 Easily create your own simple yet highly customizable blog</title>
-      <link>http://localhost:34817/post/get-started/</link>
+      <link>http://localhost:1313/post/get-started/</link>
       <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34817/post/get-started/</guid>
+      <guid>http://localhost:1313/post/get-started/</guid>
       <description>&lt;p&gt;Welcome 👋&lt;/p&gt;
 
 
