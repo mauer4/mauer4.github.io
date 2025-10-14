@@ -72,12 +72,9 @@
             <div class="checklist-title">Checklist</div>
             <ul class="checklist">
               {{ range .checklist }}
-                {{ $item := . }}
-                {{ $text := (cond (isMap $item) ($item.text) $item) }}
-                {{ $done := (cond (isMap $item) (or ($item.done) false) false) }}
                 <li>
-                  <input type="checkbox" disabled {{ if $done }}checked{{ end }} />
-                  <span>{{ $text }}</span>
+                  <input type="checkbox" disabled />
+                  <span>{{ . }}</span>
                 </li>
               {{ end }}
             </ul>
