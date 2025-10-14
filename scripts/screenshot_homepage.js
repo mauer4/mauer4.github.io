@@ -22,7 +22,7 @@ const path = require('path');
     page.setDefaultNavigationTimeout(60000);
     await page.goto(url, { waitUntil: 'networkidle2' });
     // Optional small delay for client-side hydration/animations
-    await page.waitForTimeout(1000);
+    await new Promise((r) => setTimeout(r, 1000));
     await fs.promises.mkdir(path.dirname(outPath), { recursive: true });
     await page.screenshot({ path: outPath, fullPage: false, type: 'png' });
     console.log('Saved screenshot to', outPath);
@@ -30,4 +30,3 @@ const path = require('path');
     await browser.close();
   }
 })();
-

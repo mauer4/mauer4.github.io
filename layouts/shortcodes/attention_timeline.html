@@ -7,11 +7,23 @@
   <div class="container">
     <h1>{{ with $plan.title }}{{ . }}{{ else }}Attention From Scratch{{ end }}</h1>
     {{ with $plan.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
-    <div class="dates-row">
-      {{ $start := $plan.start_date }}
-      <div class="date-item">Start: {{ with $start }}{{ . }}{{ else }}TBD{{ end }}</div>
-      <div class="date-item">Today: {{ now | time.Format "2006-01-02" }}</div>
-      <div class="date-item">Last Updated: {{ site.Lastmod | time.Format "2006-01-02" }}</div>
+    {{ $start := $plan.start_date }}
+    <div class="meta-bar" role="group" aria-label="Plan dates">
+      <div class="meta-chip">
+        <span class="meta-emoji">📅</span>
+        <span class="meta-label">Today</span>
+        <span class="meta-value">{{ now | time.Format "2006-01-02" }}</span>
+      </div>
+      <div class="meta-chip">
+        <span class="meta-emoji">🚀</span>
+        <span class="meta-label">Start</span>
+        <span class="meta-value">{{ with $start }}{{ . }}{{ else }}TBD{{ end }}</span>
+      </div>
+      <div class="meta-chip">
+        <span class="meta-emoji">🔄</span>
+        <span class="meta-label">Updated</span>
+        <span class="meta-value">{{ site.Lastmod | time.Format "2025-01-02" }}</span>
+      </div>
     </div>
     {{/* Progress bar */}}
     {{ $total := len $plan.weeks }}

@@ -5,7 +5,7 @@ weeks:
   - id: week-1
     week: 1
     title: Loader, Tokenizer, Golden Harness (part 1)
-    target_date: '2025-10-14'
+    target_date: '2025-10-21'
     completed: false
     completed_date: ''
     summary: Implement safetensors weight loader and start SentencePiece tokenizer integration.
@@ -18,7 +18,7 @@ weeks:
   - id: week-2
     week: 2
     title: Loader, Tokenizer, Golden Harness (part 2)
-    target_date: '2025-10-21'
+    target_date: '2025-10-28'
     completed: false
     completed_date: ''
     summary: Build a correctness harness to diff logits layer-by-layer vs HF.
@@ -30,7 +30,7 @@ weeks:
   - id: week-3
     week: 3
     title: Baseline Forward & Minimal Server (part 1)
-    target_date: '2025-10-28'
+    target_date: '2025-11-04'
     completed: false
     completed_date: ''
     summary: Implement core CUDA kernels and a basic C++ forward path.
@@ -41,7 +41,7 @@ weeks:
   - id: week-4
     week: 4
     title: Baseline Forward & Minimal Server (part 2)
-    target_date: '2025-11-04'
+    target_date: '2025-11-11'
     completed: false
     completed_date: ''
     summary: Add KV cache, sampling, and a minimal HTTP server.
@@ -52,7 +52,7 @@ weeks:
   - id: week-5
     week: 5
     title: Flash-style Attention & KV Paged Cache (part 1)
-    target_date: '2025-11-11'
+    target_date: '2025-11-18'
     completed: false
     completed_date: ''
     summary: Replace naÃ¯ve attention with FlashAttention-style kernels.
@@ -63,7 +63,7 @@ weeks:
   - id: week-6
     week: 6
     title: Flash-style Attention & KV Paged Cache (part 2)
-    target_date: '2025-11-18'
+    target_date: '2025-11-25'
     completed: false
     completed_date: ''
     summary: Redesign KV cache to paged/slab layout and add CUDA Graphs.
@@ -75,7 +75,7 @@ weeks:
   - id: week-7
     week: 7
     title: Quantization (AWQ path)
-    target_date: '2025-11-25'
+    target_date: '2025-12-02'
     completed: false
     completed_date: ''
     summary: Add weight-only INT4 via AWQ; validate accuracy vs fp16.
@@ -86,7 +86,7 @@ weeks:
   - id: week-8
     week: 8
     title: Quantization (GPTQ/NF4) and comparisons
-    target_date: '2025-12-02'
+    target_date: '2025-12-09'
     completed: false
     completed_date: ''
     summary: Add GPTQ path; optional NF4 baseline; compare accuracy/speed.
@@ -97,7 +97,7 @@ weeks:
   - id: week-9
     week: 9
     title: Throughput Scalers
-    target_date: '2025-12-09'
+    target_date: '2025-12-16'
     completed: false
     completed_date: ''
     summary: In-flight batching, pinned I/O, overlap tokenization/H2D/decode.
@@ -108,7 +108,7 @@ weeks:
   - id: week-10
     week: 10
     title: Speculative & Parallel Decoding
-    target_date: '2025-12-16'
+    target_date: '2025-12-23'
     completed: false
     completed_date: ''
     summary: Add Lookahead decoding; experiment with Medusa/ReDrafter.
@@ -120,7 +120,7 @@ weeks:
   - id: week-11
     week: 11
     title: Production Serving
-    target_date: '2025-12-23'
+    target_date: '2025-12-30'
     completed: false
     completed_date: ''
     summary: OpenAI-compatible REST, metrics, eviction policy, and hot-reload.
@@ -132,7 +132,7 @@ weeks:
   - id: week-12
     week: 12
     title: Docs, Benchmarks, Release
-    target_date: '2025-12-30'
+    target_date: '2026-01-06'
     completed: false
     completed_date: ''
     summary: Bench suite, competitive baselines, and public release.
@@ -141,5 +141,6 @@ weeks:
       llama.cpp on the same GPU. Reproduce vLLM/TensorRT-LLM ballpark throughput on your hardware and
       document where you gain/lose. Finalize docs and publish.
     comments: ["M6: OpenAI-compatible API + metrics + report"]
+
 
 
