@@ -1,52 +1,116 @@
-# [Hugo Academic CV Theme](https://github.com/HugoBlox/theme-academic-cv)
+# Adin Mauer ó Portfolio Website
 
-[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/)
+Personal site built with Hugo (HugoBlox/Academic) and deployed via GitHub Pages.
 
-The Hugo **Academic CV Template** empowers you to easily create your job-winning online resum√©, showcase your academic publications, and create online courses or knowledge bases to grow your audience.
+- Live site: https://mauer4.github.io/
+- Tech: Hugo Extended, HugoBlox blocks, GitHub Actions, GitHub Pages
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://hugoblox.com/templates/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/GetResearchDev?label=Follow%20on%20Twitter)](https://twitter.com/GetResearchDev)
+## Overview
 
-Ô∏è**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, Hugo Blox Builder**, making every site truly personalized ‚≠ê‚≠ê‚≠ê‚≠ê‚≠ê
+This repo powers my portfolio: bio, experience, projects, blog, publications, and an ìAttention From Scratchî build log for a 12-week Transformer inference project.
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+Key features:
+- Automated import of Medium posts to the Blog
+- Automated sync of selected GitHub repo READMEs into the Projects section
+- One-click deploy to GitHub Pages on push to `main`
+- Data-driven, interactive timeline for the ìAttention From Scratchî page
 
-[Check out the latest demo](https://academic-demo.netlify.app/) of what you'll get in less than 10 minutes, or [get inspired by our academics and research groups](https://hugoblox.com/creators/).
+## Structure
 
-The integrated [**Hugo Blox Builder**](https://hugoblox.com) and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+- `content/`
+  - `_index.md` ó homepage layout and sections
+  - `authors/admin/_index.md` ó profile data (bio, education, skills, awards)
+  - `post/` ó blog posts (including imported Medium posts)
+  - `project/` ó project pages (some auto-generated from GitHub READMEs)
+  - `attention-from-scratch/` ó page rendering the 12-week timeline
+- `data/`
+  - `attention_plan.yaml` ó the timeline plan (weeks, status, comments)
+  - `github_projects.yaml` ó list of repos to sync into Projects
+- `assets/`
+  - `css/custom.css` ó site custom styles, including the timeline
+  - `js/attention.js` ó interactions for the timeline component
+- `layouts/shortcodes/attention_timeline.html` ó renders the interactive timeline from `data/attention_plan.yaml`
+- `static/` ó static assets (icons, uploads)
+- `config/_default/` ó site config (menus, params, Hugo)
+- `.github/workflows/` ó CI for deploy, Medium import, and GitHub projects sync
 
-- üëâ [**Get Started**](https://hugoblox.com/templates/)
-- üìö [View the **documentation**](https://docs.hugoblox.com/)
-- üí¨ [Chat with the **Hugo Blox Builder community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- üê¶ Twitter: [@GetResearchDev](https://twitter.com/GetResearchDev) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithHugoBlox](https://twitter.com/search?q=%23MadeWithHugoBlox&src=typed_query)
-- ‚¨áÔ∏è **Automatically import your publications from BibTeX** with the [Hugo Academic CLI](https://github.com/GetRD/academic-file-converter)
-- üí° [Suggest an improvement](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ‚¨ÜÔ∏è **Updating?** View the [Update Guide](https://docs.hugoblox.com/reference/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+## Automations
 
-## We ask you, humbly, to support this open source movement
+### 1) Medium ? Blog
 
-Today we ask you to defend the open source independence of the Hugo Blox Builder and themes üêß
+Workflow: `.github/workflows/medium-sync.yml`
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+What it does:
+- Fetches your Medium RSS feed and converts each entry to a Hugo post under `content/post/<slug>/index.md`
+- Adds `canonical_url` pointing to the original Medium article (SEO clean)
+- Skips existing posts to remain idempotent
 
-### [‚ù§Ô∏è Click here to become a Sponsor, unlocking awesome perks such as _exclusive academic templates and blocks_](https://hugoblox.com/sponsor/)
+Setup:
+- Repo Secret or Variable: `MEDIUM_FEED_URL` with your feed URL, e.g. `https://medium.com/feed/@YOUR_HANDLE` or `https://your-handle.medium.com/feed`
+- Trigger via GitHub Actions ? ìSync Medium Postsî ? Run workflow
 
-<!--
-<p align="center"><a href="https://hugoblox.com/templates/" target="_blank" rel="noopener"><img src="https://hugoblox.com/uploads/readmes/academic_logo_200px.png" alt="Hugo Academic Theme for Hugo Blox Builder"></a></p>
--->
+Script:
+- `scripts/sync_medium.py` (uses `feedparser` + `requests`)
 
-## Demo image credits
+### 2) GitHub READMEs ? Projects
 
-- [Unsplash](https://unsplash.com)
+Workflow: `.github/workflows/github-projects-sync.yml`
 
-## Latest news
+What it does:
+- Reads `data/github_projects.yaml`
+- For each repo, fetches repo metadata + README, rewrites relative links/images
+- Writes/updates `content/project/<repo>/index.md`
+- Use `featured: true` to show on the homepage ìSelected Projectsî grid
 
-<!--START_SECTION:news-->
+Setup:
+- Configure repos in `data/github_projects.yaml`
+- Trigger via GitHub Actions ? ìSync GitHub Projectsî ? Run workflow
 
-- [Easily make an academic CV website to get more cites and grow your audience üöÄ](https://hugoblox.com/blog/easily-make-academic-website/)
-- [What&#39;s new in v5.2?](https://hugoblox.com/blog/whats-new-in-v5.2/)
-- [What&#39;s new in v5.1?](https://hugoblox.com/blog/whats-new-in-v5.1/)
-- [Version 5.0 (February 2021)](https://hugoblox.com/blog/version-5.0-february-2021/)
-- [Version 5.0 Beta 3 (February 2021)](https://hugoblox.com/blog/version-5.0-beta-3-february-2021/)
-<!--END_SECTION:news-->
+Script:
+- `scripts/sync_github_projects.py` (uses `requests` + `pyyaml`)
+
+### 3) Deploy to GitHub Pages
+
+Workflow: `.github/workflows/publish.yaml`
+
+What it does:
+- Builds site with Hugo Extended and uploads the artifact
+- Deploys to GitHub Pages using the latest actions (`configure-pages@v5`, `upload-pages-artifact@v3`, `deploy-pages@v4`)
+
+Trigger:
+- On push to `main` or manual run in Actions
+
+## Attention From Scratch ó Editing the Timeline
+
+- Data file: `data/attention_plan.yaml`
+  - Each `week` entry supports: `title`, `summary`, `details`, `target_date`, `completed`, `completed_date`, and `comments` (array of notes)
+  - Set `completed: true` and `completed_date: YYYY-MM-DD` to mark done; header progress bar updates automatically
+- Page: `content/attention-from-scratch/_index.md`
+  - The page renders with `{{< attention_timeline >}}`
+  - Icons appear next to titles (attention vs transformer) based on title text
+
+## Local Development
+
+Requirements:
+- Hugo Extended (matching the CI version, currently `0.136.5`)
+
+Commands:
+- Build: `hugo --minify`
+- Local server: `hugo server -D` then open `http://localhost:1313`
+
+Note: keep Hugo/Go toolchains installed outside the repo. The repo ignores `tools/` and `*.zip` to avoid large binaries.
+
+## Configuration & SEO
+
+- Update site params: `config/_default/params.yaml` (SEO description, footer, analytics)
+- Update menus: `config/_default/menus.yaml`
+- Update base URL: `config/_default/hugo.yaml`
+
+## Maintenance
+
+- Large files: the repo ignores `tools/` and `*.zip`. History has been cleaned to remove previously committed large binaries.
+- If you need to add big media, use Git LFS or host externally and link.
+
+## License
+
+See `LICENSE.md`.
