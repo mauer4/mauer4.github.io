@@ -33,6 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const open = (e) => { e?.preventDefault?.(); openOverlay(makeHTML()); };
     card?.addEventListener('click', open);
     dot?.addEventListener('click', open);
+    // Keyboard support
+    card?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
 
     // Subtle hover highlight
     dot?.addEventListener('mouseenter', () => card?.classList.add('hover')); 

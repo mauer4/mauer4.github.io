@@ -26,22 +26,28 @@
 .attention-hero .dates-row .date-item { padding: .15rem .5rem; background: rgba(148,163,184,.12); border: 1px solid rgba(148,163,184,.25); border-radius: .375rem; }
 
 .attention-timeline { padding: 2rem 0 5rem; }
-.attention-timeline .timeline-wrapper { position: relative; display: grid; grid-template-columns: 120px 1fr; gap: 1.2rem; max-width: 1100px; margin: 0 auto; }
+.attention-timeline .timeline-wrapper { position: relative; display: grid; grid-template-columns: 90px 1fr; gap: .9rem; max-width: 1000px; margin: 0 auto; }
 .attention-timeline .timeline-rail { position: relative; }
-.attention-timeline .rail-stick { position: sticky; top: 120px; width: 3px; height: calc(100vh - 160px); margin-left: 58px; background: linear-gradient(#10b981, rgba(16,185,129,.15)); border-radius: 2px; opacity: .7; }
-.attention-timeline .timeline-list { display: grid; gap: 1.25rem; }
-.attention-timeline .timeline-item { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; align-items: start; transform: translateZ(0); }
-.attention-timeline .timeline-item .dot { width: 24px; height: 24px; border-radius: 50%; background: #34d399; border: 3px solid #064e3b; margin-left: 46px; margin-top: .35rem; box-shadow: 0 0 0 3px rgba(52,211,153,.25); display: grid; place-items: center; }
+.attention-timeline .rail-stick { position: sticky; top: 120px; width: 3px; height: calc(100vh - 160px); margin-left: 42px; background: linear-gradient(#10b981, rgba(16,185,129,.15)); border-radius: 2px; opacity: .7; }
+.attention-timeline .timeline-list { display: grid; gap: 1rem; }
+.attention-timeline .timeline-item { display: grid; grid-template-columns: 90px 1fr; gap: .9rem; align-items: start; transform: translateZ(0); }
+.attention-timeline .timeline-item .dot { width: 26px; height: 26px; border-radius: 50%; background: #34d399; border: 3px solid #064e3b; margin-left: 30px; margin-top: .35rem; box-shadow: 0 0 0 3px rgba(52,211,153,.25); display: grid; place-items: center; }
 .attention-timeline .timeline-item .dot .icon { width: 16px; height: 16px; opacity: .95; filter: drop-shadow(0 1px 0 rgba(0,0,0,.4)); }
 .attention-timeline .timeline-item .dot.completed { background: #22c55e; border-color: #14532d; box-shadow: 0 0 0 4px rgba(34,197,94,.28), inset 0 0 0 2px #fff; }
-.attention-timeline .content { position: relative; background: rgba(255,255,255,.03); border: 1px solid rgba(148,163,184,.22); border-radius: .75rem; padding: 1rem 1.1rem; cursor: pointer; transition: transform .18s ease, border-color .18s ease, background .18s ease; }
+.attention-timeline .content { position: relative; background: rgba(255,255,255,.03); border: 1px solid rgba(148,163,184,.22); border-radius: .9rem; padding: 1rem 1.1rem .85rem; cursor: pointer; transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease; box-shadow: 0 0 0 rgba(34,197,94,0); }
 .attention-timeline .content:focus-visible { outline: 2px solid #22d3ee; outline-offset: 2px; }
-.attention-timeline .content:hover { transform: translateY(-2px); background: rgba(255,255,255,.04); border-color: rgba(148,163,184,.35); }
+.attention-timeline .content:hover { transform: translateY(-2px); background: rgba(255,255,255,.04); border-color: rgba(148,163,184,.35); box-shadow: 0 8px 22px rgba(0,0,0,.25); }
 .attention-timeline .header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
 .attention-timeline .week { font-weight: 700; color: #10b981; letter-spacing: .02em; }
 .attention-timeline .title { font-weight: 700; display: flex; align-items: center; gap: .5rem; font-size: 1.05rem; }
 .attention-timeline .target, .attention-timeline .done { font-size: .85rem; color: #94a3b8; }
 .attention-timeline .summary { margin-top: .35rem; color: #cbd5e1; }
+
+/* CTA affordance inside card */
+.attention-timeline .cta-row { display: inline-flex; align-items: center; gap: .45rem; margin-top: .6rem; color: #9ae6b4; opacity: .85; font-size: .92rem; }
+.attention-timeline .content:hover .cta-row { color: #6ee7b7; opacity: 1; }
+.attention-timeline .cta-icon { display: inline-block; width: 1.1rem; height: 1.1rem; line-height: 1; filter: drop-shadow(0 1px 0 rgba(0,0,0,.35)); }
+.attention-timeline .cta-chev { margin-left: .15rem; }
 
 /* Fullscreen overlay for details */
 .attention-overlay { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; }
