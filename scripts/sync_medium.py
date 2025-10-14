@@ -4,6 +4,8 @@ import re
 from datetime import datetime
 
 import feedparser
+import requests
+import sys
 
 
 def slugify(text: str) -> str:
@@ -87,9 +89,28 @@ def main():
     parser.add_argument("--root", default=os.getcwd(), help="Site root (default: CWD)")
     args = parser.parse_args()
 
-    d = feedparser.parse(args.feed)
+    # Fetch the feed first to provide clearer errors (status, content-type)
+    try:
+        resp = requests.get(
+            args.feed,
+            headers={"User-Agent": "medium-sync/1.0 (+https://github.com/mauer4/mauer4.github.io)"},
+            timeout=30,
+        )
+    except Exception as e:
+        raise SystemExit(f"Failed to request feed: {e}")
+
+    if resp.status_code != 200:
+        raise SystemExit(f"Failed to fetch feed: HTTP {resp.status_code} from {args.feed}")
+
+    ctype = (resp.headers.get("content-type") or "").lower()
+    if "xml" not in ctype and not resp.text.lstrip().startswith("<?xml"):
+        print("Warning: Response does not look like RSS/Atom XML (content-type=", ctype, ")", file=sys.stderr)
+
+    d = feedparser.parse(resp.content)
     if d.bozo:
         raise SystemExit(f"Failed to parse feed: {getattr(d, 'bozo_exception', '')}")
+    if not getattr(d, 'entries', None):
+        raise SystemExit("Parsed feed but found no entries. Is the URL a valid Medium RSS? Expected formats: https://medium.com/feed/@handle or https://handle.medium.com/feed")
 
     created = 0
     for entry in d.entries:
@@ -101,4 +122,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
