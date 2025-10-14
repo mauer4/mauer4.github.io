@@ -65,3 +65,34 @@
 .attention-overlay .overlay-checklist ul { list-style: none; padding-left: 0; margin: .25rem 0 .75rem; display: grid; gap: .35rem; }
 .attention-overlay .overlay-checklist li { display: flex; gap: .5rem; align-items: flex-start; }
 .attention-overlay .overlay-notes .notes-title { color: #86efac; font-weight: 700; margin-top: .25rem; }
+
+/* Light mode overrides for readability */
+@media (prefers-color-scheme: light) {
+  .attention-hero {
+    background: radial-gradient(1200px 400px at 10% 0%, rgba(16,185,129,.18) 0, rgba(16,185,129,0) 60%),
+                linear-gradient(180deg, rgba(255,255,255,.75) 0, rgba(255,255,255,.55) 50%);
+  }
+  .attention-hero .subtitle { color: #475569; }
+  .attention-hero .meta-chip { border-color: rgba(15,23,42,.12); background: rgba(255,255,255,.7); color: #0f172a; }
+  .attention-hero .meta-label { color: #0ea5a4; }
+  .attention-hero .progress-outer { background: rgba(15,23,42,.1); }
+
+  .attention-timeline .rail-stick { background: linear-gradient(#0ea5a4, rgba(14,165,164,.2)); opacity: .8; }
+  .attention-timeline .timeline-item .dot { background: #10b981; border-color: #0f766e; box-shadow: 0 0 0 3px rgba(16,185,129,.25); }
+  .attention-timeline .content { background: rgba(255,255,255,.92); border-color: #e2e8f0; }
+  .attention-timeline .content:hover { background: #ffffff; border-color: #cbd5e1; box-shadow: 0 10px 24px rgba(2,6,23,.08); }
+  .attention-timeline .week { color: #0ea5a4; }
+  .attention-timeline .target, .attention-timeline .done { color: #64748b; }
+  .attention-timeline .summary { color: #334155; }
+  .attention-timeline .cta-row { color: #0ea5a4; }
+  .attention-timeline .content:hover .cta-row { color: #059669; }
+
+  .attention-overlay .overlay-backdrop { background: rgba(2,6,23,.35); }
+  .attention-overlay .overlay-panel { background: #ffffff; border-color: #e2e8f0; }
+  .attention-overlay .overlay-close { background: rgba(241,245,249,.9); border-color: #cbd5e1; color: #0f172a; }
+  .attention-overlay .overlay-content { color: #0f172a; }
+  .attention-overlay .overlay-target { color: #64748b; }
+  .attention-overlay .overlay-checklist .checklist-title { color: #4338ca; }
+  .attention-overlay .overlay-notes .notes-title { color: #15803d; }
+}
+.no-scroll { overflow: hidden; }
