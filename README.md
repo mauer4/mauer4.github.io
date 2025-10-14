@@ -1,4 +1,6 @@
-# Adin Mauer — Portfolio Website
+ï»¿# Adin Mauer â€” Portfolio Website
+
+![Preview of latest site](.github/preview.png)
 
 Personal site built with Hugo (HugoBlox/Academic) and deployed via GitHub Pages.
 
@@ -7,36 +9,36 @@ Personal site built with Hugo (HugoBlox/Academic) and deployed via GitHub Pages.
 
 ## Overview
 
-This repo powers my portfolio: bio, experience, projects, blog, publications, and an “Attention From Scratch” build log for a 12-week Transformer inference project.
+This repo powers my portfolio: bio, experience, projects, blog, publications, and an â€œAttention From Scratchâ€ build log for a 12â€‘week Transformer inference project.
 
 Key features:
 - Automated import of Medium posts to the Blog
 - Automated sync of selected GitHub repo READMEs into the Projects section
-- One-click deploy to GitHub Pages on push to `main`
-- Data-driven, interactive timeline for the “Attention From Scratch” page
+- Oneâ€‘click deploy to GitHub Pages on push to `main`
+- Dataâ€‘driven, interactive timeline for the â€œAttention From Scratchâ€ page
 
 ## Structure
 
 - `content/`
-  - `_index.md` — homepage layout and sections
-  - `authors/admin/_index.md` — profile data (bio, education, skills, awards)
-  - `post/` — blog posts (including imported Medium posts)
-  - `project/` — project pages (some auto-generated from GitHub READMEs)
-  - `attention-from-scratch/` — page rendering the 12-week timeline
+  - `_index.md` â€” homepage layout and sections
+  - `authors/admin/_index.md` â€” profile data (bio, education, skills, awards)
+  - `post/` â€” blog posts (including imported Medium posts)
+  - `project/` â€” project pages (some autoâ€‘generated from GitHub READMEs)
+  - `attention-from-scratch/` â€” page rendering the 12â€‘week timeline
 - `data/`
-  - `attention_plan.yaml` — the timeline plan (weeks, status, comments)
-  - `github_projects.yaml` — list of repos to sync into Projects
+  - `attention_plan.yaml` â€” the timeline plan (weeks, status, comments)
+  - `github_projects.yaml` â€” list of repos to sync into Projects
 - `assets/`
-  - `css/custom.css` — site custom styles, including the timeline
-  - `js/attention.js` — interactions for the timeline component
-- `layouts/shortcodes/attention_timeline.html` — renders the interactive timeline from `data/attention_plan.yaml`
-- `static/` — static assets (icons, uploads)
-- `config/_default/` — site config (menus, params, Hugo)
-- `.github/workflows/` — CI for deploy, Medium import, and GitHub projects sync
+  - `css/custom.css` â€” site custom styles, including the timeline
+  - `js/attention.js` â€” interactions for the timeline component
+- `layouts/shortcodes/attention_timeline.html` â€” renders the interactive timeline from `data/attention_plan.yaml`
+- `static/` â€” static assets (icons, uploads)
+- `config/_default/` â€” site config (menus, params, Hugo)
+- `.github/workflows/` â€” CI for deploy, Medium import, and GitHub projects sync
 
 ## Automations
 
-### 1) Medium ? Blog
+### 1) Medium â†’ Blog
 
 Workflow: `.github/workflows/medium-sync.yml`
 
@@ -47,12 +49,12 @@ What it does:
 
 Setup:
 - Repo Secret or Variable: `MEDIUM_FEED_URL` with your feed URL, e.g. `https://medium.com/feed/@YOUR_HANDLE` or `https://your-handle.medium.com/feed`
-- Trigger via GitHub Actions ? “Sync Medium Posts” ? Run workflow
+- Trigger via GitHub Actions â†’ â€œSync Medium Postsâ€ â†’ Run workflow
 
 Script:
 - `scripts/sync_medium.py` (uses `feedparser` + `requests`)
 
-### 2) GitHub READMEs ? Projects
+### 2) GitHub READMEs â†’ Projects
 
 Workflow: `.github/workflows/github-projects-sync.yml`
 
@@ -60,11 +62,11 @@ What it does:
 - Reads `data/github_projects.yaml`
 - For each repo, fetches repo metadata + README, rewrites relative links/images
 - Writes/updates `content/project/<repo>/index.md`
-- Use `featured: true` to show on the homepage “Selected Projects” grid
+- Use `featured: true` to show on the homepage â€œSelected Projectsâ€ grid
 
 Setup:
 - Configure repos in `data/github_projects.yaml`
-- Trigger via GitHub Actions ? “Sync GitHub Projects” ? Run workflow
+- Trigger via GitHub Actions â†’ â€œSync GitHub Projectsâ€ â†’ Run workflow
 
 Script:
 - `scripts/sync_github_projects.py` (uses `requests` + `pyyaml`)
@@ -80,7 +82,7 @@ What it does:
 Trigger:
 - On push to `main` or manual run in Actions
 
-## Attention From Scratch — Editing the Timeline
+## Attention From Scratch â€” Editing the Timeline
 
 - Data file: `data/attention_plan.yaml`
   - Each `week` entry supports: `title`, `summary`, `details`, `target_date`, `completed`, `completed_date`, and `comments` (array of notes)
