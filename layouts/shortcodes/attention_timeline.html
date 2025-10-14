@@ -29,74 +29,88 @@
     {{ $total := len $plan.weeks }}
     {{ $completed := len (where $plan.weeks "completed" true) }}
     {{ $pct := div (mul $completed 100) $total }}
-    <div class="progress">
-      <div class="progress-label">Progress: {{ $completed }}/{{ $total }} ({{ $pct }}%)</div>
-      <div class="progress-outer" aria-label="Plan progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ $pct }}">
-        <div class="progress-inner" style="width: {{ $pct }}%"></div>
+      <div class="progress">
+        <div class="progress-label">Progress: {{ $completed }}/{{ $total }} ({{ $pct }}%)</div>
+        <div class="progress-outer" aria-label="Plan progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ $pct }}">
+          <div class="progress-inner" style="width: {{ $pct }}%"></div>
+        </div>
       </div>
-    </div>
   </div>
 </section>
 
 <section class="attention-timeline">
-  <div class="timeline">
-    {{ range $plan.weeks }}
-    <div class="timeline-item" data-id="{{ .id }}" data-completed="{{ .completed }}">
-      <div class="dot {{ if .completed }}completed{{ end }}" title="{{ if .completed }}Completed{{ else }}Planned{{ end }}"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week {{ .week }}</div>
-            <div class="title">
-              {{/* Icon: attention for attention-related weeks, else transformer */}}
-              {{ $title := .title | lower }}
-              {{ if or (in $title "attent") (in $title "kv") }}
-                <img class="icon" src="{{ relURL "media/icons/timeline/attention.svg" }}" alt="attention icon" />
-              {{ else }}
-                <img class="icon" src="{{ relURL "media/icons/timeline/transformer.svg" }}" alt="transformer icon" />
-              {{ end }}
-              <span>{{ .title }}</span>
+  <div class="timeline-wrapper">
+    <div class="timeline-rail">
+      <div class="rail-stick"></div>
+    </div>
+    <div class="timeline-list">
+      {{ range $plan.weeks }}
+      {{ $title := .title | lower }}
+      {{ $isAttn := or (in $title "attent") (in $title "kv") }}
+      <div class="timeline-item" data-id="{{ .id }}" data-week="{{ .week }}" data-title="{{ .title }}" data-target="{{ .target_date }}" data-completed="{{ .completed }}">
+        <div class="dot {{ if .completed }}completed{{ end }}" title="{{ if .completed }}Completed{{ else }}Planned{{ end }}">
+          {{ if $isAttn }}
+            <img class="icon" src="{{ relURL "media/icons/timeline/attention.svg" }}" alt="attention icon" />
+          {{ else }}
+            <img class="icon" src="{{ relURL "media/icons/timeline/transformer.svg" }}" alt="transformer icon" />
+          {{ end }}
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week {{ .week }}">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week {{ .week }}</div>
+              <div class="title"><span>{{ .title }}</span></div>
+            </div>
+            <div class="right">
+              {{ with .target_date }}<div class="target">Target: {{ . }}</div>{{ end }}
+              {{ if .completed }}{{ with .completed_date }}<div class="done">Done: {{ . }}</div>{{ end }}{{ end }}
             </div>
           </div>
-          <div class="right">
-            {{ with .target_date }}<div class="target">Target: {{ . }}</div>{{ end }}
-            {{ if .completed }}{{ with .completed_date }}<div class="done">Done: {{ . }}</div>{{ end }}{{ end }}
-          </div>
-        </div>
-        <div class="summary">{{ .summary }}</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          {{ if .checklist }}
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
-              {{ range .checklist }}
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>{{ . }}</span>
-                </li>
+          <div class="summary">{{ .summary }}</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week {{ .week }}</div>
+              <div class="overlay-title">{{ .title }}</div>
+              {{ with .target_date }}<div class="overlay-target">Target: {{ . }}</div>{{ end }}
+            </div>
+            <div class="overlay-body">
+              <p>{{ .details }}</p>
+              {{ if .checklist }}
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  {{ range .checklist }}
+                    <li><input type="checkbox" disabled /> <span>{{ . }}</span></li>
+                  {{ end }}
+                </ul>
+              </div>
               {{ end }}
-            </ul>
+              {{ with .comments }}
+              <div class="overlay-notes">
+                <div class="notes-title">Notes</div>
+                <ul>
+                  {{ range . }}<li>{{ . }}</li>{{ end }}
+                </ul>
+              </div>
+              {{ end }}
+            </div>
           </div>
-          {{ end }}
-        </div>
-        <div class="details" hidden>
-          <p>{{ .details }}</p>
-          {{ with .comments }}
-          <div class="comments">
-            <div class="comments-title">Notes</div>
-            <ul>
-              {{ range . }}<li>{{ . }}</li>{{ end }}
-            </ul>
-          </div>
-          {{ end }}
         </div>
       </div>
+      {{ end }}
     </div>
-    {{ end }}
   </div>
 </section>
+
+<div class="attention-overlay" hidden aria-hidden="true">
+  <div class="overlay-backdrop"></div>
+  <div class="overlay-panel" role="dialog" aria-modal="true" aria-label="Week details">
+    <button class="overlay-close" aria-label="Close">✕</button>
+    <div class="overlay-content">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+</div>
 
 {{ $js := resources.Get "js/attention.js" | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ $js.RelPermalink }}"></script>

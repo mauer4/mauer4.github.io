@@ -1,69 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.attention-timeline .timeline-item .toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.timeline-item');
-      const details = item ? item.querySelector('.details') : null;
-      if (!details) return;
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      if (expanded) {
-        details.setAttribute('hidden', '');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.textContent = 'Details';
-      } else {
-        details.removeAttribute('hidden');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.textContent = 'Hide';
-      }
-    });
+  const overlay = document.querySelector('.attention-overlay');
+  const overlayContent = overlay?.querySelector('.overlay-content');
+  const overlayClose = overlay?.querySelector('.overlay-close');
+
+  const openOverlay = (html) => {
+    if (!overlay || !overlayContent) return;
+    overlayContent.innerHTML = html;
+    overlay.removeAttribute('hidden');
+    document.documentElement.classList.add('no-scroll');
+  };
+  const closeOverlay = () => {
+    if (!overlay) return;
+    overlay.setAttribute('hidden', '');
+    document.documentElement.classList.remove('no-scroll');
+    if (overlayContent) overlayContent.innerHTML = '';
+  };
+
+  overlayClose?.addEventListener('click', closeOverlay);
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target.classList.contains('overlay-backdrop')) closeOverlay();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeOverlay();
   });
 
-  // Hover summary tooltip-like behavior on dots
-  document.querySelectorAll('.attention-timeline .timeline-item .dot').forEach(dot => {
-    const content = dot.closest('.timeline-item').querySelector('.summary');
-    dot.addEventListener('mouseenter', () => {
-      content.classList.add('highlight');
-    });
-    dot.addEventListener('mouseleave', () => {
-      content.classList.remove('highlight');
-    });
-  });
-
-  // Checklist popover: open on click, keep open on hover, close on outside click
+  // Click on content card or dot to open overlay with details
   document.querySelectorAll('.attention-timeline .timeline-item').forEach(item => {
-    const trigger = item.querySelector('.checklist-trigger');
-    const pop = item.querySelector('.checklist-popover');
-    if (!trigger || !pop) return;
+    const card = item.querySelector('.content');
+    const dot = item.querySelector('.dot');
+    const tpl = item.querySelector('.overlay-template');
+    const makeHTML = () => tpl ? tpl.innerHTML : '<p>No details</p>';
+    const open = (e) => { e?.preventDefault?.(); openOverlay(makeHTML()); };
+    card?.addEventListener('click', open);
+    dot?.addEventListener('click', open);
 
-    let hideTimer = null;
-    const open = () => {
-      const rect = trigger.getBoundingClientRect();
-      // Position popover relative to trigger
-      pop.style.top = (trigger.offsetTop + trigger.offsetHeight + 8) + 'px';
-      pop.style.left = (trigger.offsetLeft) + 'px';
-      pop.removeAttribute('hidden');
-      trigger.setAttribute('aria-expanded', 'true');
-    };
-    const close = () => {
-      pop.setAttribute('hidden', '');
-      trigger.setAttribute('aria-expanded', 'false');
-    };
-
-    trigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (pop.hasAttribute('hidden')) open(); else close();
-    });
-    trigger.addEventListener('mouseenter', open);
-    trigger.addEventListener('mouseleave', () => {
-      hideTimer = setTimeout(close, 200);
-    });
-    pop.addEventListener('mouseenter', () => {
-      if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-    });
-    pop.addEventListener('mouseleave', () => {
-      hideTimer = setTimeout(close, 200);
-    });
-    document.addEventListener('click', (e) => {
-      if (!item.contains(e.target)) close();
-    });
+    // Subtle hover highlight
+    dot?.addEventListener('mouseenter', () => card?.classList.add('hover')); 
+    dot?.addEventListener('mouseleave', () => card?.classList.remove('hover'));
   });
+
+  // Intersection Observer to animate items in view
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+  document.querySelectorAll('.attention-timeline .timeline-item .content').forEach(el => io.observe(el));
 });

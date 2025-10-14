@@ -66,7 +66,7 @@
 
   
     
-    <link href="/css/custom.min.8658fbee89aaf6712237e6c7c97448deff1d1b30632dde5eebffb0ca1e72e321.css" rel="stylesheet" />
+    <link href="/css/custom.min.394b2e9eb67ad2cab1b2b637bd8eba86caba959fe5da404eb890652e81d6faee.css" rel="stylesheet" />
   
 
   <script>
@@ -899,803 +899,662 @@
     
     
     
-    <div class="progress">
-      <div class="progress-label">Progress: 0/12 (0%)</div>
-      <div class="progress-outer" aria-label="Plan progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-        <div class="progress-inner" style="width: 0%"></div>
+      <div class="progress">
+        <div class="progress-label">Progress: 0/12 (0%)</div>
+        <div class="progress-outer" aria-label="Plan progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress-inner" style="width: 0%"></div>
+        </div>
       </div>
-    </div>
   </div>
 </section>
 
 <section class="attention-timeline">
-  <div class="timeline">
-    
-    <div class="timeline-item" data-id="week-1" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 1</div>
-            <div class="title">
+  <div class="timeline-wrapper">
+    <div class="timeline-rail">
+      <div class="rail-stick"></div>
+    </div>
+    <div class="timeline-list">
+      
+      
+      
+      <div class="timeline-item" data-id="week-1" data-week="1" data-title="Vast.AI Setup &#43; Baseline Environment" data-target="2025-10-21" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 1">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 1</div>
+              <div class="title"><span>Vast.AI Setup &#43; Baseline Environment</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-10-21</div>
               
-              
-              
-                <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
-              
-              <span>Vast.AI Setup &#43; Baseline Environment</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-10-21</div>
-            
-          </div>
-        </div>
-        <div class="summary">Provision a GPU instance, set up toolchains and libraries, and capture a baseline with a reference LLM.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
+          <div class="summary">Provision a GPU instance, set up toolchains and libraries, and capture a baseline with a reference LLM.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 1</div>
+              <div class="overlay-title">Vast.AI Setup &#43; Baseline Environment</div>
+              <div class="overlay-target">Target: 2025-10-21</div>
+            </div>
+            <div class="overlay-body">
+              <p>Create a repeatable Vast.AI environment. Install build tools, CUDA/CUTLASS, SentencePiece, and HF libs. Run a reference model (Mistral-7B or Llama-3-8B) to capture tokens/s, latency, VRAM usage — your baseline.</p>
               
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Create Vast.AI account and allocate A100/4090 GPU</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Create a persistent Volume for models and build cache</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>map[Launch image:nvcr.io/nvidia/pytorch:25.04-py3]</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Install build tools (git, cmake, ninja, g&#43;&#43;, clang, python3-dev)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Install libs (torch, transformers, safetensors, sentencepiece, numpy, cutlass, pybind11)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Verify CUDA/NVCC and run a sample kernel</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>map[Run reference LLM and log:tokens/s, VRAM, prefill vs decode latency]</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Save results as baseline report</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Create a repeatable Vast.AI environment. Install build tools, CUDA/CUTLASS, SentencePiece, and HF libs. Run a reference model (Mistral-7B or Llama-3-8B) to capture tokens/s, latency, VRAM usage — your baseline.</p>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-2" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 2</div>
-            <div class="title">
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>Create Vast.AI account and allocate A100/4090 GPU</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Create a persistent Volume for models and build cache</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>map[Launch image:nvcr.io/nvidia/pytorch:25.04-py3]</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Install build tools (git, cmake, ninja, g&#43;&#43;, clang, python3-dev)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Install libs (torch, transformers, safetensors, sentencepiece, numpy, cutlass, pybind11)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Verify CUDA/NVCC and run a sample kernel</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>map[Run reference LLM and log:tokens/s, VRAM, prefill vs decode latency]</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Save results as baseline report</span></li>
+                  
+                </ul>
+              </div>
               
               
-              
-                <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
-              
-              <span>Repo Scaffolding &#43; Tokenizer &#43; Weight Loader</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-10-28</div>
-            
-          </div>
-        </div>
-        <div class="summary">Scaffold the project and implement tokenizer wrapper and safetensors weight loader with tests.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Init src/, include/, python_bindings/, tests/, scripts/, benchmarks/</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>CMakeLists for shared lib and exe targets</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>SentencePiece tokenizer wrapper (&#43; round-trip tests)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Safetensors reader to row-major fp16; validate names/shapes</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>map[Unit tests:mean abs diff &lt; 1e-5 on sampled tensors]</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Create C&#43;&#43;/CUDA skeleton with CMake and pybind11 bindings. Implement SentencePiece wrapper and a safetensors loader with shape/name validation. Add unit tests with small diffs.</p>
-          
         </div>
       </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-3" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 3</div>
-            <div class="title">
+      
+      
+      
+      <div class="timeline-item" data-id="week-2" data-week="2" data-title="Repo Scaffolding &#43; Tokenizer &#43; Weight Loader" data-target="2025-10-28" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 2">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 2</div>
+              <div class="title"><span>Repo Scaffolding &#43; Tokenizer &#43; Weight Loader</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-10-28</div>
               
-              
-              
-                <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
-              
-              <span>Forward Pass Framework &#43; Basic Kernels</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-11-04</div>
-            
-          </div>
-        </div>
-        <div class="summary">Build the forward graph and write core kernels for RMSNorm, RoPE, matmul, MLP, and naïve attention.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
+          <div class="summary">Scaffold the project and implement tokenizer wrapper and safetensors weight loader with tests.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 2</div>
+              <div class="overlay-title">Repo Scaffolding &#43; Tokenizer &#43; Weight Loader</div>
+              <div class="overlay-target">Target: 2025-10-28</div>
+            </div>
+            <div class="overlay-body">
+              <p>Create C&#43;&#43;/CUDA skeleton with CMake and pybind11 bindings. Implement SentencePiece wrapper and a safetensors loader with shape/name validation. Add unit tests with small diffs.</p>
               
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Define ModelConfig (layers, heads, dims, rope_theta)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>RMSNorm kernel validated vs PyTorch</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>RoPE kernel</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Matmul wrapper (cuBLAS/CUTLASS)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>MLP (SwiGLU)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Naïve QKV attention &#43; softmax</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Prefill-only forward; layerwise MAE &lt; 1e-3</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Implement RMSNorm and RoPE kernels. Use cuBLAS/CUTLASS for matmul wrappers. Implement SwiGLU MLP and a simple attention path. Compare layerwise activations against HF.</p>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-4" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 4</div>
-            <div class="title">
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>Init src/, include/, python_bindings/, tests/, scripts/, benchmarks/</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>CMakeLists for shared lib and exe targets</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>SentencePiece tokenizer wrapper (&#43; round-trip tests)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Safetensors reader to row-major fp16; validate names/shapes</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>map[Unit tests:mean abs diff &lt; 1e-5 on sampled tensors]</span></li>
+                  
+                </ul>
+              </div>
               
               
-              
-                <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
-              
-              <span>Prefill &#43; Decode Loop &#43; Sampling</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-11-11</div>
-            
-          </div>
-        </div>
-        <div class="summary">Implement KV cache, decode loop, and sampling strategies; validate generations and measure performance.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>KV cache structure (batch, layer, seq, dim)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Prefill &#43; token-by-token decode loop</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Greedy, top-k, top-p, temperature</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Validate text parity on short prompts</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Record tokens/s, latency, memory use</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Add contiguous KV cache, greedy/top-k/top-p/temperature sampling, and end-to-end decode. Measure throughput and latency; validate against HF on short prompts.</p>
-          
         </div>
       </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-5" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 5</div>
-            <div class="title">
+      
+      
+      
+      <div class="timeline-item" data-id="week-3" data-week="3" data-title="Forward Pass Framework &#43; Basic Kernels" data-target="2025-11-04" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 3">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 3</div>
+              <div class="title"><span>Forward Pass Framework &#43; Basic Kernels</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-11-04</div>
               
-              
-              
-                <img class="icon" src="/media/icons/timeline/attention.svg" alt="attention icon" />
-              
-              <span>FlashAttention-Style Optimization</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-11-18</div>
-            
-          </div>
-        </div>
-        <div class="summary">Replace naïve attention with IO-aware tiled kernels; benchmark and profile.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
+          <div class="summary">Build the forward graph and write core kernels for RMSNorm, RoPE, matmul, MLP, and naïve attention.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 3</div>
+              <div class="overlay-title">Forward Pass Framework &#43; Basic Kernels</div>
+              <div class="overlay-target">Target: 2025-11-04</div>
+            </div>
+            <div class="overlay-body">
+              <p>Implement RMSNorm and RoPE kernels. Use cuBLAS/CUTLASS for matmul wrappers. Implement SwiGLU MLP and a simple attention path. Compare layerwise activations against HF.</p>
               
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Review FlashAttention algorithm</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Tiled softmax&#43;attention kernel</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Correctness on 128–4096 tokens</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Benchmark vs week-4 attention</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Nsight Compute profiling and timing macros</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Implement shared-memory tiled softmax/attention; test on 128–4096 tokens. Benchmark vs week-4 and capture Nsight metrics (occupancy, memory bandwidth).</p>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-6" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 6</div>
-            <div class="title">
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>Define ModelConfig (layers, heads, dims, rope_theta)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>RMSNorm kernel validated vs PyTorch</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>RoPE kernel</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Matmul wrapper (cuBLAS/CUTLASS)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>MLP (SwiGLU)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Naïve QKV attention &#43; softmax</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Prefill-only forward; layerwise MAE &lt; 1e-3</span></li>
+                  
+                </ul>
+              </div>
               
               
-              
-                <img class="icon" src="/media/icons/timeline/attention.svg" alt="attention icon" />
-              
-              <span>Advanced KV Cache &#43; CUDA Graphs</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-11-25</div>
-            
-          </div>
-        </div>
-        <div class="summary">Introduce paged/slab KV cache and capture the decode path with CUDA Graphs.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Paged/slab KV allocator (vLLM-inspired)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Variable seq lengths &#43; in-flight batching</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>CUDA Graph capture for decode chain</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Micro-bench capture overhead; target ≤ 1 µs per token</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Design a paged allocator (vLLM-style) handling variable seq lengths and in-flight batching. Add CUDA Graphs for the decode chain and micro-bench scheduling overhead.</p>
-          
         </div>
       </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-7" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 7</div>
-            <div class="title">
+      
+      
+      
+      <div class="timeline-item" data-id="week-4" data-week="4" data-title="Prefill &#43; Decode Loop &#43; Sampling" data-target="2025-11-11" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 4">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 4</div>
+              <div class="title"><span>Prefill &#43; Decode Loop &#43; Sampling</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-11-11</div>
               
-              
-              
-                <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
-              
-              <span>Quantization (AWQ / GPTQ / NF4)</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-12-02</div>
-            
-          </div>
-        </div>
-        <div class="summary">Implement weight-only int4 paths and evaluate quality vs fp16 baseline.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
+          <div class="summary">Implement KV cache, decode loop, and sampling strategies; validate generations and measure performance.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 4</div>
+              <div class="overlay-title">Prefill &#43; Decode Loop &#43; Sampling</div>
+              <div class="overlay-target">Target: 2025-11-11</div>
+            </div>
+            <div class="overlay-body">
+              <p>Add contiguous KV cache, greedy/top-k/top-p/temperature sampling, and end-to-end decode. Measure throughput and latency; validate against HF on short prompts.</p>
               
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Group-wise quantization (e.g., 128-group)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Scales/zeros and storage format</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>GEMM dequant on-the-fly</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Logit diff within tolerance vs fp16</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Throughput &amp; memory evaluation</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Implement group-wise quantization with on-the-fly dequant in GEMM, compare AWQ/GPTQ/NF4 behavior and regressions.</p>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-8" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 8</div>
-            <div class="title">
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>KV cache structure (batch, layer, seq, dim)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Prefill &#43; token-by-token decode loop</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Greedy, top-k, top-p, temperature</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Validate text parity on short prompts</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Record tokens/s, latency, memory use</span></li>
+                  
+                </ul>
+              </div>
               
               
-              
-                <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
-              
-              <span>Batching, Streams, and Scheduler</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-12-09</div>
-            
-          </div>
-        </div>
-        <div class="summary">Improve throughput via concurrent streams and request scheduling.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Request queues (prefill/decode)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Separate CUDA streams for prefill/copy</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Overlap tokenization and H2D</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>≥2× tokens/s vs week-6 with batching</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Build prefill/decode queues with separate CUDA streams, overlap tokenization and H2D copies, and benchmark mixed prompt lengths.</p>
-          
         </div>
       </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-9" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 9</div>
-            <div class="title">
+      
+      
+      
+      <div class="timeline-item" data-id="week-5" data-week="5" data-title="FlashAttention-Style Optimization" data-target="2025-11-18" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/attention.svg" alt="attention icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 5">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 5</div>
+              <div class="title"><span>FlashAttention-Style Optimization</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-11-18</div>
               
-              
-              
-                <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
-              
-              <span>Parallelism &amp; Memory Optimization</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-12-16</div>
-            
-          </div>
-        </div>
-        <div class="summary">Extend to multi-GPU tensor parallel and reduce memory pressure for long contexts.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
+          <div class="summary">Replace naïve attention with IO-aware tiled kernels; benchmark and profile.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 5</div>
+              <div class="overlay-title">FlashAttention-Style Optimization</div>
+              <div class="overlay-target">Target: 2025-11-18</div>
+            </div>
+            <div class="overlay-body">
+              <p>Implement shared-memory tiled softmax/attention; test on 128–4096 tokens. Benchmark vs week-4 and capture Nsight metrics (occupancy, memory bandwidth).</p>
               
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Tensor parallel sharding for QKV/MLP</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>NCCL all-reduce wiring and tests</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>1→2 GPU scaling measurements</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Activation checkpointing for long contexts</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Shard QKV/MLP across GPUs with NCCL all-reduce; add activation checkpointing for long contexts and measure scaling.</p>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-10" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 10</div>
-            <div class="title">
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>Review FlashAttention algorithm</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Tiled softmax&#43;attention kernel</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Correctness on 128–4096 tokens</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Benchmark vs week-4 attention</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Nsight Compute profiling and timing macros</span></li>
+                  
+                </ul>
+              </div>
               
               
-              
-                <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
-              
-              <span>Speculative &amp; Lookahead Decoding</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-12-23</div>
-            
-          </div>
-        </div>
-        <div class="summary">Implement Lookahead and (optionally) Medusa heads; measure speedups.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Lookahead decoding with rollback checks</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Optional Medusa head adapter</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Measure speedup vs standard decode</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Enable a lookahead path with rollback, add an optional Medusa multi-token predictor, and log speedup ratios on long outputs.</p>
-          
         </div>
       </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-11" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 11</div>
-            <div class="title">
+      
+      
+      
+      <div class="timeline-item" data-id="week-6" data-week="6" data-title="Advanced KV Cache &#43; CUDA Graphs" data-target="2025-11-25" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/attention.svg" alt="attention icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 6">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 6</div>
+              <div class="title"><span>Advanced KV Cache &#43; CUDA Graphs</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-11-25</div>
               
-              
-              
-                <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
-              
-              <span>Serving Layer</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2025-12-30</div>
-            
-          </div>
-        </div>
-        <div class="summary">Expose the engine via a lightweight API with batching and metrics.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
+          <div class="summary">Introduce paged/slab KV cache and capture the decode path with CUDA Graphs.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 6</div>
+              <div class="overlay-title">Advanced KV Cache &#43; CUDA Graphs</div>
+              <div class="overlay-target">Target: 2025-11-25</div>
+            </div>
+            <div class="overlay-body">
+              <p>Design a paged allocator (vLLM-style) handling variable seq lengths and in-flight batching. Add CUDA Graphs for the decode chain and micro-bench scheduling overhead.</p>
               
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>FastAPI or C&#43;&#43; http server</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>/v1/completions and /v1/chat/completions</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>In-server batching</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Metrics and LRU cache eviction</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Concurrency test with ≥ 8 clients</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Implement HTTP endpoints (/v1/completions and /v1/chat/completions), add batching inside the server, metrics, and KV eviction.</p>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="timeline-item" data-id="week-12" data-completed="false">
-      <div class="dot " title="Planned"></div>
-      <div class="content">
-        <div class="header">
-          <div class="left">
-            <div class="week">Week 12</div>
-            <div class="title">
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>Paged/slab KV allocator (vLLM-inspired)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Variable seq lengths &#43; in-flight batching</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>CUDA Graph capture for decode chain</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Micro-bench capture overhead; target ≤ 1 µs per token</span></li>
+                  
+                </ul>
+              </div>
               
               
-              
-                <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
-              
-              <span>Validation, Docs, and Release</span>
             </div>
           </div>
-          <div class="right">
-            <div class="target">Target: 2026-01-06</div>
-            
-          </div>
-        </div>
-        <div class="summary">Validate parity and publish a complete report and repo.</div>
-        <div class="controls">
-          <button class="toggle" aria-expanded="false">Details</button>
-          
-          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
-          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
-            <div class="checklist-title">Checklist</div>
-            <ul class="checklist">
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Logit diff &lt; 1e-3 vs HF</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Bench vs llama.cpp, vLLM, TensorRT-LLM</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Long-prompt stress tests (&gt; 8k tokens)</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Technical report &#43; diagrams &#43; profiling</span>
-                </li>
-              
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Public repo and (optional) demo video</span>
-                </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-        <div class="details" hidden>
-          <p>Run numerical parity checks, benchmark against llama.cpp/vLLM/TensorRT-LLM, stress test long prompts, and publish a thorough write-up with results and lessons learned.</p>
-          
         </div>
       </div>
+      
+      
+      
+      <div class="timeline-item" data-id="week-7" data-week="7" data-title="Quantization (AWQ / GPTQ / NF4)" data-target="2025-12-02" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 7">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 7</div>
+              <div class="title"><span>Quantization (AWQ / GPTQ / NF4)</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-12-02</div>
+              
+            </div>
+          </div>
+          <div class="summary">Implement weight-only int4 paths and evaluate quality vs fp16 baseline.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 7</div>
+              <div class="overlay-title">Quantization (AWQ / GPTQ / NF4)</div>
+              <div class="overlay-target">Target: 2025-12-02</div>
+            </div>
+            <div class="overlay-body">
+              <p>Implement group-wise quantization with on-the-fly dequant in GEMM, compare AWQ/GPTQ/NF4 behavior and regressions.</p>
+              
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>Group-wise quantization (e.g., 128-group)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Scales/zeros and storage format</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>GEMM dequant on-the-fly</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Logit diff within tolerance vs fp16</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Throughput &amp; memory evaluation</span></li>
+                  
+                </ul>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="timeline-item" data-id="week-8" data-week="8" data-title="Batching, Streams, and Scheduler" data-target="2025-12-09" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 8">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 8</div>
+              <div class="title"><span>Batching, Streams, and Scheduler</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-12-09</div>
+              
+            </div>
+          </div>
+          <div class="summary">Improve throughput via concurrent streams and request scheduling.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 8</div>
+              <div class="overlay-title">Batching, Streams, and Scheduler</div>
+              <div class="overlay-target">Target: 2025-12-09</div>
+            </div>
+            <div class="overlay-body">
+              <p>Build prefill/decode queues with separate CUDA streams, overlap tokenization and H2D copies, and benchmark mixed prompt lengths.</p>
+              
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>Request queues (prefill/decode)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Separate CUDA streams for prefill/copy</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Overlap tokenization and H2D</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>≥2× tokens/s vs week-6 with batching</span></li>
+                  
+                </ul>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="timeline-item" data-id="week-9" data-week="9" data-title="Parallelism &amp; Memory Optimization" data-target="2025-12-16" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 9">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 9</div>
+              <div class="title"><span>Parallelism &amp; Memory Optimization</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-12-16</div>
+              
+            </div>
+          </div>
+          <div class="summary">Extend to multi-GPU tensor parallel and reduce memory pressure for long contexts.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 9</div>
+              <div class="overlay-title">Parallelism &amp; Memory Optimization</div>
+              <div class="overlay-target">Target: 2025-12-16</div>
+            </div>
+            <div class="overlay-body">
+              <p>Shard QKV/MLP across GPUs with NCCL all-reduce; add activation checkpointing for long contexts and measure scaling.</p>
+              
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>Tensor parallel sharding for QKV/MLP</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>NCCL all-reduce wiring and tests</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>1→2 GPU scaling measurements</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Activation checkpointing for long contexts</span></li>
+                  
+                </ul>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="timeline-item" data-id="week-10" data-week="10" data-title="Speculative &amp; Lookahead Decoding" data-target="2025-12-23" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 10">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 10</div>
+              <div class="title"><span>Speculative &amp; Lookahead Decoding</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-12-23</div>
+              
+            </div>
+          </div>
+          <div class="summary">Implement Lookahead and (optionally) Medusa heads; measure speedups.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 10</div>
+              <div class="overlay-title">Speculative &amp; Lookahead Decoding</div>
+              <div class="overlay-target">Target: 2025-12-23</div>
+            </div>
+            <div class="overlay-body">
+              <p>Enable a lookahead path with rollback, add an optional Medusa multi-token predictor, and log speedup ratios on long outputs.</p>
+              
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>Lookahead decoding with rollback checks</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Optional Medusa head adapter</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Measure speedup vs standard decode</span></li>
+                  
+                </ul>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="timeline-item" data-id="week-11" data-week="11" data-title="Serving Layer" data-target="2025-12-30" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 11">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 11</div>
+              <div class="title"><span>Serving Layer</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2025-12-30</div>
+              
+            </div>
+          </div>
+          <div class="summary">Expose the engine via a lightweight API with batching and metrics.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 11</div>
+              <div class="overlay-title">Serving Layer</div>
+              <div class="overlay-target">Target: 2025-12-30</div>
+            </div>
+            <div class="overlay-body">
+              <p>Implement HTTP endpoints (/v1/completions and /v1/chat/completions), add batching inside the server, metrics, and KV eviction.</p>
+              
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>FastAPI or C&#43;&#43; http server</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>/v1/completions and /v1/chat/completions</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>In-server batching</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Metrics and LRU cache eviction</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Concurrency test with ≥ 8 clients</span></li>
+                  
+                </ul>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="timeline-item" data-id="week-12" data-week="12" data-title="Validation, Docs, and Release" data-target="2026-01-06" data-completed="false">
+        <div class="dot " title="Planned">
+          
+            <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
+          
+        </div>
+        <div class="content" tabindex="0" role="button" aria-label="Open details for week 12">
+          <div class="header">
+            <div class="left">
+              <div class="week">Week 12</div>
+              <div class="title"><span>Validation, Docs, and Release</span></div>
+            </div>
+            <div class="right">
+              <div class="target">Target: 2026-01-06</div>
+              
+            </div>
+          </div>
+          <div class="summary">Validate parity and publish a complete report and repo.</div>
+          <div class="overlay-template" hidden>
+            <div class="overlay-header">
+              <div class="overlay-week">Week 12</div>
+              <div class="overlay-title">Validation, Docs, and Release</div>
+              <div class="overlay-target">Target: 2026-01-06</div>
+            </div>
+            <div class="overlay-body">
+              <p>Run numerical parity checks, benchmark against llama.cpp/vLLM/TensorRT-LLM, stress test long prompts, and publish a thorough write-up with results and lessons learned.</p>
+              
+              <div class="overlay-checklist">
+                <div class="checklist-title">Checklist</div>
+                <ul>
+                  
+                    <li><input type="checkbox" disabled /> <span>Logit diff &lt; 1e-3 vs HF</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Bench vs llama.cpp, vLLM, TensorRT-LLM</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Long-prompt stress tests (&gt; 8k tokens)</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Technical report &#43; diagrams &#43; profiling</span></li>
+                  
+                    <li><input type="checkbox" disabled /> <span>Public repo and (optional) demo video</span></li>
+                  
+                </ul>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
-    
   </div>
 </section>
 
+<div class="attention-overlay" hidden aria-hidden="true">
+  <div class="overlay-backdrop"></div>
+  <div class="overlay-panel" role="dialog" aria-modal="true" aria-label="Week details">
+    <button class="overlay-close" aria-label="Close">✕</button>
+    <div class="overlay-content">
+      
+    </div>
+  </div>
+</div>
 
-<script defer src="/js/attention.min.899c2e04018b3ff6925716b9919947fd5c5096917b30df692eeca6eadeefd7d5.js"></script>
+
+<script defer src="/js/attention.min.d6cd934a2da9fd8c67dca10f79f4a0165bf997c7ef73f1ec0d32dab25cd0209c.js"></script>
 
 
   </article>
