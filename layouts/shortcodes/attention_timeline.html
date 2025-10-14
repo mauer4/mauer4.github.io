@@ -11,7 +11,7 @@
       {{ $start := $plan.start_date }}
       <div class="date-item">Start: {{ with $start }}{{ . }}{{ else }}TBD{{ end }}</div>
       <div class="date-item">Today: {{ now | time.Format "2006-01-02" }}</div>
-      <div class="date-item">Last Updated: {{ site.LastChange | time.Format "2006-01-02" }}</div>
+      <div class="date-item">Last Updated: {{ site.Lastmod | time.Format "2006-01-02" }}</div>
     </div>
     {{/* Progress bar */}}
     {{ $total := len $plan.weeks }}
