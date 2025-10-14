@@ -48,7 +48,7 @@ sections:
 
   - block: markdown
     content:
-      title: '📚 My Interests'
+      title: 'My Interests'
       subtitle: ''
       text: |-
         Adin is continuously curious and learning more about the technical topics that are of interest for him, including developments in the world of Computer Architecture, and Machine Learning. Adin believes that well-rounded knowledge and understanding of a broad variety of technical and theoretical topics in order to be truly innovative and contribute to solving any big problems in today's world. Intuitively, it is important to have excellent foundations in mathematics (probability, statistics, linear algebra, multivariable calculus and complex analysis), signal processing, and computer architecture.
@@ -126,3 +126,5 @@ sections:
         css_class: "bg-primary-700"
         css_style: ""
 ---
+
+

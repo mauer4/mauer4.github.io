@@ -1,0 +1,10 @@
+repos:
+  # Example entries. Replace with the repos you want to showcase.
+  - repo: mauer4/Parallel_FFT
+    featured: true
+    summary: "Parallel FFT implementation using CUDA and OpenMPI"
+  - repo: mauer4/EEG_CNN
+    featured: true
+  - repo: mauer4/Gaussian_Elimination
+    featured: false
+

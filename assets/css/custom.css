@@ -4,3 +4,37 @@
     padding-bottom: 2rem; /* Optional: Add extra padding inside the block */
   }
   
+/* Attention timeline styles */
+.attention-hero {
+  background: radial-gradient(1200px 400px at 10% 0%, rgba(16,185,129,.15) 0, rgba(16,185,129,0) 60%),
+              linear-gradient(180deg, rgba(0,0,0,.65) 0, rgba(0,0,0,0) 50%);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.attention-hero h1 { margin: 0; font-size: 2.2rem; }
+.attention-hero .subtitle { margin-top: .5rem; color: var(--color-text-muted, #94a3b8); }
+.attention-hero .progress { margin: 1rem auto 0; max-width: 680px; text-align: left; }
+.attention-hero .progress-label { font-size: .9rem; color: #cbd5e1; margin-bottom: .25rem; }
+.attention-hero .progress-outer { width: 100%; height: .65rem; background: rgba(148,163,184,.25); border-radius: 999px; overflow: hidden; }
+.attention-hero .progress-inner { height: 100%; background: linear-gradient(90deg,#10b981,#22d3ee); box-shadow: inset 0 0 6px rgba(0,0,0,.2); }
+
+.attention-timeline { padding: 2rem 0 4rem; }
+.attention-timeline .timeline { position: relative; margin: 0 auto; max-width: 900px; }
+.attention-timeline .timeline:before { content: ""; position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: #0ea5a4; opacity: .25; }
+.attention-timeline .timeline-item { display: grid; grid-template-columns: 48px 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.attention-timeline .dot { width: 14px; height: 14px; border-radius: 50%; background: #34d399; border: 3px solid #064e3b; margin-left: 14px; margin-top: .35rem; box-shadow: 0 0 0 2px rgba(52,211,153,.25); }
+.attention-timeline .dot.completed { background: #22c55e; border-color: #14532d; box-shadow: 0 0 0 3px rgba(34,197,94,.3), inset 0 0 0 2px #fff; }
+.attention-timeline .content { background: rgba(255,255,255,.02); border: 1px solid rgba(148,163,184,.2); border-radius: .5rem; padding: 1rem; }
+.attention-timeline .header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.attention-timeline .week { font-weight: 600; color: #10b981; }
+.attention-timeline .title { font-weight: 600; display: flex; align-items: center; gap: .4rem; }
+.attention-timeline .title .icon { width: 18px; height: 18px; opacity: .9; }
+.attention-timeline .target, .attention-timeline .done { font-size: .85rem; color: #94a3b8; }
+.attention-timeline .summary { margin-top: .25rem; color: #cbd5e1; }
+.attention-timeline .summary.highlight { background: rgba(16,185,129,.12); border-radius: .25rem; padding: .25rem .5rem; }
+.attention-timeline .toggle { margin-top: .5rem; background: transparent; color: #10b981; border: 1px solid #10b981; border-radius: .375rem; padding: .25rem .65rem; cursor: pointer; }
+.attention-timeline .toggle:hover { background: rgba(16,185,129,.1); }
+.attention-timeline .details { margin-top: .75rem; color: #e2e8f0; }
+.attention-timeline .comments { margin-top: .5rem; }
+.attention-timeline .comments-title { font-weight: 600; margin-bottom: .25rem; color: #a3e635; }
+.attention-timeline ul { margin: 0; padding-left: 1.1rem; }

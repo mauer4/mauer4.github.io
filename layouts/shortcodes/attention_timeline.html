@@ -1,0 +1,68 @@
+{{/* Attention timeline shortcode
+   Renders a vertical timeline from data/attention_plan.yaml
+   Usage: {{< attention_timeline >}}
+*/}}
+{{ $plan := site.Data.attention_plan }}
+<section class="attention-hero">
+  <div class="container">
+    <h1>{{ with $plan.title }}{{ . }}{{ else }}Attention From Scratch{{ end }}</h1>
+    {{ with $plan.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+    {{/* Progress bar */}}
+    {{ $total := len $plan.weeks }}
+    {{ $completed := len (where $plan.weeks "completed" true) }}
+    {{ $pct := div (mul $completed 100) $total }}
+    <div class="progress">
+      <div class="progress-label">Progress: {{ $completed }}/{{ $total }} ({{ $pct }}%)</div>
+      <div class="progress-outer" aria-label="Plan progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ $pct }}">
+        <div class="progress-inner" style="width: {{ $pct }}%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="attention-timeline">
+  <div class="timeline">
+    {{ range $plan.weeks }}
+    <div class="timeline-item" data-id="{{ .id }}" data-completed="{{ .completed }}">
+      <div class="dot {{ if .completed }}completed{{ end }}" title="{{ if .completed }}Completed{{ else }}Planned{{ end }}"></div>
+      <div class="content">
+        <div class="header">
+          <div class="left">
+            <div class="week">Week {{ .week }}</div>
+            <div class="title">
+              {{/* Icon: attention for attention-related weeks, else transformer */}}
+              {{ $title := .title | lower }}
+              {{ if or (in $title "attent") (in $title "kv") }}
+                <img class="icon" src="{{ relURL "media/icons/timeline/attention.svg" }}" alt="attention icon" />
+              {{ else }}
+                <img class="icon" src="{{ relURL "media/icons/timeline/transformer.svg" }}" alt="transformer icon" />
+              {{ end }}
+              <span>{{ .title }}</span>
+            </div>
+          </div>
+          <div class="right">
+            {{ with .target_date }}<div class="target">Target: {{ . }}</div>{{ end }}
+            {{ if .completed }}{{ with .completed_date }}<div class="done">Done: {{ . }}</div>{{ end }}{{ end }}
+          </div>
+        </div>
+        <div class="summary">{{ .summary }}</div>
+        <button class="toggle" aria-expanded="false">Details</button>
+        <div class="details" hidden>
+          <p>{{ .details }}</p>
+          {{ with .comments }}
+          <div class="comments">
+            <div class="comments-title">Notes</div>
+            <ul>
+              {{ range . }}<li>{{ . }}</li>{{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<script defer src="{{ relURL "js/attention.js" }}"></script>
+<link rel="stylesheet" href="{{ relURL "css/attention.css" }}"/>

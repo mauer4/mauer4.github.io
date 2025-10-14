@@ -52,7 +52,7 @@ interests:
   - Signal Processing / Statistics
 
 education:
-  - area: BaSC Computer Engineering
+  - area: BASc Computer Engineering
     institution: University of British Columbia (graduated December 2024)
     date_start: 2020-09-01
     date_end: 2024-12-31
@@ -61,7 +61,7 @@ education:
       Courses included:
       - CPEN 512: Parallel and Configurable Computer Architecture
       - CPEN 411: Computer Architecture
-      - CPEN 331: Oerating Systems
+      - CPEN 331: Operating Systems
       - ELEC 421: Digital Signal Processing
       - STAT 305: Statistical Inference
     # button:
@@ -87,7 +87,7 @@ education:
   #     - lorem ipsum dolor sit amet, consectetur adipiscing elit
   #     - lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
-  - position: hardware Design Intern
+  - position: Hardware Design Intern
     company_name: AMD
     company_url: 'https://www.amd.com/en.html'
     company_logo: ''
@@ -97,7 +97,7 @@ work:
       Responsibilities include:
       - Worked with the interconnect team at AMD on low-power, high-bandwidth interconnect logic
       - Implemented and delivered 2 features in System Verilog from Architecture design documents
-      - Scripted for automating synthesis and testing processses, using tcl, bash, perl etc.
+      - Scripted for automating synthesis and testing processes, using Tcl, Bash, and Perl etc.
   - position: Operations Officer
     company_name: IDF
     company_url: 'https://www.idf.il/en/'
@@ -160,7 +160,7 @@ awards:
     awarder: UBC ECE
     icon: computer
     summary: |
-      We built a physical LED cube (8x8x8) from scratch, and create a digital logic hardware on an FPGA as a custom hardware block integrated into a NIOS softcore processor as a custom intruction. The FPGA driver was then connected to a Android app via ESP32-bluetooth, where a user can control the cude from an interface. The cube can either show cool patterns (pre-made), or open the phone's camera, point at a person, and a pose detecting algorithm creates a simulated stick person figure in real-time, transmits it to the cube where to show the person and their movement live. WON FIRST PLACE! See video.
+      We built a physical LED cube (8x8x8) from scratch, and created digital logic on an FPGA as a custom hardware block integrated into a NIOS softcore processor as a custom intruction. The FPGA driver was then connected to an Android app via ESP32-bluetooth, where a user can control the cube from an interface. The cube can either show cool patterns (pre-made), or open the phone's camera, point at a person, and a pose detecting algorithm creates a simulated stick person figure in real-time, transmits it to the cube where to show the person and their movement live. WON FIRST PLACE! See video.
   - title: Blockchain Fundamentals
     url: 
     date: '2023-07-01'
@@ -170,11 +170,11 @@ awards:
       Learned:
       - Build solderboard from scratch. LED cube electronics.
       - Design of hardware driver.
-      - Integration of custom hardware components to softcore processor (NIOS) as custom intructions.
+      - Integration of custom hardware components to softcore processor (NIOS) as custom instructions.
       - ESP32-Bluetooth
       - Integrate and use ML pose estimation algo
       - Communication protocols (UART, Bluetooth)
-      - Create GIFs
+      - Create animations/GIFs
   # - title: 'Object-Oriented Programming in R'
   #   url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
   #   certificate_url: https://www.datacamp.com

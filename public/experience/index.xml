@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Experience | Adin Mauer Portfolio Website</title>
-    <link>http://localhost:1313/experience/</link>
-      <atom:link href="http://localhost:1313/experience/index.xml" rel="self" type="application/rss+xml" />
-    <description>Experience</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 24 Oct 2023 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>http://localhost:1313/media/icon_hu4060597685561840127.png</url>
-      <title>Experience</title>
-      <link>http://localhost:1313/experience/</link>
-    </image>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Experience | Adin Mauer Portfolio Website</title><link>https://mauer4.github.io/experience/</link><atom:link href="https://mauer4.github.io/experience/index.xml" rel="self" type="application/rss+xml"/><description>Experience</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 24 Oct 2023 00:00:00 +0000</lastBuildDate><image><url>https://mauer4.github.io/media/icon_hu4060597685561840127.png</url><title>Experience</title><link>https://mauer4.github.io/experience/</link></image></channel></rss>

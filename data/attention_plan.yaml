@@ -1,0 +1,142 @@
+title: Attention From Scratch
+subtitle: 12-week plan to build a from-scratch Transformer inference stack (prefill, decode, serving)
+weeks:
+  - id: week-1
+    week: 1
+    title: Loader, Tokenizer, Golden Harness (part 1)
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: Implement safetensors weight loader and start SentencePiece tokenizer integration.
+    details: >-
+      Implement a weight loader for Hugging Face safetensors and convert to a custom on-disk
+      layout (row-major, per-channel scales). Verify tensor shapes vs model configs (Mistral-7B
+      or Llama-3.1-8B). Plug in SentencePiece tokenizer and create byte-level parity tests vs
+      HF tokenization.
+    comments: ["M1: layerwise diff harness by end of W2"]
+  - id: week-2
+    week: 2
+    title: Loader, Tokenizer, Golden Harness (part 2)
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: Build a correctness harness to diff logits layer-by-layer vs HF.
+    details: >-
+      Run a reference forward in PyTorch/HF and diff logits/embeddings layer-by-layer within small
+      tolerances. Solidify tokenizer bindings and I/O. Ensure the harness can run short prompts for
+      fast iteration.
+    comments: ["Definition of done: ~1e-3 tol on a 64-token prompt"]
+  - id: week-3
+    week: 3
+    title: Baseline Forward & Minimal Server (part 1)
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: Implement core CUDA kernels and a basic C++ forward path.
+    details: >-
+      Write kernels for RMSNorm, RoPE, QKV projection, a naïve attention, and MLP (SwiGLU).
+      Assemble a clean C++ forward that consumes the loaded weights and tokenizer output.
+    comments: []
+  - id: week-4
+    week: 4
+    title: Baseline Forward & Minimal Server (part 2)
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: Add KV cache, sampling, and a minimal HTTP server.
+    details: >-
+      Implement a contiguous per-layer KV cache (fp16/bf16). Add greedy/top-k/top-p sampling and
+      temperature. Ship a minimal HTTP server with a basic completion route and request lifecycle.
+    comments: ["M2: ≥50 tok/s greedy on A100-40GB (single request)"]
+  - id: week-5
+    week: 5
+    title: Flash-style Attention & KV Paged Cache (part 1)
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: Replace naïve attention with FlashAttention-style kernels.
+    details: >-
+      Implement I/O-aware attention kernels with tiling and numerically stable softmax. Keep code
+      portable across A100/4090, with hooks for Hopper FA-3 features when available.
+    comments: []
+  - id: week-6
+    week: 6
+    title: Flash-style Attention & KV Paged Cache (part 2)
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: Redesign KV cache to paged/slab layout and add CUDA Graphs.
+    details: >-
+      Introduce a paged (slab) KV cache to reduce fragmentation and enable large batches (vLLM-like
+      PagedAttention semantics). Add CUDA Graph capture for decode and multiple CUDA streams to
+      overlap prefill vs copies. Implement a simple scheduler to interleave requests by stage.
+    comments: ["M3: 2–3× throughput vs M2 at batch ≥ 8"]
+  - id: week-7
+    week: 7
+    title: Quantization (AWQ path)
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: Add weight-only INT4 via AWQ; validate accuracy vs fp16.
+    details: >-
+      Implement AWQ calibration/scales with optional outlier handling. Validate perplexity drift and
+      token accuracy compared to fp16/bf16 baselines. Prepare hooks for later GPTQ path.
+    comments: []
+  - id: week-8
+    week: 8
+    title: Quantization (GPTQ/NF4) and comparisons
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: Add GPTQ path; optional NF4 baseline; compare accuracy/speed.
+    details: >-
+      Implement GPTQ group-wise quantization, and optionally NF4 (bitsandbytes-like) as a 4-bit
+      baseline for comparison. Measure latency/bandwidth improvements and accuracy regressions.
+    comments: ["M4: INT4 path < 0.5 ppl regression on WikiText-2"]
+  - id: week-9
+    week: 9
+    title: Throughput Scalers
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: In-flight batching, pinned I/O, overlap tokenization/H2D/decode.
+    details: >-
+      Support joining requests mid-sequence. Use pinned host buffers and staging areas. Overlap
+      tokenization, host-to-device copies, and decode steps for better utilization.
+    comments: ["Optional: tensor parallel across 2–4 GPUs (shard QKV/MLP)"]
+  - id: week-10
+    week: 10
+    title: Speculative & Parallel Decoding
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: Add Lookahead decoding; experiment with Medusa/ReDrafter.
+    details: >-
+      Implement a flag to enable Lookahead decoding (parallel steps without a draft model). Add
+      experimental adapters for Medusa (multi-head next tokens) or Apple’s ReDrafter. Keep
+      interfaces pluggable for A/B testing.
+    comments: ["M5: 1.3–1.8× wall-clock speedup on long outputs"]
+  - id: week-11
+    week: 11
+    title: Production Serving
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: OpenAI-compatible REST, metrics, eviction policy, and hot-reload.
+    details: >-
+      Implement /v1/chat/completions, rate limiting, logging, and Prometheus metrics. Add KV cache
+      eviction (LRU by session) and guardrails for context window. Support tokenizer/weights
+      hot-reload without downtime.
+    comments: []
+  - id: week-12
+    week: 12
+    title: Docs, Benchmarks, Release
+    target_date: ''
+    completed: false
+    completed_date: ''
+    summary: Bench suite, competitive baselines, and public release.
+    details: >-
+      Build a benchmark suite reporting tokens/s, p50/p95 latency, and VRAM usage vs HF baseline and
+      llama.cpp on the same GPU. Reproduce vLLM/TensorRT-LLM ballpark throughput on your hardware and
+      document where you gain/lose. Finalize docs and publish.
+    comments: ["M6: OpenAI-compatible API + metrics + report"]

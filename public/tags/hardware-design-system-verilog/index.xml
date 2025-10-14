@@ -1,45 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hardware Design (System Verilog) | Adin Mauer Portfolio Website</title>
-    <link>http://localhost:1313/tags/hardware-design-system-verilog/</link>
-      <atom:link href="http://localhost:1313/tags/hardware-design-system-verilog/index.xml" rel="self" type="application/rss+xml" />
-    <description>Hardware Design (System Verilog)</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 26 Oct 2023 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>http://localhost:1313/media/icon_hu4060597685561840127.png</url>
-      <title>Hardware Design (System Verilog)</title>
-      <link>http://localhost:1313/tags/hardware-design-system-verilog/</link>
-    </image>
-    
-    <item>
-      <title>LED Cube Project</title>
-      <link>http://localhost:1313/project/led_cube/</link>
-      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/led_cube/</guid>
-      <description>&lt;h3 id=&#34;led-cube--fpga-driver--real-time-video-pose-projection-android&#34;&gt;LED Cube + FPGA driver + real-time video pose projection (Android)&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=kbrSmiwQhu4&#34; title=&#34;LED Cube&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;http://img.youtube.com/vi/kbrSmiwQhu4/0.jpg&#34; alt=&#34;LED CUBE&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hardware Design (System Verilog) | Adin Mauer Portfolio Website</title><link>https://mauer4.github.io/tags/hardware-design-system-verilog/</link><atom:link href="https://mauer4.github.io/tags/hardware-design-system-verilog/index.xml" rel="self" type="application/rss+xml"/><description>Hardware Design (System Verilog)</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 26 Oct 2023 00:00:00 +0000</lastBuildDate><image><url>https://mauer4.github.io/media/icon_hu4060597685561840127.png</url><title>Hardware Design (System Verilog)</title><link>https://mauer4.github.io/tags/hardware-design-system-verilog/</link></image><item><title>LED Cube Project</title><link>https://mauer4.github.io/project/led_cube/</link><pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate><guid>https://mauer4.github.io/project/led_cube/</guid><description>&lt;h3 id="led-cube--fpga-driver--real-time-video-pose-projection-android">LED Cube + FPGA driver + real-time video pose projection (Android)&lt;/h3>
+&lt;p>&lt;a href="https://www.youtube.com/watch?v=kbrSmiwQhu4" title="LED Cube" target="_blank" rel="noopener">
+&lt;figure >
+&lt;div class="flex justify-center ">
+&lt;div class="w-100" >&lt;img src="http://img.youtube.com/vi/kbrSmiwQhu4/0.jpg" alt="LED CUBE" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/a>&lt;/p></description></item></channel></rss>
