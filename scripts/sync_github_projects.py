@@ -121,7 +121,9 @@ def write_project(root: str, repo: dict, readme_md: str, featured: bool, summary
     topics = repo.get("topics") or []
     if topics:
         fm.append("tags: [" + ", ".join(repr(t) for t in topics) + "]")
-    fm.append(f"external_link: https://github.com/{owner}/{name}")
+    repo_url = f"https://github.com/{owner}/{name}"
+    fm.append(f"external_link: {repo_url}")
+    fm.append(f"url: {repo_url}")
     fm.append(f"featured: {str(bool(featured)).lower()}")
     fm.append("---\n")
 
@@ -152,4 +154,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

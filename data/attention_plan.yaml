@@ -1,10 +1,11 @@
-title: Attention From Scratch
+﻿title: Attention From Scratch
 subtitle: 12-week plan to build a from-scratch Transformer inference stack (prefill, decode, serving)
+start_date: 2025-10-14
 weeks:
   - id: week-1
     week: 1
     title: Loader, Tokenizer, Golden Harness (part 1)
-    target_date: ''
+    target_date: '2025-10-14'
     completed: false
     completed_date: ''
     summary: Implement safetensors weight loader and start SentencePiece tokenizer integration.
@@ -17,7 +18,7 @@ weeks:
   - id: week-2
     week: 2
     title: Loader, Tokenizer, Golden Harness (part 2)
-    target_date: ''
+    target_date: '2025-10-21'
     completed: false
     completed_date: ''
     summary: Build a correctness harness to diff logits layer-by-layer vs HF.
@@ -29,32 +30,32 @@ weeks:
   - id: week-3
     week: 3
     title: Baseline Forward & Minimal Server (part 1)
-    target_date: ''
+    target_date: '2025-10-28'
     completed: false
     completed_date: ''
     summary: Implement core CUDA kernels and a basic C++ forward path.
     details: >-
-      Write kernels for RMSNorm, RoPE, QKV projection, a naïve attention, and MLP (SwiGLU).
+      Write kernels for RMSNorm, RoPE, QKV projection, a naÃ¯ve attention, and MLP (SwiGLU).
       Assemble a clean C++ forward that consumes the loaded weights and tokenizer output.
     comments: []
   - id: week-4
     week: 4
     title: Baseline Forward & Minimal Server (part 2)
-    target_date: ''
+    target_date: '2025-11-04'
     completed: false
     completed_date: ''
     summary: Add KV cache, sampling, and a minimal HTTP server.
     details: >-
       Implement a contiguous per-layer KV cache (fp16/bf16). Add greedy/top-k/top-p sampling and
       temperature. Ship a minimal HTTP server with a basic completion route and request lifecycle.
-    comments: ["M2: ≥50 tok/s greedy on A100-40GB (single request)"]
+    comments: ["M2: â‰¥50 tok/s greedy on A100-40GB (single request)"]
   - id: week-5
     week: 5
     title: Flash-style Attention & KV Paged Cache (part 1)
-    target_date: ''
+    target_date: '2025-11-11'
     completed: false
     completed_date: ''
-    summary: Replace naïve attention with FlashAttention-style kernels.
+    summary: Replace naÃ¯ve attention with FlashAttention-style kernels.
     details: >-
       Implement I/O-aware attention kernels with tiling and numerically stable softmax. Keep code
       portable across A100/4090, with hooks for Hopper FA-3 features when available.
@@ -62,7 +63,7 @@ weeks:
   - id: week-6
     week: 6
     title: Flash-style Attention & KV Paged Cache (part 2)
-    target_date: ''
+    target_date: '2025-11-18'
     completed: false
     completed_date: ''
     summary: Redesign KV cache to paged/slab layout and add CUDA Graphs.
@@ -70,11 +71,11 @@ weeks:
       Introduce a paged (slab) KV cache to reduce fragmentation and enable large batches (vLLM-like
       PagedAttention semantics). Add CUDA Graph capture for decode and multiple CUDA streams to
       overlap prefill vs copies. Implement a simple scheduler to interleave requests by stage.
-    comments: ["M3: 2–3× throughput vs M2 at batch ≥ 8"]
+    comments: ["M3: 2â€“3Ã— throughput vs M2 at batch â‰¥ 8"]
   - id: week-7
     week: 7
     title: Quantization (AWQ path)
-    target_date: ''
+    target_date: '2025-11-25'
     completed: false
     completed_date: ''
     summary: Add weight-only INT4 via AWQ; validate accuracy vs fp16.
@@ -85,7 +86,7 @@ weeks:
   - id: week-8
     week: 8
     title: Quantization (GPTQ/NF4) and comparisons
-    target_date: ''
+    target_date: '2025-12-02'
     completed: false
     completed_date: ''
     summary: Add GPTQ path; optional NF4 baseline; compare accuracy/speed.
@@ -96,30 +97,30 @@ weeks:
   - id: week-9
     week: 9
     title: Throughput Scalers
-    target_date: ''
+    target_date: '2025-12-09'
     completed: false
     completed_date: ''
     summary: In-flight batching, pinned I/O, overlap tokenization/H2D/decode.
     details: >-
       Support joining requests mid-sequence. Use pinned host buffers and staging areas. Overlap
       tokenization, host-to-device copies, and decode steps for better utilization.
-    comments: ["Optional: tensor parallel across 2–4 GPUs (shard QKV/MLP)"]
+    comments: ["Optional: tensor parallel across 2â€“4 GPUs (shard QKV/MLP)"]
   - id: week-10
     week: 10
     title: Speculative & Parallel Decoding
-    target_date: ''
+    target_date: '2025-12-16'
     completed: false
     completed_date: ''
     summary: Add Lookahead decoding; experiment with Medusa/ReDrafter.
     details: >-
       Implement a flag to enable Lookahead decoding (parallel steps without a draft model). Add
-      experimental adapters for Medusa (multi-head next tokens) or Apple’s ReDrafter. Keep
+      experimental adapters for Medusa (multi-head next tokens) or Appleâ€™s ReDrafter. Keep
       interfaces pluggable for A/B testing.
-    comments: ["M5: 1.3–1.8× wall-clock speedup on long outputs"]
+    comments: ["M5: 1.3â€“1.8Ã— wall-clock speedup on long outputs"]
   - id: week-11
     week: 11
     title: Production Serving
-    target_date: ''
+    target_date: '2025-12-23'
     completed: false
     completed_date: ''
     summary: OpenAI-compatible REST, metrics, eviction policy, and hot-reload.
@@ -131,7 +132,7 @@ weeks:
   - id: week-12
     week: 12
     title: Docs, Benchmarks, Release
-    target_date: ''
+    target_date: '2025-12-30'
     completed: false
     completed_date: ''
     summary: Bench suite, competitive baselines, and public release.
@@ -140,3 +141,5 @@ weeks:
       llama.cpp on the same GPU. Reproduce vLLM/TensorRT-LLM ballpark throughput on your hardware and
       document where you gain/lose. Finalize docs and publish.
     comments: ["M6: OpenAI-compatible API + metrics + report"]
+
+

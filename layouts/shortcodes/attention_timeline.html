@@ -7,6 +7,12 @@
   <div class="container">
     <h1>{{ with $plan.title }}{{ . }}{{ else }}Attention From Scratch{{ end }}</h1>
     {{ with $plan.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+    <div class="dates-row">
+      {{ $start := $plan.start_date }}
+      <div class="date-item">Start: {{ with $start }}{{ . }}{{ else }}TBD{{ end }}</div>
+      <div class="date-item">Today: {{ now | time.Format "2006-01-02" }}</div>
+      <div class="date-item">Last Updated: {{ site.LastChange | time.Format "2006-01-02" }}</div>
+    </div>
     {{/* Progress bar */}}
     {{ $total := len $plan.weeks }}
     {{ $completed := len (where $plan.weeks "completed" true) }}

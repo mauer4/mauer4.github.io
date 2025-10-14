@@ -1,0 +1,49 @@
+name: Update README Preview
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '33 7 * * 1' # Weekly
+  workflow_run:
+    workflows: ["Deploy website to GitHub Pages"]
+    types: [completed]
+
+jobs:
+  screenshot:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install puppeteer
+        run: |
+          npm init -y >/dev/null 2>&1 || true
+          npm install puppeteer@22 --no-audit --no-fund
+
+      - name: Capture homepage screenshot
+        env:
+          SITE_URL: https://mauer4.github.io/
+          OUT_PATH: .github/preview.png
+        run: |
+          node scripts/screenshot_homepage.js
+
+      - name: Commit updated preview if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain .github/preview.png)" ]; then
+            git add .github/preview.png README.md
+            git commit -m "docs(readme): refresh dynamic site preview"
+            git push
+          else
+            echo "No changes to preview image"
+          fi
+

@@ -1,7 +1,78 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects | Adin Mauer Portfolio Website</title><link>https://mauer4.github.io/project/</link><atom:link href="https://mauer4.github.io/project/index.xml" rel="self" type="application/rss+xml"/><description>Projects</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 14 Dec 2024 22:46:33 -0800</lastBuildDate><image><url>https://mauer4.github.io/media/icon_hu4060597685561840127.png</url><title>Projects</title><link>https://mauer4.github.io/project/</link></image><item><title>LED Cube Project</title><link>https://mauer4.github.io/project/led_cube/</link><pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate><guid>https://mauer4.github.io/project/led_cube/</guid><description>&lt;h3 id="led-cube--fpga-driver--real-time-video-pose-projection-android">LED Cube + FPGA driver + real-time video pose projection (Android)&lt;/h3>
-&lt;p>&lt;a href="https://www.youtube.com/watch?v=kbrSmiwQhu4" title="LED Cube" target="_blank" rel="noopener">
-&lt;figure >
-&lt;div class="flex justify-center ">
-&lt;div class="w-100" >&lt;img src="http://img.youtube.com/vi/kbrSmiwQhu4/0.jpg" alt="LED CUBE" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/a>&lt;/p></description></item><item><title>Parallel FFT (CUDA / OpenMPI)</title><link>https://mauer4.github.io/project/parallel_fft/</link><pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate><guid>https://mauer4.github.io/project/parallel_fft/</guid><description>&lt;p>Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p></description></item><item><title>EEG CNN</title><link>https://mauer4.github.io/project/eeg_cnn/</link><pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate><guid>https://mauer4.github.io/project/eeg_cnn/</guid><description>&lt;p>Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p></description></item><item><title>CUDA LU Decomposition</title><link>https://mauer4.github.io/project/gaussian_elimination/</link><pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate><guid>https://mauer4.github.io/project/gaussian_elimination/</guid><description>&lt;p>Placeholder text&lt;/p></description></item><item><title>Adin’s Portfolio | Adin Mauer Portfolio Website</title><link>https://mauer4.github.io/project/2024-10-26_adins-portfolio-adin-mauer-portfolio-website/</link><pubDate>Sat, 26 Oct 2024 00:00:55 +0000</pubDate><guid>https://mauer4.github.io/project/2024-10-26_adins-portfolio-adin-mauer-portfolio-website/</guid><description>&lt;figure name="886d" id="886d" class="graf graf--figure graf-after--h3">&lt;/figure>&lt;p name="bffc" id="bffc" class="graf graf--p graf-after--figure">Welcome 👋&lt;/p>&lt;h3 name="272c" id="272c" class="graf graf--h3 graf-after--p">Overview&lt;/h3>&lt;ol class="postList">&lt;li name="a5b0" id="a5b0" class="graf graf--li graf-after--h3">The Hugo Blox website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations — although it can be used to create any kind of site&lt;/li>&lt;li name="3836" id="3836" class="graf graf--li graf-after--li">The template can be modified and customised to suit your needs. It’s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong class="markup--strong markup--li-strong">no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong> and having &lt;strong class="markup--strong markup--li-strong">flexibility to later add even deeper personalization with HTML and CSS&lt;/strong>&lt;/li>&lt;li name="cf87" id="cf87" class="graf graf--li graf-after--li">You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li>&lt;/ol>&lt;h3 name="3293" id="3293" class="graf graf--h3 graf-after--li">Get Started&lt;/h3>&lt;h3 name="821f" id="821f" class="graf graf--h3 graf-after--h3">Crowd-funded open-source software&lt;/h3>&lt;p name="18d0" id="18d0" class="graf graf--p graf-after--h3 graf--trailing">To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p>&lt;p name="ddb5" id="ddb5" class="graf graf--p graf--leading graf--trailing">&lt;em class="markup--em markup--p-em">Originally published at &lt;/em>&lt;a href="https://mauer4.github.io/" data-href="https://mauer4.github.io/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">&lt;em class="markup--em markup--p-em">https://mauer4.github.io&lt;/em>&lt;/a>&lt;em class="markup--em markup--p-em"> on October 26, 2024.&lt;/em>&lt;/p></description></item><item><title>Whatever</title><link>https://mauer4.github.io/project/2024-10-26_whatever/</link><pubDate>Sat, 26 Oct 2024 00:00:28 +0000</pubDate><guid>https://mauer4.github.io/project/2024-10-26_whatever/</guid><description>&lt;p name="3ff5" id="3ff5" class="graf graf--p graf-after--h3">whatever&lt;/p>&lt;figure name="231f" id="231f" class="graf graf--figure graf-after--p graf--trailing">&lt;/figure></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Adin Mauer Portfolio Website</title>
+    <link>http://localhost:1313/project/</link>
+      <atom:link href="http://localhost:1313/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 14 Dec 2024 22:46:33 -0800</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu4060597685561840127.png</url>
+      <title>Projects</title>
+      <link>http://localhost:1313/project/</link>
+    </image>
+    
+    <item>
+      <title>LED Cube Project</title>
+      <link>http://localhost:1313/project/led_cube/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project/led_cube/</guid>
+      <description>&lt;h3 id=&#34;led-cube--fpga-driver--real-time-video-pose-projection-android&#34;&gt;LED Cube + FPGA driver + real-time video pose projection (Android)&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=kbrSmiwQhu4&#34; title=&#34;LED Cube&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;flex justify-center	&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;http://img.youtube.com/vi/kbrSmiwQhu4/0.jpg&#34; alt=&#34;LED CUBE&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Parallel FFT (CUDA / OpenMPI)</title>
+      <link>http://localhost:1313/project/parallel_fft/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project/parallel_fft/</guid>
+      <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>EEG CNN</title>
+      <link>http://localhost:1313/project/eeg_cnn/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project/eeg_cnn/</guid>
+      <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CUDA LU Decomposition</title>
+      <link>http://localhost:1313/project/gaussian_elimination/</link>
+      <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project/gaussian_elimination/</guid>
+      <description>&lt;p&gt;Placeholder text&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Adin’s Portfolio | Adin Mauer Portfolio Website</title>
+      <link>http://localhost:1313/project/draft__adins-portfolio-adin-mauer-portfolio-website/</link>
+      <pubDate>Sat, 14 Dec 2024 22:46:33 -0800</pubDate>
+      <guid>http://localhost:1313/project/draft__adins-portfolio-adin-mauer-portfolio-website/</guid>
+      <description>&lt;p name=&#34;bcb9&#34; id=&#34;bcb9&#34; class=&#34;graf graf--p graf--empty graf-after--h3&#34;&gt;&lt;br/&gt;&lt;/p&gt;&lt;figure name=&#34;1d1e&#34; id=&#34;1d1e&#34; class=&#34;graf graf--figure graf-after--p&#34;&gt;&lt;/figure&gt;&lt;p name=&#34;5ca9&#34; id=&#34;5ca9&#34; class=&#34;graf graf--p graf-after--figure&#34;&gt;Welcome 👋&lt;/p&gt;&lt;h3 name=&#34;d4d0&#34; id=&#34;d4d0&#34; class=&#34;graf graf--h3 graf-after--p&#34;&gt;Overview&lt;/h3&gt;&lt;h3 name=&#34;e4dc&#34; id=&#34;e4dc&#34; class=&#34;graf graf--h3 graf--empty graf-after--h3&#34;&gt;&lt;br/&gt;&lt;/h3&gt;&lt;ol class=&#34;postList&#34;&gt;&lt;li name=&#34;faa1&#34; id=&#34;faa1&#34; class=&#34;graf graf--li graf-after--h3&#34;&gt;The Hugo Blox website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations — although it can be used to create any kind of site&lt;/li&gt;&lt;li name=&#34;73f1&#34; id=&#34;73f1&#34; class=&#34;graf graf--li graf-after--li&#34;&gt;The template can be modified and customised to suit your needs. It’s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong class=&#34;markup--strong markup--li-strong&#34;&gt;no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong&gt; and having &lt;strong class=&#34;markup--strong markup--li-strong&#34;&gt;flexibility to later add even deeper personalization with HTML and CSS&lt;/strong&gt;&lt;/li&gt;&lt;li name=&#34;f7de&#34; id=&#34;f7de&#34; class=&#34;graf graf--li graf-after--li&#34;&gt;You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li&gt;&lt;/ol&gt;&lt;h3 name=&#34;bd0e&#34; id=&#34;bd0e&#34; class=&#34;graf graf--h3 graf-after--li&#34;&gt;Get Started&lt;/h3&gt;&lt;h3 name=&#34;20aa&#34; id=&#34;20aa&#34; class=&#34;graf graf--h3 graf--empty graf-after--h3&#34;&gt;&lt;br/&gt;&lt;/h3&gt;&lt;h3 name=&#34;73f5&#34; id=&#34;73f5&#34; class=&#34;graf graf--h3 graf-after--h3&#34;&gt;Crowd-funded open-source software&lt;/h3&gt;&lt;h3 name=&#34;97e0&#34; id=&#34;97e0&#34; class=&#34;graf graf--h3 graf--empty graf-after--h3&#34;&gt;&lt;br/&gt;&lt;/h3&gt;&lt;p name=&#34;6b77&#34; id=&#34;6b77&#34; class=&#34;graf graf--p graf-after--h3 graf--trailing&#34;&gt;To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p&gt;&lt;p name=&#34;6b4c&#34; id=&#34;6b4c&#34; class=&#34;graf graf--p graf--leading graf--trailing&#34;&gt;&lt;em class=&#34;markup--em markup--p-em&#34;&gt;Originally published at &lt;/em&gt;&lt;a href=&#34;https://mauer4.github.io/&#34; data-href=&#34;https://mauer4.github.io/&#34; class=&#34;markup--anchor markup--p-anchor&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;&lt;em class=&#34;markup--em markup--p-em&#34;&gt;https://mauer4.github.io&lt;/em&gt;&lt;/a&gt;&lt;em class=&#34;markup--em markup--p-em&#34;&gt; on October 26, 2024.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

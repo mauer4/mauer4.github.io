@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Medium | Adin Mauer Portfolio Website</title>
+    <link>http://localhost:1313/tags/medium/</link>
+      <atom:link href="http://localhost:1313/tags/medium/index.xml" rel="self" type="application/rss+xml" />
+    <description>Medium</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu4060597685561840127.png</url>
+      <title>Medium</title>
+      <link>http://localhost:1313/tags/medium/</link>
+    </image>
+    
+    <item>
+      <title>Adin’s Portfolio | Adin Mauer Portfolio Website</title>
+      <link>http://localhost:1313/post/2024-10-26_adins-portfolio-adin-mauer-portfolio-website/</link>
+      <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-10-26_adins-portfolio-adin-mauer-portfolio-website/</guid>
+      <description>&lt;p&gt;tags: [&amp;lsquo;medium&amp;rsquo;]&lt;/p&gt;
+&lt;figure name=&#34;886d&#34; id=&#34;886d&#34; class=&#34;graf graf--figure graf-after--h3&#34;&gt;&lt;/figure&gt;&lt;p name=&#34;bffc&#34; id=&#34;bffc&#34; class=&#34;graf graf--p graf-after--figure&#34;&gt;Welcome ðŸ‘‹&lt;/p&gt;&lt;h3 name=&#34;272c&#34; id=&#34;272c&#34; class=&#34;graf graf--h3 graf-after--p&#34;&gt;Overview&lt;/h3&gt;&lt;ol class=&#34;postList&#34;&gt;&lt;li name=&#34;a5b0&#34; id=&#34;a5b0&#34; class=&#34;graf graf--li graf-after--h3&#34;&gt;The Hugo Blox website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizationsâ€Šâ€”â€Šalthough it can be used to create any kind of site&lt;/li&gt;&lt;li name=&#34;3836&#34; id=&#34;3836&#34; class=&#34;graf graf--li graf-after--li&#34;&gt;The template can be modified and customised to suit your needs. Itâ€™s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong class=&#34;markup--strong markup--li-strong&#34;&gt;no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong&gt; and having &lt;strong class=&#34;markup--strong markup--li-strong&#34;&gt;flexibility to later add even deeper personalization with HTML and CSS&lt;/strong&gt;&lt;/li&gt;&lt;li name=&#34;cf87&#34; id=&#34;cf87&#34; class=&#34;graf graf--li graf-after--li&#34;&gt;You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li&gt;&lt;/ol&gt;&lt;h3 name=&#34;3293&#34; id=&#34;3293&#34; class=&#34;graf graf--h3 graf-after--li&#34;&gt;Get Started&lt;/h3&gt;&lt;h3 name=&#34;821f&#34; id=&#34;821f&#34; class=&#34;graf graf--h3 graf-after--h3&#34;&gt;Crowd-funded open-source software&lt;/h3&gt;&lt;p name=&#34;18d0&#34; id=&#34;18d0&#34; class=&#34;graf graf--p graf-after--h3 graf--trailing&#34;&gt;To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p&gt;&lt;p name=&#34;ddb5&#34; id=&#34;ddb5&#34; class=&#34;graf graf--p graf--leading graf--trailing&#34;&gt;&lt;em class=&#34;markup--em markup--p-em&#34;&gt;Originally published at &lt;/em&gt;&lt;a href=&#34;https://mauer4.github.io/&#34; data-href=&#34;https://mauer4.github.io/&#34; class=&#34;markup--anchor markup--p-anchor&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;&lt;em class=&#34;markup--em markup--p-em&#34;&gt;https://mauer4.github.io&lt;/em&gt;&lt;/a&gt;&lt;em class=&#34;markup--em markup--p-em&#34;&gt; on October 26, 2024.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Whatever</title>
+      <link>http://localhost:1313/post/2024-10-26_whatever/</link>
+      <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-10-26_whatever/</guid>
+      <description>&lt;p&gt;tags: [&amp;lsquo;medium&amp;rsquo;]&lt;/p&gt;
+&lt;p name=&#34;3ff5&#34; id=&#34;3ff5&#34; class=&#34;graf graf--p graf-after--h3&#34;&gt;whatever&lt;/p&gt;&lt;figure name=&#34;231f&#34; id=&#34;231f&#34; class=&#34;graf graf--figure graf-after--p graf--trailing&#34;&gt;&lt;/figure&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
