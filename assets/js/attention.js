@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.attention-timeline .timeline-item .toggle').forEach(btn => {
     btn.addEventListener('click', () => {
-      const details = btn.parentElement.querySelector('.details');
+      const item = btn.closest('.timeline-item');
+      const details = item ? item.querySelector('.details') : null;
+      if (!details) return;
       const expanded = btn.getAttribute('aria-expanded') === 'true';
       if (expanded) {
         details.setAttribute('hidden', '');

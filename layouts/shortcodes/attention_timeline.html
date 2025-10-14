@@ -98,5 +98,5 @@
   </div>
 </section>
 
-<script defer src="{{ relURL "js/attention.js" }}"></script>
-<link rel="stylesheet" href="{{ relURL "css/attention.css" }}"/>
+{{ $js := resources.Get "js/attention.js" | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ $js.RelPermalink }}"></script>

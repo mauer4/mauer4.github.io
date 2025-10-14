@@ -66,7 +66,7 @@
 
   
     
-    <link href="/css/custom.min.3a5b6fde69b11493243602b0849b84c2dfee3874b82e02eb1bcf12bc1faf70e6.css" rel="stylesheet" />
+    <link href="/css/custom.min.8658fbee89aaf6712237e6c7c97448deff1d1b30632dde5eebffb0ca1e72e321.css" rel="stylesheet" />
   
 
   <script>
@@ -892,7 +892,7 @@
       <div class="meta-chip">
         <span class="meta-emoji">🔄</span>
         <span class="meta-label">Updated</span>
-        <span class="meta-value">1010-06-01</span>
+        <span class="meta-value">2030-06-01</span>
       </div>
     </div>
     
@@ -923,7 +923,7 @@
               
                 <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
               
-              <span>Loader, Tokenizer, Golden Harness (part 1)</span>
+              <span>Vast.AI Setup &#43; Baseline Environment</span>
             </div>
           </div>
           <div class="right">
@@ -931,17 +931,61 @@
             
           </div>
         </div>
-        <div class="summary">Implement safetensors weight loader and start SentencePiece tokenizer integration.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
-        <div class="details" hidden>
-          <p>Implement a weight loader for Hugging Face safetensors and convert to a custom on-disk layout (row-major, per-channel scales). Verify tensor shapes vs model configs (Mistral-7B or Llama-3.1-8B). Plug in SentencePiece tokenizer and create byte-level parity tests vs HF tokenization.</p>
+        <div class="summary">Provision a GPU instance, set up toolchains and libraries, and capture a baseline with a reference LLM.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
           
-          <div class="comments">
-            <div class="comments-title">Notes</div>
-            <ul>
-              <li>M1: layerwise diff harness by end of W2</li>
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Create Vast.AI account and allocate A100/4090 GPU</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Create a persistent Volume for models and build cache</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>map[Launch image:nvcr.io/nvidia/pytorch:25.04-py3]</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Install build tools (git, cmake, ninja, g&#43;&#43;, clang, python3-dev)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Install libs (torch, transformers, safetensors, sentencepiece, numpy, cutlass, pybind11)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Verify CUDA/NVCC and run a sample kernel</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>map[Run reference LLM and log:tokens/s, VRAM, prefill vs decode latency]</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Save results as baseline report</span>
+                </li>
+              
             </ul>
           </div>
+          
+        </div>
+        <div class="details" hidden>
+          <p>Create a repeatable Vast.AI environment. Install build tools, CUDA/CUTLASS, SentencePiece, and HF libs. Run a reference model (Mistral-7B or Llama-3-8B) to capture tokens/s, latency, VRAM usage — your baseline.</p>
           
         </div>
       </div>
@@ -959,7 +1003,7 @@
               
                 <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
               
-              <span>Loader, Tokenizer, Golden Harness (part 2)</span>
+              <span>Repo Scaffolding &#43; Tokenizer &#43; Weight Loader</span>
             </div>
           </div>
           <div class="right">
@@ -967,17 +1011,46 @@
             
           </div>
         </div>
-        <div class="summary">Build a correctness harness to diff logits layer-by-layer vs HF.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
-        <div class="details" hidden>
-          <p>Run a reference forward in PyTorch/HF and diff logits/embeddings layer-by-layer within small tolerances. Solidify tokenizer bindings and I/O. Ensure the harness can run short prompts for fast iteration.</p>
+        <div class="summary">Scaffold the project and implement tokenizer wrapper and safetensors weight loader with tests.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
           
-          <div class="comments">
-            <div class="comments-title">Notes</div>
-            <ul>
-              <li>Definition of done: ~1e-3 tol on a 64-token prompt</li>
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Init src/, include/, python_bindings/, tests/, scripts/, benchmarks/</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>CMakeLists for shared lib and exe targets</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>SentencePiece tokenizer wrapper (&#43; round-trip tests)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Safetensors reader to row-major fp16; validate names/shapes</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>map[Unit tests:mean abs diff &lt; 1e-5 on sampled tensors]</span>
+                </li>
+              
             </ul>
           </div>
+          
+        </div>
+        <div class="details" hidden>
+          <p>Create C&#43;&#43;/CUDA skeleton with CMake and pybind11 bindings. Implement SentencePiece wrapper and a safetensors loader with shape/name validation. Add unit tests with small diffs.</p>
           
         </div>
       </div>
@@ -995,7 +1068,7 @@
               
                 <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
               
-              <span>Baseline Forward &amp; Minimal Server (part 1)</span>
+              <span>Forward Pass Framework &#43; Basic Kernels</span>
             </div>
           </div>
           <div class="right">
@@ -1003,10 +1076,56 @@
             
           </div>
         </div>
-        <div class="summary">Implement core CUDA kernels and a basic C&#43;&#43; forward path.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
+        <div class="summary">Build the forward graph and write core kernels for RMSNorm, RoPE, matmul, MLP, and naïve attention.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
+          
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Define ModelConfig (layers, heads, dims, rope_theta)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>RMSNorm kernel validated vs PyTorch</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>RoPE kernel</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Matmul wrapper (cuBLAS/CUTLASS)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>MLP (SwiGLU)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Naïve QKV attention &#43; softmax</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Prefill-only forward; layerwise MAE &lt; 1e-3</span>
+                </li>
+              
+            </ul>
+          </div>
+          
+        </div>
         <div class="details" hidden>
-          <p>Write kernels for RMSNorm, RoPE, QKV projection, a naÃ¯ve attention, and MLP (SwiGLU). Assemble a clean C&#43;&#43; forward that consumes the loaded weights and tokenizer output.</p>
+          <p>Implement RMSNorm and RoPE kernels. Use cuBLAS/CUTLASS for matmul wrappers. Implement SwiGLU MLP and a simple attention path. Compare layerwise activations against HF.</p>
           
         </div>
       </div>
@@ -1024,7 +1143,7 @@
               
                 <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
               
-              <span>Baseline Forward &amp; Minimal Server (part 2)</span>
+              <span>Prefill &#43; Decode Loop &#43; Sampling</span>
             </div>
           </div>
           <div class="right">
@@ -1032,17 +1151,46 @@
             
           </div>
         </div>
-        <div class="summary">Add KV cache, sampling, and a minimal HTTP server.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
-        <div class="details" hidden>
-          <p>Implement a contiguous per-layer KV cache (fp16/bf16). Add greedy/top-k/top-p sampling and temperature. Ship a minimal HTTP server with a basic completion route and request lifecycle.</p>
+        <div class="summary">Implement KV cache, decode loop, and sampling strategies; validate generations and measure performance.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
           
-          <div class="comments">
-            <div class="comments-title">Notes</div>
-            <ul>
-              <li>M2: â‰¥50 tok/s greedy on A100-40GB (single request)</li>
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>KV cache structure (batch, layer, seq, dim)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Prefill &#43; token-by-token decode loop</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Greedy, top-k, top-p, temperature</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Validate text parity on short prompts</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Record tokens/s, latency, memory use</span>
+                </li>
+              
             </ul>
           </div>
+          
+        </div>
+        <div class="details" hidden>
+          <p>Add contiguous KV cache, greedy/top-k/top-p/temperature sampling, and end-to-end decode. Measure throughput and latency; validate against HF on short prompts.</p>
           
         </div>
       </div>
@@ -1060,7 +1208,7 @@
               
                 <img class="icon" src="/media/icons/timeline/attention.svg" alt="attention icon" />
               
-              <span>Flash-style Attention &amp; KV Paged Cache (part 1)</span>
+              <span>FlashAttention-Style Optimization</span>
             </div>
           </div>
           <div class="right">
@@ -1068,10 +1216,46 @@
             
           </div>
         </div>
-        <div class="summary">Replace naÃ¯ve attention with FlashAttention-style kernels.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
+        <div class="summary">Replace naïve attention with IO-aware tiled kernels; benchmark and profile.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
+          
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Review FlashAttention algorithm</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Tiled softmax&#43;attention kernel</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Correctness on 128–4096 tokens</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Benchmark vs week-4 attention</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Nsight Compute profiling and timing macros</span>
+                </li>
+              
+            </ul>
+          </div>
+          
+        </div>
         <div class="details" hidden>
-          <p>Implement I/O-aware attention kernels with tiling and numerically stable softmax. Keep code portable across A100/4090, with hooks for Hopper FA-3 features when available.</p>
+          <p>Implement shared-memory tiled softmax/attention; test on 128–4096 tokens. Benchmark vs week-4 and capture Nsight metrics (occupancy, memory bandwidth).</p>
           
         </div>
       </div>
@@ -1089,7 +1273,7 @@
               
                 <img class="icon" src="/media/icons/timeline/attention.svg" alt="attention icon" />
               
-              <span>Flash-style Attention &amp; KV Paged Cache (part 2)</span>
+              <span>Advanced KV Cache &#43; CUDA Graphs</span>
             </div>
           </div>
           <div class="right">
@@ -1097,17 +1281,41 @@
             
           </div>
         </div>
-        <div class="summary">Redesign KV cache to paged/slab layout and add CUDA Graphs.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
-        <div class="details" hidden>
-          <p>Introduce a paged (slab) KV cache to reduce fragmentation and enable large batches (vLLM-like PagedAttention semantics). Add CUDA Graph capture for decode and multiple CUDA streams to overlap prefill vs copies. Implement a simple scheduler to interleave requests by stage.</p>
+        <div class="summary">Introduce paged/slab KV cache and capture the decode path with CUDA Graphs.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
           
-          <div class="comments">
-            <div class="comments-title">Notes</div>
-            <ul>
-              <li>M3: 2â€“3Ã— throughput vs M2 at batch â‰¥ 8</li>
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Paged/slab KV allocator (vLLM-inspired)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Variable seq lengths &#43; in-flight batching</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>CUDA Graph capture for decode chain</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Micro-bench capture overhead; target ≤ 1 µs per token</span>
+                </li>
+              
             </ul>
           </div>
+          
+        </div>
+        <div class="details" hidden>
+          <p>Design a paged allocator (vLLM-style) handling variable seq lengths and in-flight batching. Add CUDA Graphs for the decode chain and micro-bench scheduling overhead.</p>
           
         </div>
       </div>
@@ -1125,7 +1333,7 @@
               
                 <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
               
-              <span>Quantization (AWQ path)</span>
+              <span>Quantization (AWQ / GPTQ / NF4)</span>
             </div>
           </div>
           <div class="right">
@@ -1133,10 +1341,46 @@
             
           </div>
         </div>
-        <div class="summary">Add weight-only INT4 via AWQ; validate accuracy vs fp16.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
+        <div class="summary">Implement weight-only int4 paths and evaluate quality vs fp16 baseline.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
+          
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Group-wise quantization (e.g., 128-group)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Scales/zeros and storage format</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>GEMM dequant on-the-fly</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Logit diff within tolerance vs fp16</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Throughput &amp; memory evaluation</span>
+                </li>
+              
+            </ul>
+          </div>
+          
+        </div>
         <div class="details" hidden>
-          <p>Implement AWQ calibration/scales with optional outlier handling. Validate perplexity drift and token accuracy compared to fp16/bf16 baselines. Prepare hooks for later GPTQ path.</p>
+          <p>Implement group-wise quantization with on-the-fly dequant in GEMM, compare AWQ/GPTQ/NF4 behavior and regressions.</p>
           
         </div>
       </div>
@@ -1154,7 +1398,7 @@
               
                 <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
               
-              <span>Quantization (GPTQ/NF4) and comparisons</span>
+              <span>Batching, Streams, and Scheduler</span>
             </div>
           </div>
           <div class="right">
@@ -1162,17 +1406,41 @@
             
           </div>
         </div>
-        <div class="summary">Add GPTQ path; optional NF4 baseline; compare accuracy/speed.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
-        <div class="details" hidden>
-          <p>Implement GPTQ group-wise quantization, and optionally NF4 (bitsandbytes-like) as a 4-bit baseline for comparison. Measure latency/bandwidth improvements and accuracy regressions.</p>
+        <div class="summary">Improve throughput via concurrent streams and request scheduling.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
           
-          <div class="comments">
-            <div class="comments-title">Notes</div>
-            <ul>
-              <li>M4: INT4 path &lt; 0.5 ppl regression on WikiText-2</li>
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Request queues (prefill/decode)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Separate CUDA streams for prefill/copy</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Overlap tokenization and H2D</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>≥2× tokens/s vs week-6 with batching</span>
+                </li>
+              
             </ul>
           </div>
+          
+        </div>
+        <div class="details" hidden>
+          <p>Build prefill/decode queues with separate CUDA streams, overlap tokenization and H2D copies, and benchmark mixed prompt lengths.</p>
           
         </div>
       </div>
@@ -1190,7 +1458,7 @@
               
                 <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
               
-              <span>Throughput Scalers</span>
+              <span>Parallelism &amp; Memory Optimization</span>
             </div>
           </div>
           <div class="right">
@@ -1198,17 +1466,41 @@
             
           </div>
         </div>
-        <div class="summary">In-flight batching, pinned I/O, overlap tokenization/H2D/decode.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
-        <div class="details" hidden>
-          <p>Support joining requests mid-sequence. Use pinned host buffers and staging areas. Overlap tokenization, host-to-device copies, and decode steps for better utilization.</p>
+        <div class="summary">Extend to multi-GPU tensor parallel and reduce memory pressure for long contexts.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
           
-          <div class="comments">
-            <div class="comments-title">Notes</div>
-            <ul>
-              <li>Optional: tensor parallel across 2â€“4 GPUs (shard QKV/MLP)</li>
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Tensor parallel sharding for QKV/MLP</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>NCCL all-reduce wiring and tests</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>1→2 GPU scaling measurements</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Activation checkpointing for long contexts</span>
+                </li>
+              
             </ul>
           </div>
+          
+        </div>
+        <div class="details" hidden>
+          <p>Shard QKV/MLP across GPUs with NCCL all-reduce; add activation checkpointing for long contexts and measure scaling.</p>
           
         </div>
       </div>
@@ -1226,7 +1518,7 @@
               
                 <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
               
-              <span>Speculative &amp; Parallel Decoding</span>
+              <span>Speculative &amp; Lookahead Decoding</span>
             </div>
           </div>
           <div class="right">
@@ -1234,17 +1526,36 @@
             
           </div>
         </div>
-        <div class="summary">Add Lookahead decoding; experiment with Medusa/ReDrafter.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
-        <div class="details" hidden>
-          <p>Implement a flag to enable Lookahead decoding (parallel steps without a draft model). Add experimental adapters for Medusa (multi-head next tokens) or Appleâ€™s ReDrafter. Keep interfaces pluggable for A/B testing.</p>
+        <div class="summary">Implement Lookahead and (optionally) Medusa heads; measure speedups.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
           
-          <div class="comments">
-            <div class="comments-title">Notes</div>
-            <ul>
-              <li>M5: 1.3â€“1.8Ã— wall-clock speedup on long outputs</li>
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Lookahead decoding with rollback checks</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Optional Medusa head adapter</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Measure speedup vs standard decode</span>
+                </li>
+              
             </ul>
           </div>
+          
+        </div>
+        <div class="details" hidden>
+          <p>Enable a lookahead path with rollback, add an optional Medusa multi-token predictor, and log speedup ratios on long outputs.</p>
           
         </div>
       </div>
@@ -1262,7 +1573,7 @@
               
                 <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
               
-              <span>Production Serving</span>
+              <span>Serving Layer</span>
             </div>
           </div>
           <div class="right">
@@ -1270,10 +1581,46 @@
             
           </div>
         </div>
-        <div class="summary">OpenAI-compatible REST, metrics, eviction policy, and hot-reload.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
+        <div class="summary">Expose the engine via a lightweight API with batching and metrics.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
+          
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>FastAPI or C&#43;&#43; http server</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>/v1/completions and /v1/chat/completions</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>In-server batching</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Metrics and LRU cache eviction</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Concurrency test with ≥ 8 clients</span>
+                </li>
+              
+            </ul>
+          </div>
+          
+        </div>
         <div class="details" hidden>
-          <p>Implement /v1/chat/completions, rate limiting, logging, and Prometheus metrics. Add KV cache eviction (LRU by session) and guardrails for context window. Support tokenizer/weights hot-reload without downtime.</p>
+          <p>Implement HTTP endpoints (/v1/completions and /v1/chat/completions), add batching inside the server, metrics, and KV eviction.</p>
           
         </div>
       </div>
@@ -1291,7 +1638,7 @@
               
                 <img class="icon" src="/media/icons/timeline/transformer.svg" alt="transformer icon" />
               
-              <span>Docs, Benchmarks, Release</span>
+              <span>Validation, Docs, and Release</span>
             </div>
           </div>
           <div class="right">
@@ -1299,17 +1646,46 @@
             
           </div>
         </div>
-        <div class="summary">Bench suite, competitive baselines, and public release.</div>
-        <button class="toggle" aria-expanded="false">Details</button>
-        <div class="details" hidden>
-          <p>Build a benchmark suite reporting tokens/s, p50/p95 latency, and VRAM usage vs HF baseline and llama.cpp on the same GPU. Reproduce vLLM/TensorRT-LLM ballpark throughput on your hardware and document where you gain/lose. Finalize docs and publish.</p>
+        <div class="summary">Validate parity and publish a complete report and repo.</div>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
           
-          <div class="comments">
-            <div class="comments-title">Notes</div>
-            <ul>
-              <li>M6: OpenAI-compatible API &#43; metrics &#43; report</li>
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Logit diff &lt; 1e-3 vs HF</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Bench vs llama.cpp, vLLM, TensorRT-LLM</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Long-prompt stress tests (&gt; 8k tokens)</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Technical report &#43; diagrams &#43; profiling</span>
+                </li>
+              
+                <li>
+                  <input type="checkbox" disabled />
+                  <span>Public repo and (optional) demo video</span>
+                </li>
+              
             </ul>
           </div>
+          
+        </div>
+        <div class="details" hidden>
+          <p>Run numerical parity checks, benchmark against llama.cpp/vLLM/TensorRT-LLM, stress test long prompts, and publish a thorough write-up with results and lessons learned.</p>
           
         </div>
       </div>
@@ -1318,8 +1694,8 @@
   </div>
 </section>
 
-<script defer src="/js/attention.js"></script>
-<link rel="stylesheet" href="/css/attention.css"/>
+
+<script defer src="/js/attention.min.899c2e04018b3ff6925716b9919947fd5c5096917b30df692eeca6eadeefd7d5.js"></script>
 
 
   </article>
