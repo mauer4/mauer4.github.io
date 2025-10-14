@@ -22,7 +22,7 @@
       <div class="meta-chip">
         <span class="meta-emoji">🔄</span>
         <span class="meta-label">Updated</span>
-        <span class="meta-value">{{ site.Lastmod | time.Format "2025-01-02" }}</span>
+        <span class="meta-value">{{ site.Lastmod | time.Format "2006-01-02" }}</span>
       </div>
     </div>
     {{/* Progress bar */}}
@@ -64,7 +64,26 @@
           </div>
         </div>
         <div class="summary">{{ .summary }}</div>
-        <button class="toggle" aria-expanded="false">Details</button>
+        <div class="controls">
+          <button class="toggle" aria-expanded="false">Details</button>
+          {{ if .checklist }}
+          <button class="checklist-trigger" aria-haspopup="true" aria-expanded="false" title="Weekly checklist" aria-label="Open checklist">🗒️ Checklist</button>
+          <div class="checklist-popover" role="dialog" aria-label="Checklist" hidden>
+            <div class="checklist-title">Checklist</div>
+            <ul class="checklist">
+              {{ range .checklist }}
+                {{ $item := . }}
+                {{ $text := (cond (isMap $item) ($item.text) $item) }}
+                {{ $done := (cond (isMap $item) (or ($item.done) false) false) }}
+                <li>
+                  <input type="checkbox" disabled {{ if $done }}checked{{ end }} />
+                  <span>{{ $text }}</span>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        </div>
         <div class="details" hidden>
           <p>{{ .details }}</p>
           {{ with .comments }}

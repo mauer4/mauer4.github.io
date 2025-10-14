@@ -4,143 +4,202 @@ start_date: 2025-10-14
 weeks:
   - id: week-1
     week: 1
-    title: Loader, Tokenizer, Golden Harness (part 1)
+    title: Vast.AI Setup + Baseline Environment
     target_date: '2025-10-21'
     completed: false
     completed_date: ''
-    summary: Implement safetensors weight loader and start SentencePiece tokenizer integration.
+    summary: Provision a GPU instance, set up toolchains and libraries, and capture a baseline with a reference LLM.
     details: >-
-      Implement a weight loader for Hugging Face safetensors and convert to a custom on-disk
-      layout (row-major, per-channel scales). Verify tensor shapes vs model configs (Mistral-7B
-      or Llama-3.1-8B). Plug in SentencePiece tokenizer and create byte-level parity tests vs
-      HF tokenization.
-    comments: ["M1: layerwise diff harness by end of W2"]
+      Create a repeatable Vast.AI environment. Install build tools, CUDA/CUTLASS, SentencePiece, and HF libs.
+      Run a reference model (Mistral-7B or Llama-3-8B) to capture tokens/s, latency, VRAM usage — your baseline.
+    checklist:
+      - Create Vast.AI account and allocate A100/4090 GPU
+      - Create a persistent Volume for models and build cache
+      - Launch image: nvcr.io/nvidia/pytorch:25.04-py3
+      - Install build tools (git, cmake, ninja, g++, clang, python3-dev)
+      - Install libs (torch, transformers, safetensors, sentencepiece, numpy, cutlass, pybind11)
+      - Verify CUDA/NVCC and run a sample kernel
+      - Run reference LLM and log: tokens/s, VRAM, prefill vs decode latency
+      - Save results as baseline report
+
   - id: week-2
     week: 2
-    title: Loader, Tokenizer, Golden Harness (part 2)
+    title: Repo Scaffolding + Tokenizer + Weight Loader
     target_date: '2025-10-28'
     completed: false
     completed_date: ''
-    summary: Build a correctness harness to diff logits layer-by-layer vs HF.
+    summary: Scaffold the project and implement tokenizer wrapper and safetensors weight loader with tests.
     details: >-
-      Run a reference forward in PyTorch/HF and diff logits/embeddings layer-by-layer within small
-      tolerances. Solidify tokenizer bindings and I/O. Ensure the harness can run short prompts for
-      fast iteration.
-    comments: ["Definition of done: ~1e-3 tol on a 64-token prompt"]
+      Create C++/CUDA skeleton with CMake and pybind11 bindings. Implement SentencePiece wrapper and
+      a safetensors loader with shape/name validation. Add unit tests with small diffs.
+    checklist:
+      - Init src/, include/, python_bindings/, tests/, scripts/, benchmarks/
+      - CMakeLists for shared lib and exe targets
+      - SentencePiece tokenizer wrapper (+ round-trip tests)
+      - Safetensors reader to row-major fp16; validate names/shapes
+      - Unit tests: mean abs diff < 1e-5 on sampled tensors
+
   - id: week-3
     week: 3
-    title: Baseline Forward & Minimal Server (part 1)
+    title: Forward Pass Framework + Basic Kernels
     target_date: '2025-11-04'
     completed: false
     completed_date: ''
-    summary: Implement core CUDA kernels and a basic C++ forward path.
+    summary: Build the forward graph and write core kernels for RMSNorm, RoPE, matmul, MLP, and naïve attention.
     details: >-
-      Write kernels for RMSNorm, RoPE, QKV projection, a naÃ¯ve attention, and MLP (SwiGLU).
-      Assemble a clean C++ forward that consumes the loaded weights and tokenizer output.
-    comments: []
+      Implement RMSNorm and RoPE kernels. Use cuBLAS/CUTLASS for matmul wrappers. Implement SwiGLU MLP and
+      a simple attention path. Compare layerwise activations against HF.
+    checklist:
+      - Define ModelConfig (layers, heads, dims, rope_theta)
+      - RMSNorm kernel validated vs PyTorch
+      - RoPE kernel
+      - Matmul wrapper (cuBLAS/CUTLASS)
+      - MLP (SwiGLU)
+      - Naïve QKV attention + softmax
+      - Prefill-only forward; layerwise MAE < 1e-3
+
   - id: week-4
     week: 4
-    title: Baseline Forward & Minimal Server (part 2)
+    title: Prefill + Decode Loop + Sampling
     target_date: '2025-11-11'
     completed: false
     completed_date: ''
-    summary: Add KV cache, sampling, and a minimal HTTP server.
+    summary: Implement KV cache, decode loop, and sampling strategies; validate generations and measure performance.
     details: >-
-      Implement a contiguous per-layer KV cache (fp16/bf16). Add greedy/top-k/top-p sampling and
-      temperature. Ship a minimal HTTP server with a basic completion route and request lifecycle.
-    comments: ["M2: â‰¥50 tok/s greedy on A100-40GB (single request)"]
+      Add contiguous KV cache, greedy/top-k/top-p/temperature sampling, and end-to-end decode. Measure throughput
+      and latency; validate against HF on short prompts.
+    checklist:
+      - KV cache structure (batch, layer, seq, dim)
+      - Prefill + token-by-token decode loop
+      - Greedy, top-k, top-p, temperature
+      - Validate text parity on short prompts
+      - Record tokens/s, latency, memory use
+
   - id: week-5
     week: 5
-    title: Flash-style Attention & KV Paged Cache (part 1)
+    title: FlashAttention-Style Optimization
     target_date: '2025-11-18'
     completed: false
     completed_date: ''
-    summary: Replace naÃ¯ve attention with FlashAttention-style kernels.
+    summary: Replace naïve attention with IO-aware tiled kernels; benchmark and profile.
     details: >-
-      Implement I/O-aware attention kernels with tiling and numerically stable softmax. Keep code
-      portable across A100/4090, with hooks for Hopper FA-3 features when available.
-    comments: []
+      Implement shared-memory tiled softmax/attention; test on 128–4096 tokens. Benchmark vs week-4 and capture
+      Nsight metrics (occupancy, memory bandwidth).
+    checklist:
+      - Review FlashAttention algorithm
+      - Tiled softmax+attention kernel
+      - Correctness on 128–4096 tokens
+      - Benchmark vs week-4 attention
+      - Nsight Compute profiling and timing macros
+
   - id: week-6
     week: 6
-    title: Flash-style Attention & KV Paged Cache (part 2)
+    title: Advanced KV Cache + CUDA Graphs
     target_date: '2025-11-25'
     completed: false
     completed_date: ''
-    summary: Redesign KV cache to paged/slab layout and add CUDA Graphs.
+    summary: Introduce paged/slab KV cache and capture the decode path with CUDA Graphs.
     details: >-
-      Introduce a paged (slab) KV cache to reduce fragmentation and enable large batches (vLLM-like
-      PagedAttention semantics). Add CUDA Graph capture for decode and multiple CUDA streams to
-      overlap prefill vs copies. Implement a simple scheduler to interleave requests by stage.
-    comments: ["M3: 2â€“3Ã— throughput vs M2 at batch â‰¥ 8"]
+      Design a paged allocator (vLLM-style) handling variable seq lengths and in-flight batching. Add CUDA Graphs
+      for the decode chain and micro-bench scheduling overhead.
+    checklist:
+      - Paged/slab KV allocator (vLLM-inspired)
+      - Variable seq lengths + in-flight batching
+      - CUDA Graph capture for decode chain
+      - Micro-bench capture overhead; target ≤ 1 µs per token
+
   - id: week-7
     week: 7
-    title: Quantization (AWQ path)
+    title: Quantization (AWQ / GPTQ / NF4)
     target_date: '2025-12-02'
     completed: false
     completed_date: ''
-    summary: Add weight-only INT4 via AWQ; validate accuracy vs fp16.
+    summary: Implement weight-only int4 paths and evaluate quality vs fp16 baseline.
     details: >-
-      Implement AWQ calibration/scales with optional outlier handling. Validate perplexity drift and
-      token accuracy compared to fp16/bf16 baselines. Prepare hooks for later GPTQ path.
-    comments: []
+      Implement group-wise quantization with on-the-fly dequant in GEMM, compare AWQ/GPTQ/NF4 behavior and regressions.
+    checklist:
+      - Group-wise quantization (e.g., 128-group)
+      - Scales/zeros and storage format
+      - GEMM dequant on-the-fly
+      - Logit diff within tolerance vs fp16
+      - Throughput & memory evaluation
+
   - id: week-8
     week: 8
-    title: Quantization (GPTQ/NF4) and comparisons
+    title: Batching, Streams, and Scheduler
     target_date: '2025-12-09'
     completed: false
     completed_date: ''
-    summary: Add GPTQ path; optional NF4 baseline; compare accuracy/speed.
+    summary: Improve throughput via concurrent streams and request scheduling.
     details: >-
-      Implement GPTQ group-wise quantization, and optionally NF4 (bitsandbytes-like) as a 4-bit
-      baseline for comparison. Measure latency/bandwidth improvements and accuracy regressions.
-    comments: ["M4: INT4 path < 0.5 ppl regression on WikiText-2"]
+      Build prefill/decode queues with separate CUDA streams, overlap tokenization and H2D copies, and benchmark
+      mixed prompt lengths.
+    checklist:
+      - Request queues (prefill/decode)
+      - Separate CUDA streams for prefill/copy
+      - Overlap tokenization and H2D
+      - ≥2× tokens/s vs week-6 with batching
+
   - id: week-9
     week: 9
-    title: Throughput Scalers
+    title: Parallelism & Memory Optimization
     target_date: '2025-12-16'
     completed: false
     completed_date: ''
-    summary: In-flight batching, pinned I/O, overlap tokenization/H2D/decode.
+    summary: Extend to multi-GPU tensor parallel and reduce memory pressure for long contexts.
     details: >-
-      Support joining requests mid-sequence. Use pinned host buffers and staging areas. Overlap
-      tokenization, host-to-device copies, and decode steps for better utilization.
-    comments: ["Optional: tensor parallel across 2â€“4 GPUs (shard QKV/MLP)"]
+      Shard QKV/MLP across GPUs with NCCL all-reduce; add activation checkpointing for long contexts and measure scaling.
+    checklist:
+      - Tensor parallel sharding for QKV/MLP
+      - NCCL all-reduce wiring and tests
+      - 1→2 GPU scaling measurements
+      - Activation checkpointing for long contexts
+
   - id: week-10
     week: 10
-    title: Speculative & Parallel Decoding
+    title: Speculative & Lookahead Decoding
     target_date: '2025-12-23'
     completed: false
     completed_date: ''
-    summary: Add Lookahead decoding; experiment with Medusa/ReDrafter.
+    summary: Implement Lookahead and (optionally) Medusa heads; measure speedups.
     details: >-
-      Implement a flag to enable Lookahead decoding (parallel steps without a draft model). Add
-      experimental adapters for Medusa (multi-head next tokens) or Appleâ€™s ReDrafter. Keep
-      interfaces pluggable for A/B testing.
-    comments: ["M5: 1.3â€“1.8Ã— wall-clock speedup on long outputs"]
+      Enable a lookahead path with rollback, add an optional Medusa multi-token predictor, and log speedup ratios on long outputs.
+    checklist:
+      - Lookahead decoding with rollback checks
+      - Optional Medusa head adapter
+      - Measure speedup vs standard decode
+
   - id: week-11
     week: 11
-    title: Production Serving
+    title: Serving Layer
     target_date: '2025-12-30'
     completed: false
     completed_date: ''
-    summary: OpenAI-compatible REST, metrics, eviction policy, and hot-reload.
+    summary: Expose the engine via a lightweight API with batching and metrics.
     details: >-
-      Implement /v1/chat/completions, rate limiting, logging, and Prometheus metrics. Add KV cache
-      eviction (LRU by session) and guardrails for context window. Support tokenizer/weights
-      hot-reload without downtime.
-    comments: []
+      Implement HTTP endpoints (/v1/completions and /v1/chat/completions), add batching inside the server, metrics, and KV eviction.
+    checklist:
+      - FastAPI or C++ http server
+      - /v1/completions and /v1/chat/completions
+      - In-server batching
+      - Metrics and LRU cache eviction
+      - Concurrency test with ≥ 8 clients
+
   - id: week-12
     week: 12
-    title: Docs, Benchmarks, Release
+    title: Validation, Docs, and Release
     target_date: '2026-01-06'
     completed: false
     completed_date: ''
-    summary: Bench suite, competitive baselines, and public release.
+    summary: Validate parity and publish a complete report and repo.
     details: >-
-      Build a benchmark suite reporting tokens/s, p50/p95 latency, and VRAM usage vs HF baseline and
-      llama.cpp on the same GPU. Reproduce vLLM/TensorRT-LLM ballpark throughput on your hardware and
-      document where you gain/lose. Finalize docs and publish.
-    comments: ["M6: OpenAI-compatible API + metrics + report"]
-
+      Run numerical parity checks, benchmark against llama.cpp/vLLM/TensorRT-LLM, stress test long prompts, and publish
+      a thorough write-up with results and lessons learned.
+    checklist:
+      - Logit diff < 1e-3 vs HF
+      - Bench vs llama.cpp, vLLM, TensorRT-LLM
+      - Long-prompt stress tests (> 8k tokens)
+      - Technical report + diagrams + profiling
+      - Public repo and (optional) demo video
 
 
