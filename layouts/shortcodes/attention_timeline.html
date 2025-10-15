@@ -1,26 +1,26 @@
-{{/* Attention timeline shortcode
+﻿{{/* Attention timeline shortcode
    Renders a vertical timeline from data/attention_plan.yaml
    Usage: {{< attention_timeline >}}
 */}}
 {{ $plan := site.Data.attention_plan }}
 <section class="attention-hero">
   <div class="container">
-    <h1>{{ with $plan.title }}{{ . }}{{ else }}Attention From Scratch{{ end }}</h1>
-    {{ with $plan.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+    <h1>{{ with $plan.title }}{{ . }}Attention From Scratch</h1>
+    {{ with $plan.subtitle }}<p class="subtitle">{{ . }}</p>
     {{ $start := $plan.start_date }}
     <div class="meta-bar" role="group" aria-label="Plan dates">
       <div class="meta-chip">
-        <span class="meta-emoji">📅</span>
+        <span class="meta-emoji">ðŸ“…</span>
         <span class="meta-label">Today</span>
         <span class="meta-value">{{ now | time.Format "2006-01-02" }}</span>
       </div>
       <div class="meta-chip">
-        <span class="meta-emoji">🚀</span>
+        <span class="meta-emoji">ðŸš€</span>
         <span class="meta-label">Start</span>
-        <span class="meta-value">{{ with $start }}{{ . }}{{ else }}TBD{{ end }}</span>
+        <span class="meta-value">{{ with $start }}{{ . }}TBD</span>
       </div>
       <div class="meta-chip">
-        <span class="meta-emoji">🔄</span>
+        <span class="meta-emoji">ðŸ”„</span>
         <span class="meta-label">Updated</span>
         <span class="meta-value">{{ site.Lastmod | time.Format "2006-01-02" }}</span>
       </div>
@@ -45,12 +45,7 @@
       {{ $title := .title | lower }}
       {{ $isAttn := or (in $title "attent") (in $title "kv") }}
       <div class="timeline-item" data-id="{{ .id }}" data-week="{{ .week }}" data-title="{{ .title }}" data-target="{{ .target_date }}" data-completed="{{ .completed }}">
-        <div class="dot {{ if .completed }}completed{{ end }}" title="{{ if .completed }}Completed{{ else }}Planned{{ end }}">
-          {{ if $isAttn }}
-            <img class="icon" src="{{ relURL "media/icons/timeline/attention.svg" }}" alt="attention icon" />
-          {{ else }}
-            <img class="icon" src="{{ relURL "media/icons/timeline/transformer.svg" }}" alt="transformer icon" />
-          {{ end }}
+        <div class="dot {{ if .completed }}completed" title="{{ if .completed }}CompletedPlanned">
         </div>
         <div class="content" tabindex="0" role="button" aria-label="Open details for week {{ .week }}" title="Click for details and checklist (Enter to open)">
           <div class="header">
@@ -59,17 +54,17 @@
               <div class="title"><span>{{ .title }}</span></div>
             </div>
             <div class="right">
-              {{ with .target_date }}<div class="target">Target: {{ . }}</div>{{ end }}
-              {{ if .completed }}{{ with .completed_date }}<div class="done">Done: {{ . }}</div>{{ end }}{{ end }}
+              {{ with .target_date }}<div class="target">Target: {{ . }}</div>
+              {{ if .completed }}{{ with .completed_date }}<div class="done">Done: {{ . }}</div>
             </div>
           </div>
           <div class="summary">{{ .summary }}</div>
-          <div class="cta-row" aria-hidden="true"><span class="cta-text">View details & checklist</span><span class="cta-chev">↗</span></div>
+          <div class="cta-row" aria-hidden="true"><span class="cta-text">View details & checklist</span><span class="cta-chev">â†—</span></div>
           <div class="overlay-template" hidden>
             <div class="overlay-header">
               <div class="overlay-week">Week {{ .week }}</div>
               <div class="overlay-title">{{ .title }}</div>
-              {{ with .target_date }}<div class="overlay-target">Target: {{ . }}</div>{{ end }}
+              {{ with .target_date }}<div class="overlay-target">Target: {{ . }}</div>
             </div>
             <div class="overlay-body">
               <p>{{ .details }}</p>
@@ -79,23 +74,19 @@
                 <ul>
                   {{ range .checklist }}
                     <li><input type="checkbox" disabled /> <span>{{ . }}</span></li>
-                  {{ end }}
                 </ul>
               </div>
-              {{ end }}
               {{ with .comments }}
               <div class="overlay-notes">
                 <div class="notes-title">Notes</div>
                 <ul>
-                  {{ range . }}<li>{{ . }}</li>{{ end }}
+                  {{ range . }}<li>{{ . }}</li>
                 </ul>
               </div>
-              {{ end }}
             </div>
           </div>
         </div>
       </div>
-      {{ end }}
     </div>
   </div>
 </section>
@@ -103,7 +94,7 @@
 <div class="attention-overlay" hidden aria-hidden="true">
   <div class="overlay-backdrop"></div>
   <div class="overlay-panel" role="dialog" aria-modal="true" aria-label="Week details">
-    <button class="overlay-close" aria-label="Close">✕</button>
+    <button class="overlay-close" aria-label="Close">âœ•</button>
     <div class="overlay-content">
       <!-- Injected dynamically -->
     </div>
@@ -112,3 +103,4 @@
 
 {{ $js := resources.Get "js/attention.js" | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ $js.RelPermalink }}"></script>
+
