@@ -62,7 +62,7 @@
 .attention-timeline .timeline-list:before {
   content: "";
   position: absolute;
-  left: var(--rail-offset);
+  left: calc(var(--rail-offset) + 12px);
   top: 0;
   bottom: 0;
   width: 3px;
@@ -76,7 +76,7 @@
 .attention-timeline .timeline-item::after {
   content: "";
   position: absolute;
-  left: var(--rail-offset);
+  left: calc(var(--rail-offset) + 12px);
   right: 0;
   bottom: .4rem;
   height: 1px;
@@ -86,7 +86,7 @@
 .attention-timeline .timeline-item:last-child::after { display: none; }
 .attention-timeline .timeline-item .dot {
   position: absolute;
-  left: var(--rail-offset);
+  left: calc(var(--rail-offset) + 12px);
   top: .92rem;
   width: 30px;
   height: 30px;
@@ -125,7 +125,7 @@
 .attention-timeline .header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
 .attention-timeline .week { font-weight: 700; color: #10b981; letter-spacing: .02em; }
 .attention-timeline .title { font-weight: 700; display: flex; align-items: center; gap: .5rem; font-size: 1.05rem; color: #e2e8f0; }
-.attention-timeline .target, .attention-timeline .done { font-size: .9rem; color: #f8fafc; opacity: 1; text-shadow: 0 1px 0 rgba(0,0,0,.35); }
+.attention-timeline .target, .attention-timeline .done { font-size: .9rem; color: #ccfbf1; opacity: 1; text-shadow: 0 1px 0 rgba(0,0,0,.65); }
 .attention-timeline .summary { margin-top: .35rem; color: #cbd5e1; }
 .attention-timeline .cta-row { display: inline-flex; align-items: center; gap: .45rem; margin-top: .6rem; color: #9ae6b4; opacity: .85; font-size: .92rem; }
 .attention-timeline .content:hover .cta-row { color: #6ee7b7; opacity: 1; }
