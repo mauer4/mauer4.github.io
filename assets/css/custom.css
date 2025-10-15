@@ -62,7 +62,7 @@
 .attention-timeline .timeline-list:before {
   content: "";
   position: absolute;
-  left: calc(var(--rail-offset) + 12px);
+  left: var(--rail-offset);
   top: 0;
   bottom: 0;
   width: 3px;
@@ -86,7 +86,7 @@
 .attention-timeline .timeline-item:last-child::after { display: none; }
 .attention-timeline .timeline-item .dot {
   position: absolute;
-  left: calc(var(--rail-offset) + 12px);
+  left: var(--rail-offset);
   top: .92rem;
   width: 30px;
   height: 30px;
@@ -178,6 +178,9 @@
   .attention-overlay .overlay-notes .notes-title { color: #15803d; }
 }
 .no-scroll { overflow: hidden; }
+
+
+
 
 
 
