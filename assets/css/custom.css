@@ -5,16 +5,7 @@
   }
   
 /* Attention timeline styles */
-.attention-hero {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  background:
-    radial-gradient(1200px 420px at 0% 0%, rgba(16,185,129,.12), rgba(16,185,129,0) 70%),
-    radial-gradient(900px 380px at 100% 15%, rgba(34,211,238,.10), rgba(34,211,238,0) 70%),
-    linear-gradient(180deg, rgba(2,6,23,.88) 0, rgba(2,6,23,.60) 60%, rgba(2,6,23,0) 100%);
-  padding: 2.5rem 1rem 2rem;
-  text-align: center;
-}
+.attention-hero { padding: 2.5rem 1rem 1.5rem; text-align: center; }
 .attention-hero h1 { margin: 0; font-size: 2.2rem; }
 .attention-hero .subtitle { margin-top: .5rem; color: var(--color-text-muted, #94a3b8); }
 .attention-hero .meta-bar { margin: 1rem auto 0; max-width: 860px; display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; }
@@ -178,6 +169,7 @@
   .attention-overlay .overlay-notes .notes-title { color: #15803d; }
 }
 .no-scroll { overflow: hidden; }
+
 
 
 
