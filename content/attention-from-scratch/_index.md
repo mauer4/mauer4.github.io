@@ -1,4 +1,4 @@
----
+﻿---
 title: Attention From Scratch
 date: 2025-01-01
 type: page
@@ -16,6 +16,7 @@ hero:
 
 ---
 
-I would like to build a project to code AI inference transformers from scratch for an open source LLM — that is, use open-source LLM weights and implement all inference code and kernels top-to-bottom, including prefill, decode, and serving. I plan to develop and run this on rented NVIDIA server GPUs via Vast.ai. This is a realistic, first‑principles path toward learning how to implement and operate a production‑level LLM inference stack on cloud, enterprise‑grade CPU/GPU hardware.
+I'm mapping the landscape of large language models to see what's possible for an individual, not just for massive tech teams. The exciting news is that fully open-source LLMs exist: you can inspect the weights, study the architecture, run the inference code, and even examine the training stack. As someone who loves marrying hardware, software, and math--classic HW/SW co-design--I'm inspired by the breakthroughs that pushed LLM performance forward: from FlashAttention and its fused kernels, to asynchronous attention in FlashAttention 2/3, and the paged-attention serving tricks in engines like vLLM. With today's cloud options, renting enterprise-class GPUs for inference is also within reach. So I've set a personal roadmap that takes me from beginner to building production-grade inference infrastructure on top of open models like Olmo 2. I'm not aiming to train new models; I'm aiming to run them exceptionally well. Along the way, I hope to understand the algorithms behind one of the most impactful technologies of our time--and maybe even find new ways to push them further.
 
 {{< attention_timeline >}}
+
