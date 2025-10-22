@@ -12,7 +12,7 @@
       <div class="meta-chip">
         <span class="meta-emoji">📆</span>
         <span class="meta-label">Today</span>
-        <span class="meta-value">{{ now | time.Format "2006-01-02" }}</span>
+        <span class="meta-value js-today" data-fallback="{{ now | time.Format "Jan 2, 2006" }}">{{ now | time.Format "Jan 2, 2006" }}</span>
       </div>
       <div class="meta-chip">
         <span class="meta-emoji">🚀</span>
@@ -22,7 +22,7 @@
       <div class="meta-chip">
         <span class="meta-emoji">🔄</span>
         <span class="meta-label">Updated</span>
-        <span class="meta-value">{{ site.Lastmod | time.Format "2006-01-02" }}</span>
+        <span class="meta-value">{{ site.Lastmod | time.Format "Jan 2, 2006" }}</span>
       </div>
     </div>
     {{/* Progress bar */}}

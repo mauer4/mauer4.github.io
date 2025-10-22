@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Update "Today" chip with client local date for freshness
+  const todayElements = document.querySelectorAll('.js-today');
+  if (todayElements.length) {
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    });
+    const todayString = formatter.format(new Date());
+    todayElements.forEach(el => {
+      try {
+        el.textContent = todayString;
+      } catch (err) {
+        // leave fallback content
+      }
+    });
+  }
+
   const overlay = document.querySelector('.attention-overlay');
   const overlayContent = overlay?.querySelector('.overlay-content');
   const overlayClose = overlay?.querySelector('.overlay-close');
