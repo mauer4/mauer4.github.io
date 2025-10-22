@@ -3,6 +3,8 @@
    Usage: {{< attention_timeline >}}
 */}}
 {{ $plan := site.Data.attention_plan }}
+{{ $page := .Page }}
+{{ $updated := default (now) $page.Lastmod }}
 <section class="attention-hero">
   <div class="container">
     <h1>{{ with $plan.title }}{{ . }}{{ else }}Attention From Scratch{{ end }}</h1>
@@ -22,7 +24,7 @@
       <div class="meta-chip">
         <span class="meta-emoji">🔄</span>
         <span class="meta-label">Updated</span>
-        <span class="meta-value">{{ site.Lastmod | time.Format "Jan 2, 2006" }}</span>
+        <span class="meta-value">{{ $updated | time.Format "Jan 2, 2006" }}</span>
       </div>
     </div>
     {{/* Progress bar */}}
