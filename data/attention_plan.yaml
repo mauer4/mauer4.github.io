@@ -6,57 +6,56 @@ weeks:
     week: 1
     title: Vast.AI Setup + Baseline Environment
     target_date: '2025-10-21'
-    completed: false
-    completed_date: ''
-    summary: Provision a GPU instance, set up toolchains and libraries, and capture a baseline with a reference LLM.
+    completed: true
+    completed_date: '2025-10-19'
+    summary: Baseline environment ready; captured reference runs on Olmo 2 (RTX 5090).
     details: >-
       Create a repeatable Vast.AI environment. Install build tools, CUDA/CUTLASS, SentencePiece, and HF libs.
-      Run a reference model (Mistral-7B or Llama-3-8B) to capture tokens/s, latency, VRAM usage — your baseline.
+      Run a reference model to capture tokens/s, latency, VRAM usage, and profiling artefacts for the baseline.
     checklist:
       - Create Vast.AI account and allocate A100/4090 GPU
       - Create a persistent Volume for models and build cache
-      - Launch image: nvcr.io/nvidia/pytorch:25.04-py3
       - Install build tools (git, cmake, ninja, g++, clang, python3-dev)
       - Install libs (torch, transformers, safetensors, sentencepiece, numpy, cutlass, pybind11)
       - Verify CUDA/NVCC and run a sample kernel
-      - Run reference LLM and log: tokens/s, VRAM, prefill vs decode latency
-      - Save results as baseline report
+      - Run baseline generation on GPU
+    comments:
+      - Got Olmo 2 running on an RTX 5090 with ~25.7 GiB VRAM in use and ~17 tokens/s throughput over 64 tokens.
+      - Captured nsys profiling (check_olmo_gpu_profile.nsys-rep) and an nvidia-smi snapshot for the baseline report.
 
   - id: week-2
     week: 2
-    title: Repo Scaffolding + Tokenizer + Weight Loader
+    title: Baseline Benchmark Harness
     target_date: '2025-10-28'
     completed: false
     completed_date: ''
-    summary: Scaffold the project and implement tokenizer wrapper and safetensors weight loader with tests.
+    summary: Research performance metrics and implement a repeatable GPU benchmarking suite for reference models.
     details: >-
-      Create C++/CUDA skeleton with CMake and pybind11 bindings. Implement SentencePiece wrapper and
-      a safetensors loader with shape/name validation. Add unit tests with small diffs.
+      Investigate industry metrics (MLPerf, service SLIs), define the measurements to track, and build scripts that
+      execute baselines across GPUs and workloads with structured output for later comparison.
     checklist:
-      - Init src/, include/, python_bindings/, tests/, scripts/, benchmarks/
-      - CMakeLists for shared lib and exe targets
-      - SentencePiece tokenizer wrapper (+ round-trip tests)
-      - Safetensors reader to row-major fp16; validate names/shapes
-      - Unit tests: mean abs diff < 1e-5 on sampled tensors
+      - Research benchmarking frameworks (MLPerf, Hugging Face evals, inference SLIs) and select metrics to track
+      - Implement baseline runner capturing latency, throughput, and memory for configurable prompts and batch sizes
+      - Validate harness locally on the 5090 and archive results alongside profiling reports
+      - Plan GPU matrix and volume-testing scenarios for rented hardware
+      - Set up logging/output format suitable for dashboards or reports
 
   - id: week-3
     week: 3
-    title: Forward Pass Framework + Basic Kernels
+    title: Inference Stack Skeleton
     target_date: '2025-11-04'
     completed: false
     completed_date: ''
-    summary: Build the forward graph and write core kernels for RMSNorm, RoPE, matmul, MLP, and naïve attention.
+    summary: Start building the custom inference stack with modular orchestration and a prefill pipeline.
     details: >-
-      Implement RMSNorm and RoPE kernels. Use cuBLAS/CUTLASS for matmul wrappers. Implement SwiGLU MLP and
-      a simple attention path. Compare layerwise activations against HF.
+      Define boundaries between orchestrator, kernel modules, and telemetry. Stand up request queues, loader hooks,
+      and a first-cut prefill path that reuses reference kernels while enabling swap-in of custom implementations later.
     checklist:
-      - Define ModelConfig (layers, heads, dims, rope_theta)
-      - RMSNorm kernel validated vs PyTorch
-      - RoPE kernel
-      - Matmul wrapper (cuBLAS/CUTLASS)
-      - MLP (SwiGLU)
-      - Naïve QKV attention + softmax
-      - Prefill-only forward; layerwise MAE < 1e-3
+      - Define architecture diagram and module responsibilities (orchestrator, kernels, telemetry)
+      - Implement loader plus request queue scaffolding with basic scheduling hooks
+      - Wire the baseline runner into the stack for automated regression checks
+      - Stand up the prefill path with existing kernels and capture end-to-end traces
+      - Add unit/integration tests for the orchestration layer
 
   - id: week-4
     week: 4
@@ -81,14 +80,14 @@ weeks:
     target_date: '2025-11-18'
     completed: false
     completed_date: ''
-    summary: Replace naïve attention with IO-aware tiled kernels; benchmark and profile.
+    summary: Replace naive attention with IO-aware tiled kernels; benchmark and profile.
     details: >-
-      Implement shared-memory tiled softmax/attention; test on 128–4096 tokens. Benchmark vs week-4 and capture
+      Implement shared-memory tiled softmax/attention; test on 128-4096 tokens. Benchmark vs week-4 and capture
       Nsight metrics (occupancy, memory bandwidth).
     checklist:
       - Review FlashAttention algorithm
       - Tiled softmax+attention kernel
-      - Correctness on 128–4096 tokens
+      - Correctness on 128-4096 tokens
       - Benchmark vs week-4 attention
       - Nsight Compute profiling and timing macros
 
@@ -106,7 +105,7 @@ weeks:
       - Paged/slab KV allocator (vLLM-inspired)
       - Variable seq lengths + in-flight batching
       - CUDA Graph capture for decode chain
-      - Micro-bench capture overhead; target ≤ 1 µs per token
+      - Micro-bench capture overhead; target <= 1 microsecond per token
 
   - id: week-7
     week: 7
@@ -138,7 +137,7 @@ weeks:
       - Request queues (prefill/decode)
       - Separate CUDA streams for prefill/copy
       - Overlap tokenization and H2D
-      - ≥2× tokens/s vs week-6 with batching
+      - >=2x tokens/s vs week-6 with batching
 
   - id: week-9
     week: 9
@@ -152,7 +151,7 @@ weeks:
     checklist:
       - Tensor parallel sharding for QKV/MLP
       - NCCL all-reduce wiring and tests
-      - 1→2 GPU scaling measurements
+      - 1->2 GPU scaling measurements
       - Activation checkpointing for long contexts
 
   - id: week-10
@@ -183,7 +182,7 @@ weeks:
       - /v1/completions and /v1/chat/completions
       - In-server batching
       - Metrics and LRU cache eviction
-      - Concurrency test with ≥ 8 clients
+      - Concurrency test with >= 8 clients
 
   - id: week-12
     week: 12
@@ -201,5 +200,3 @@ weeks:
       - Long-prompt stress tests (> 8k tokens)
       - Technical report + diagrams + profiling
       - Public repo and (optional) demo video
-
-
