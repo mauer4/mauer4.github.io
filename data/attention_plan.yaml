@@ -137,7 +137,7 @@ weeks:
       - Request queues (prefill/decode)
       - Separate CUDA streams for prefill/copy
       - Overlap tokenization and H2D
-      - >=2x tokens/s vs week-6 with batching
+      - Achieve at least 2x tokens/s vs week-6 with batching
 
   - id: week-9
     week: 9
@@ -200,3 +200,4 @@ weeks:
       - Long-prompt stress tests (> 8k tokens)
       - Technical report + diagrams + profiling
       - Public repo and (optional) demo video
+
