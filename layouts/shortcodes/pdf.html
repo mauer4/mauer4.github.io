@@ -1,0 +1,10 @@
+{{- $src := .Get "src" -}}
+{{- $height := .Get "height" | default "900" -}}
+{{- $resource := .Page.Resources.GetMatch $src -}}
+{{- $url := "" -}}
+{{- if $resource -}}
+  {{- $url = $resource.RelPermalink -}}
+{{- else -}}
+  {{- $url = $src | relURL -}}
+{{- end -}}
+<iframe src="{{ $url }}" width="100%" height="{{ $height }}" style="border:0;" loading="lazy"></iframe>

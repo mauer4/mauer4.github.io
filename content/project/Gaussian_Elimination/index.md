@@ -6,7 +6,7 @@ info:
 date: 2024-10-26
 # external_link: https://github.com/UBC-CPEN512/assign3-mauer4
 
-url_pdf: 'CPEN512-MPI-AdinMuaer.pdf'
+url_pdf: ''
 url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
 url_dataset: 'https://github.com/HugoBlox/hugo-blox-builder'
 url_poster: ''
@@ -33,6 +33,4 @@ Project report (PDF).
 
 <!--more-->
 
-<object data="CPEN512-MPI-AdinMuaer.pdf" type="application/pdf" width="100%" height="900">
-  <p>PDF preview unavailable. <a href="CPEN512-MPI-AdinMuaer.pdf">Download the report</a>.</p>
-</object>
+{{< pdf src="CPEN512-MPI-AdinMuaer.pdf" height="900" >}}
