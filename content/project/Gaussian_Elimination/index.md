@@ -33,4 +33,4 @@ Project report (PDF).
 
 <!--more-->
 
-{{< pdf src="CPEN512-MPI-AdinMuaer.pdf" height="900" >}}
+{{< pdf src="MPI-GaussianElimiation.pdf" height="900" >}}

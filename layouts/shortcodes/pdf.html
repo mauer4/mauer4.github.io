@@ -7,4 +7,51 @@
 {{- else -}}
   {{- $url = $src | relURL -}}
 {{- end -}}
-<iframe src="{{ $url }}" width="100%" height="{{ $height }}" style="border:0;" loading="lazy"></iframe>
+{{- $id := printf "pdfjs-%d" .Ordinal -}}
+<div id="{{ $id }}" class="pdfjs-viewer" style="width:100%; height:{{ $height }}px; overflow:auto; background:#fff;"></div>
+<script>
+(function() {
+  var container = document.getElementById("{{ $id }}");
+  if (!container || container.dataset.loaded) return;
+  container.dataset.loaded = "1";
+  var url = {{ $url | jsonify }};
+  function loadPdfjs(cb) {
+    if (window.pdfjsLib) return cb();
+    var script = document.createElement("script");
+    script.src = "{{ "pdfjs/pdf.min.js" | relURL }}";
+    script.onload = cb;
+    document.head.appendChild(script);
+  }
+  loadPdfjs(function() {
+    if (!window.pdfjsLib) {
+      container.textContent = "PDF viewer failed to load.";
+      return;
+    }
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = "{{ "pdfjs/pdf.worker.min.js" | relURL }}";
+    window.pdfjsLib.getDocument(url).promise.then(function(pdf) {
+      for (var i = 1; i <= pdf.numPages; i++) {
+        var holder = document.createElement("div");
+        holder.style.margin = "0 auto 16px";
+        container.appendChild(holder);
+        (function(pageNum, pageHolder) {
+          pdf.getPage(pageNum).then(function(page) {
+            var viewport = page.getViewport({ scale: 1.0 });
+            var containerWidth = container.clientWidth || viewport.width;
+            var scale = containerWidth / viewport.width;
+            var scaledViewport = page.getViewport({ scale: scale });
+            var canvas = document.createElement("canvas");
+            var context = canvas.getContext("2d");
+            canvas.width = scaledViewport.width;
+            canvas.height = scaledViewport.height;
+            canvas.style.display = "block";
+            pageHolder.appendChild(canvas);
+            page.render({ canvasContext: context, viewport: scaledViewport });
+          });
+        })(i, holder);
+      }
+    }).catch(function() {
+      container.textContent = "PDF failed to load.";
+    });
+  });
+})();
+</script>

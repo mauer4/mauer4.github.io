@@ -1,7 +1,6 @@
 ---
 title: Parallel FFT (CUDA / OpenMPI)
 date: 2023-10-26
-external_link: https://github.com/pandas-dev/pandas
 tags:
   - Parallel Computing
   - MPI
@@ -11,6 +10,8 @@ featured: true
 weight: 100
 ---
 
-Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.
+Project presentation (PDF).
 
 <!--more-->
+
+{{< pdf src="FFT-MPI-AdinMauer-Presentation.pdf" height="900" >}}
