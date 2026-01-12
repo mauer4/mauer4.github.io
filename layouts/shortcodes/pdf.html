@@ -4,8 +4,10 @@
 {{- $url := "" -}}
 {{- if $resource -}}
   {{- $url = $resource.RelPermalink -}}
+{{- else if hasPrefix $src "/" -}}
+  {{- $url = $src -}}
 {{- else -}}
-  {{- $url = $src | relURL -}}
+  {{- $url = printf "%s%s" .Page.RelPermalink $src -}}
 {{- end -}}
 {{- $id := printf "pdfjs-%d" .Ordinal -}}
 <div id="{{ $id }}" class="pdfjs-viewer" style="width:100%; height:{{ $height }}px; overflow:auto; background:#fff;"></div>
@@ -28,7 +30,7 @@
       return;
     }
     window.pdfjsLib.GlobalWorkerOptions.workerSrc = "{{ "pdfjs/pdf.worker.min.js" | relURL }}";
-    window.pdfjsLib.getDocument(url).promise.then(function(pdf) {
+    window.pdfjsLib.getDocument({ url: url, disableWorker: true }).promise.then(function(pdf) {
       for (var i = 1; i <= pdf.numPages; i++) {
         var holder = document.createElement("div");
         holder.style.margin = "0 auto 16px";
