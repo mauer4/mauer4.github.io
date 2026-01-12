@@ -12,12 +12,8 @@ featured: true
 weight: 110
 ---
 
-Project report (PDF).
+Project presentation (PDF).
 
 <!--more-->
-
-{{< pdf src="CPEN355_Project_Report_Group_8.pdf" height="900" >}}
-
-Project presentation (PDF).
 
 {{< pdf src="EEG_CNN_AdinMauer_presentation.pdf" height="900" >}}
