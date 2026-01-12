@@ -12,6 +12,8 @@ featured: true
 weight: 110
 ---
 
+Using a dataset that mapped EEG signal recordings to specific physical hand motions, we built a CNN that classifies the physical action by analyzing the EEG recordings.
+
 Project presentation (PDF).
 
 <!--more-->

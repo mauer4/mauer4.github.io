@@ -3,6 +3,7 @@ title: 'FlashAttention'
 date: 2026-01-12T00:00:00Z
 authors: ['admin']
 tags: ['transformers', 'attention', 'deep-learning']
+url_source: 'Review_FlashAttention_AdinMauer.pdf'
 draft: false
 ---
 

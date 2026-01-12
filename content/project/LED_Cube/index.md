@@ -12,8 +12,6 @@ featured: false
 weight: 90
 ---
 
-![Dance Cube system diagram](Diagram.png)
-
 ## Dance Cube
 
 This project includes a 3D 8x8x8 LED cube connected and controlled via WiFi by an Android app. In addition to animated lighting, the phone camera runs an on-device ML model for pose estimation and projects the real-time movement of the person into the cube in 3D.

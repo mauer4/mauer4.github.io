@@ -87,6 +87,17 @@ education:
   #     - lorem ipsum dolor sit amet, consectetur adipiscing elit
   #     - lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
+  - position: Design Engineer
+    company_name: AMD
+    company_url: 'https://www.amd.com/en.html'
+    company_logo: ''
+    date_start: 2024-09-01
+    summary: |
+      Responsibilities include:
+      - Optimized IOMMU datapaths to remove DMA/RDMA bottlenecks and enable hardware-accelerated I/O.
+      - Implemented performance-critical IOMMU datapath logic in SystemVerilog.
+      - Mentored incoming engineers to accelerate onboarding and ramp-up.
+      - Documented state-of-the-art cache designs to inform architecture decisions.
   - position: Hardware Design Intern
     company_name: AMD
     company_url: 'https://www.amd.com/en.html'
