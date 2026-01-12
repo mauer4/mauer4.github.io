@@ -7,7 +7,7 @@ tags:
   - ML
   - Hardware Design (System verilog)
   - Communication
-featured: true
+featured: false
 weight: 90
 ---
 
