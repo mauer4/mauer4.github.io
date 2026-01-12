@@ -2,6 +2,7 @@
 title: LED Cube Project
 date: 2023-10-26
 url_code: 'https://github.com/mauer4/LED-CUBE'
+url_video: 'https://www.youtube.com/watch?v=kbrSmiwQhu4'
 tags:
   - FPGA
   - ML
@@ -10,8 +11,6 @@ tags:
 featured: false
 weight: 90
 ---
-
-Video: https://www.youtube.com/watch?v=kbrSmiwQhu4
 
 ![Dance Cube system diagram](Diagram.png)
 
