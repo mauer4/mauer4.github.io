@@ -161,20 +161,10 @@ awards:
     icon: computer
     summary: |
       We built a physical LED cube (8x8x8) from scratch, and created digital logic on an FPGA as a custom hardware block integrated into a NIOS softcore processor as a custom intruction. The FPGA driver was then connected to an Android app via ESP32-bluetooth, where a user can control the cube from an interface. The cube can either show cool patterns (pre-made), or open the phone's camera, point at a person, and a pose detecting algorithm creates a simulated stick person figure in real-time, transmits it to the cube where to show the person and their movement live. WON FIRST PLACE! See video.
-  - title: Blockchain Fundamentals
-    url: 
-    date: '2023-07-01'
-    awarder: UBC
-    icon: computer
-    summary: |
-      Learned:
-      - Build solderboard from scratch. LED cube electronics.
-      - Design of hardware driver.
-      - Integration of custom hardware components to softcore processor (NIOS) as custom instructions.
-      - ESP32-Bluetooth
-      - Integrate and use ML pose estimation algo
-      - Communication protocols (UART, Bluetooth)
-      - Create animations/GIFs
+  - title: Young Leadership Award
+    date: '2024-06-01'
+    awarder: JFGV (Jewish Federation of Greater Vancouver)
+    icon: award
   # - title: 'Object-Oriented Programming in R'
   #   url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
   #   certificate_url: https://www.datacamp.com
