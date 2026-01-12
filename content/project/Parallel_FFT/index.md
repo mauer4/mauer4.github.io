@@ -1,6 +1,7 @@
 ---
 title: Parallel FFT (CUDA / OpenMPI)
 date: 2023-10-26
+url_source: 'FFT-MPI-AdinMauer.pdf'
 tags:
   - Parallel Computing
   - MPI
