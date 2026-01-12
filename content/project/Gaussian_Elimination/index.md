@@ -1,5 +1,5 @@
 ---
-title: CUDA LU Decomposition
+title: MPI LU Decomposition
 info:
   icon: brands/github
   url: https://github.com/mauer4
@@ -7,13 +7,13 @@ date: 2024-10-26
 # external_link: https://github.com/UBC-CPEN512/assign3-mauer4
 
 url_pdf: ''
-url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
-url_dataset: 'https://github.com/HugoBlox/hugo-blox-builder'
+url_code: ''
+url_dataset: ''
 url_poster: ''
 url_project: ''
 url_slides: ''
-url_source: 'https://github.com/HugoBlox/hugo-blox-builder'
-url_video: 'https://youtube.com'
+url_source: ''
+url_video: ''
 
 
 tags:
@@ -29,7 +29,7 @@ outputs: [HTML, RSS]
 drafts: false
 ---
 
-Project report (PDF).
+See the presentation below for strategies to optimize LU decomposition with MPI by blocking the data, building detailed data-dependency graphs, and executing in parallel wherever possible.
 
 <!--more-->
 
