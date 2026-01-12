@@ -94,10 +94,13 @@ work:
     date_start: 2024-09-01
     summary: |
       Responsibilities include:
-      - Optimized IOMMU datapaths to remove DMA/RDMA bottlenecks and enable hardware-accelerated I/O.
-      - Implemented performance-critical IOMMU datapath logic in SystemVerilog.
-      - Mentored incoming engineers to accelerate onboarding and ramp-up.
+      - Work as designer on IOMMU IP to support DMA/RDMA to hardware-accelerated I/O.
+      - Implemented performance-critical IOMMU datapaths logic in SystemVerilog.
+      - Enable high-performance interfaces: PCIE, UALINK, InfinityFabric (IFOE).
       - Documented state-of-the-art cache designs to inform architecture decisions.
+      - Enhance and align in-house simulators to correlate with RTL expectations
+      - Execute performance studies using in-house simulators
+      - Mentored incoming engineers to accelerate onboarding and ramp-up.
   - position: Hardware Design Intern
     company_name: AMD
     company_url: 'https://www.amd.com/en.html'
@@ -113,8 +116,8 @@ work:
     company_name: IDF
     company_url: 'https://www.idf.il/en/'
     company_logo: ''
-    date_start: 2014-01-01
-    date_end: 2020-12-31
+    date_start: 2014-11-01
+    date_end: 2019-06-01
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
