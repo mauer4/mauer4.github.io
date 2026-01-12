@@ -1,7 +1,8 @@
 ---
 title: EEG CNN
 date: 2023-10-26
-external_link: https://github.com/pandas-dev/pandas
+url_code: 'https://github.com/mauer4/EEG_CNN_CPEN355'
+url_source: 'CPEN355_Project_Report_Group_8.pdf'
 tags:
   - Machine Learning
   - CNN
@@ -11,7 +12,8 @@ featured: true
 weight: 110
 ---
 
-
-Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.
+Project report (PDF).
 
 <!--more-->
+
+{{< pdf src="CPEN355_Project_Report_Group_8.pdf" height="900" >}}
