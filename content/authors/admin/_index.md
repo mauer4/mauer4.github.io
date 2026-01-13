@@ -94,13 +94,12 @@ work:
     date_start: 2024-09-01
     summary: |
       Responsibilities include:
-      - Work as designer on IOMMU IP to support DMA/RDMA to hardware-accelerated I/O.
-      - Implemented performance-critical IOMMU datapaths logic in SystemVerilog.
-      - Enable high-performance interfaces: PCIE, UALINK, InfinityFabric (IFOE).
-      - Documented state-of-the-art cache designs to inform architecture decisions.
-      - Enhance and align in-house simulators to correlate with RTL expectations
-      - Execute performance studies using in-house simulators
-      - Mentored incoming engineers to accelerate onboarding and ramp-up.
+      - IOMMU: Designed and implemented performance-critical IOMMU datapaths in SystemVerilog to support high-throughput DMA/RDMA flows  
+      - Enabled high-performance interfaces: Enabled PCIe, UALink, and Infinity Fabric (IFOE) interfaces for hardware-accelerated I/O.
+      - Performance: Conducted architecture-level performance studies using in-house simulators and correlated results with RTL behavior
+      - Architecture: Contributed to cache and memory-system design discussions through documentation and analysis of state-of-the-art approaches
+      - Mentorship: Mentored incoming engineers, accelerating onboarding and ramp-up
+
   - position: Hardware Design Intern
     company_name: AMD
     company_url: 'https://www.amd.com/en.html'
