@@ -1,2 +1,8 @@
 tools/
 *.zip
+static/uploads/*.aux
+static/uploads/*.fdb_latexmk
+static/uploads/*.fls
+static/uploads/*.log
+static/uploads/*.out
+static/uploads/*.synctex.gz

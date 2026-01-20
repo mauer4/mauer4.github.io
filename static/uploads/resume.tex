@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+
+\usepackage[
+  top=0.25in,
+  bottom=0.25in,
+  left=0.6in,
+  right=0.6in
+]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{setspace}
+
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setstretch{0.97}
+
+\definecolor{sectionbg}{HTML}{EFEFEF}
+\definecolor{gold}{HTML}{B8860B}
+\newcommand{\gold}[1]{\textcolor{gold}{#1}}
+\newcommand{\sectionbox}[1]{%
+  \colorbox{sectionbg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\large\bfseries #1}}%
+}
+\titleformat{\section}{\normalfont}{}{0em}{\sectionbox}[\titlerule]
+\titlespacing*{\section}{0pt}{0.5em}{0.3em}
+
+\setlist[itemize]{
+  noitemsep,
+  topsep=0pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{%
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\\
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE \textbf{Adin Mauer}}\\
+  Hardware Design Engineer \textbar\ RTL \textbar\ HW/SW Co-Design\\
+  Vancouver, BC, Canada\\
+  \href{mailto:Mauer4@gmail.com}{Mauer4@gmail.com} \textbar\ \href{https://github.com/mauer4}{github.com/mauer4} \textbar\ \href{https://www.linkedin.com/in/adin-mauer-4774821a1/}{linkedin.com/in/adin-mauer} \textbar\ \href{https://mauer4.github.io/}{mauer4.github.io}
+\end{center}
+
+\section{Summary}
+Hardware design engineer with experience in \gold{RTL} development, \gold{IOMMU} and \gold{high-performance I/O} subsystems, and \gold{HW/SW co-design}. Strong background in \gold{computer architecture}, \gold{parallel computing}, and \gold{performance modeling}, with a growing focus on architectures for \gold{ML} and \gold{AI acceleration}.
+
+\section{Relevant Work Experience}
+\textbf{AMD Canada}\\
+\textit{RTL Engineer II (Full-Time)} \hfill \textit{Jan 2025 -- present}\\
+\textit{Co-Op (Full-Time Student)} \hfill \textit{Jan -- Aug 2023}
+\begin{itemize}[leftmargin=*]
+  \resumeItem{IOMMU: Designed and implemented performance-critical \gold{IOMMU} datapaths in \gold{SystemVerilog} to support high-throughput \gold{DMA/RDMA} flows.}
+  \resumeItem{High-performance datapaths: Implemented and optimized a high-throughput \gold{BIU} datapath for \gold{AMBA LTI}--based coherent interconnects, including coherence-supporting structures for buffering, ordering, and back-pressure.}
+  \resumeItem{High-performance interfaces: Enabled \gold{PCIe}, \gold{UALink}, and \gold{Infinity Fabric (IFOE)} interfaces for hardware-accelerated I/O.}
+  \resumeItem{Performance: Conducted architecture-level \gold{performance studies} using in-house simulators; built \gold{Python} scripts to parse, model, and correlate results with \gold{RTL} behavior.}
+  \resumeItem{Architecture: Contributed to \gold{cache} and memory-system design discussions, including \gold{PCIe performance modeling} and documentation of state-of-the-art approaches.}
+  \resumeItem{Synthesis: Performed \gold{synthesis analysis} for area, timing, and power, and implemented \gold{clock-gating (FGCG/MGCG)} power optimizations.}
+  \resumeItem{Low Power Design: Implemented \gold{power-aware} features in \gold{PCIe I/O IP}, driving the full flow from feature definition to block-level architecture to \gold{RTL} to \gold{synthesis} to power/timing analysis.}
+  \resumeItem{Custom tooling: Created with AI a tool to automate parsing of RTL definitions of registers and generate standardized figures for documentation and other communications.}
+  \resumeItem{Mentorship: Mentored incoming engineers, accelerating onboarding and ramp-up.}
+\end{itemize}
+\vspace{4pt}
+\resumeSubheading{University of British Columbia}{Vancouver, BC, Canada}{ELEC 201 Teaching Assistant -- Circuit Analysis I}{Sep -- Dec 2022}
+\vspace{-6pt}
+\begin{itemize}[leftmargin=*]
+  \resumeItem{Led lab sessions, graded technical assignments, and supported students via Piazza.}
+\end{itemize}
+
+\section{Projects}
+\textbf{FPGA-Accelerated LED Cube with Real-Time Pose Estimation} \textbar\ \href{https://www.youtube.com/watch?v=kbrSmiwQhu4&ab_channel=AdinMauer}{Project video}\\
+1st place, 3rd-year Computer Engineering project. Designed custom FPGA hardware and real-time vision pipeline.\\
+\textbf{EEG CNN (Motor Imagery Classification)} \textbar\ \href{https://mauer4.github.io/project/eeg_cnn/}{Project page}\\
+Built a CNN to classify 4-class motor movements from 64-channel EEG using \gold{Python}/\gold{PyTorch}; processed 18,529 labeled events; achieved 61.0\% test accuracy, outperforming an SVM baseline (56.2\%).\\
+\textbf{Parallel FFT (MPI \& CUDA)} \textbar\ \href{https://mauer4.github.io/project/parallel_fft/}{Project page}\\
+Implemented parallel and distributed FFT variants using OpenMPI and CUDA, with extensive \gold{C} development.
+
+\section{Education}
+\resumeSubheading{University of British Columbia --- Dean's List}{Vancouver, BC, Canada}{Bachelor of Applied Science, Computer Engineering}{Graduated: Dec 2024}
+GPA: 84\% (Top 15\%)\\
+\resumeSubheading{Langara College --- Dean's List}{Vancouver, BC, Canada}{Engineering Transfer Program}{2020--2021}
+GPA: 4.03/4.33 (Top 5\%)
+
+\section{Volunteering}
+\resumeSubheading{Axis -- Jewish Young Adult Committee of Vancouver}{Vancouver, BC, Canada}{Volunteer Committee Chair}{Sep 2021 -- June 2024}
+\vspace{-6pt}
+\begin{itemize}[leftmargin=*]
+  \resumeItem{Organized and led community and professional events; received the 2024 Young Adult Leadership Award (June 2024).}
+\end{itemize}
+
+\end{document}
