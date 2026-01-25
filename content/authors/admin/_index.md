@@ -53,7 +53,7 @@ interests:
 
 education:
   - area: BASc Computer Engineering
-    institution: University of British Columbia (graduated December 2024)
+    institution: University of British Columbia (2024)
     date_start: 2020-09-01
     date_end: 2024-12-31
     summary: |
@@ -190,6 +190,6 @@ awards:
 
 ## About Me
 
-I recently (December 2024) graduated from **UBC** with a BASc of Computer Engineering. Currently, I am employed as a **Digital Design Engineer** at **AMD**-Vancouver, working on designing digital hardware for their chip's  low-power high-bandwidth interconnect logic.
+I’m a hardware design engineer at **AMD** (Vancouver), building high-throughput datapaths and interconnect logic where performance, correctness, and microarchitectural details all matter. I enjoy problems that sit between architecture and implementation—modeling bottlenecks, validating behavior in RTL, and pushing designs toward clean, measurable wins.
 
-Ultimately, I am driven and interested in innovating and solving hard problems that can help advance our technologies. In order to innovate and actually have an impact, my sense is that one needs strong technical and theoretical foundations in a broad range of topics in **engineering and mathematics**.
+I earned a BASc in Computer Engineering from **UBC** (2024). My technical interests center on efficient attention, ML-systems performance, and the hardware/software boundary that makes modern accelerators fast in practice.
