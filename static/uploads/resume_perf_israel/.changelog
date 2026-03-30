@@ -1,0 +1,6 @@
+2026-03-30 00:00 America/Los_Angeles
+- Created the Israel-specific performance resume variant and later moved it into its own `resume_perf_israel` directory.
+- Added military service entry: `IDF | 2014 -- 2019 | Nahal Infantry Officer`.
+- Tightened spacing to keep the document on one page.
+- Recompiled `resume_perf_israel.pdf` after the directory move.
+

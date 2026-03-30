@@ -1,0 +1,7 @@
+2026-03-30 00:00 America/Los_Angeles
+- Created `resume_hw_israel` directory.
+- Added Israel-specific hardware resume variant with IDF military service at the bottom.
+- Included `IDF | 2014 -- 2019 | Nahal Infantry Officer`.
+- Tightened layout to keep the document on one page.
+- Recompiled `resume_hw_israel.pdf`.
+

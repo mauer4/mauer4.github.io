@@ -1,0 +1,8 @@
+2026-03-30 00:00 America/Los_Angeles
+- Created `resume_hw` directory and moved the hardware-focused AI/HW-SW resume into this directory.
+- Renamed the former `resume_ai` variant to `resume_hw`.
+- Updated positioning toward AI systems, HW/SW co-design, RTL, and performance modeling.
+- Removed the unfinished `Attention From Scratch` entry.
+- Added technical review coverage for FlashAttention, DeepSeek mHC, and TiDaR.
+- Recompiled `resume_hw.pdf`.
+

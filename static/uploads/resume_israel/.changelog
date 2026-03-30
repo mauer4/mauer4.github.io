@@ -1,0 +1,5 @@
+2026-03-30 00:00 America/Los_Angeles
+- Moved the existing Israel resume into its own `resume_israel` directory.
+- Recompiled `resume_israel.pdf` after the directory move.
+- Earlier change history predates this changelog; last known update timestamp recorded now.
+
