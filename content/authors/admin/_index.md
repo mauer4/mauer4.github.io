@@ -190,6 +190,6 @@ awards:
 
 ## About Me
 
-I’m a hardware design engineer at **AMD** (Vancouver), building high-throughput datapaths and interconnect logic where performance, correctness, and microarchitectural details all matter. I enjoy problems that sit between architecture and implementation—modeling bottlenecks, validating behavior in RTL, and pushing designs toward clean, measurable wins.
+I’m a hardware engineer at **AMD** (Vancouver) working at the intersection of computer architecture, RTL design, performance modeling, and HW/SW co-design. My work focuses on high-performance I/O subsystems, memory-system behavior, coherent and non-coherent interconnects, DMA/RDMA, PCIe, NoC, and low-power design, with an emphasis on building and analyzing performance-critical hardware. I also work on custom in-house performance simulation and architecture analysis to study bottlenecks, reason about throughput and latency, and correlate model behavior with implementation details.
 
-I earned a BASc in Computer Engineering from **UBC** (2024). My technical interests center on efficient attention, ML-systems performance, and the hardware/software boundary that makes modern accelerators fast in practice.
+I earned a BASc in Computer Engineering from **UBC** (2024). My broader technical interests center on accelerators, ML systems, attention/transformer workloads, and the hardware/software tradeoffs that drive real end-to-end throughput.

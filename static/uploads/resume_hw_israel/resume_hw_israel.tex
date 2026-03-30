@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+
+\usepackage[
+  top=0.25in,
+  bottom=0.25in,
+  left=0.6in,
+  right=0.6in
+]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{setspace}
+
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setstretch{0.94}
+
+\definecolor{sectionbg}{HTML}{EFEFEF}
+\definecolor{gold}{HTML}{B8860B}
+\newcommand{\gold}[1]{\textcolor{gold}{#1}}
+\newcommand{\sectionbox}[1]{%
+  \colorbox{sectionbg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\large\bfseries #1}}%
+}
+\titleformat{\section}{\normalfont}{}{0em}{\sectionbox}[\titlerule]
+\titlespacing*{\section}{0pt}{0.35em}{0.15em}
+
+\setlist[itemize]{
+  noitemsep,
+  topsep=0pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{%
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\\
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE \textbf{Adin Mauer}}\\
+  AI Systems \textbar\ HW/SW Co-Design \textbar\ RTL \& Performance Modeling\\
+  Vancouver, BC, Canada \textbar\ Phone: +1-604-445-1498\\
+  \href{mailto:Mauer4@gmail.com}{Mauer4@gmail.com} \textbar\ \href{https://github.com/mauer4}{github.com/mauer4} \textbar\ \href{https://www.linkedin.com/in/adin-mauer-4774821a1/}{linkedin.com/in/adin-mauer} \textbar\ \href{https://mauer4.github.io/}{mauer4.github.io}
+\end{center}
+
+\section{Summary}
+Hardware engineer working at the boundary of \gold{computer architecture}, \gold{performance-critical software}, and \gold{ML systems}. At AMD, build and analyze high-performance I/O and memory-system logic using \gold{SystemVerilog}, \gold{SystemC}, and \gold{Python}. Technical focus includes \gold{attention/transformer systems}, \gold{CUDA/OpenMPI} accelerated computing, and practical questions around \gold{memory traffic}, \gold{kernel design}, and end-to-end throughput.
+
+\section{Relevant Work Experience}
+\textbf{AMD Canada}\\
+\textit{RTL Engineer II (Full-Time)} \hfill \textit{Jan 2025 -- present}\\
+\textit{Co-Op (Full-Time Student)} \hfill \textit{Jan -- Aug 2023}
+\begin{itemize}[leftmargin=*]
+  \resumeItem{Develop and analyze \gold{IOMMU} performance models using \gold{SystemC} timing mechanics to study throughput/latency bottlenecks and support architecture decisions for high-performance I/O paths.}
+  \resumeItem{Design and implement performance-critical \gold{SystemVerilog} datapaths for \gold{IOMMU}, \gold{DMA/RDMA}, and I/O subsystems with attention to buffering, ordering, back-pressure, and memory-system behavior.}
+  \resumeItem{Contribute to \gold{PCIe}, \gold{NoC}, cache, and interconnect design discussions; correlate model outputs with \gold{RTL} behavior using internal simulators and \gold{Python} analysis tooling.}
+  \resumeItem{Perform synthesis-driven area/timing/power analysis, implement low-power features including \gold{clock-gating}, and build AI-assisted automation for engineering documentation workflows.}
+\end{itemize}
+\vspace{2pt}
+\resumeSubheading{University of British Columbia}{Vancouver, BC, Canada}{ELEC 201 Teaching Assistant -- Circuit Analysis I}{Sep -- Dec 2022}
+\vspace{-8pt}
+\begin{itemize}[leftmargin=*]
+  \resumeItem{Led lab sessions, graded assignments, and explained circuit-analysis fundamentals to undergraduate students.}
+\end{itemize}
+
+\section{Selected Projects \& Technical Writing}
+\textbf{FlashAttention / DeepSeek mHC / TiDaR Technical Reviews} \textbar\ \href{https://mauer4.github.io/post/}{Posts}\\
+Prepared and presented technical reviews on \gold{IO-aware attention}, \gold{kernel fusion}, memory traffic, transformer architecture choices, and \gold{TiDaR}'s diffusion-vs.-autoregression design tradeoffs in modern ML systems.\\
+\textbf{EEG CNN (Motor Imagery Classification)} \textbar\ \href{https://mauer4.github.io/project/eeg_cnn/}{Project page}\\
+Built a \gold{CNN} in \gold{Python/PyTorch} for 4-class motor-imagery classification from 64-channel EEG; processed 18,529 labeled events and achieved 61.0\% test accuracy, outperforming an SVM baseline (56.2\%).\\
+\textbf{FPGA-Accelerated LED Cube with Real-Time Pose Estimation} \textbar\ \href{https://www.youtube.com/watch?v=kbrSmiwQhu4&ab_channel=AdinMauer}{Project video}\\
+Designed a custom \gold{FPGA} hardware system with Android control and on-device pose estimation, integrating digital logic, embedded communication, and real-time ML-driven visualization in a first-place UBC project.\\
+\textbf{Parallel FFT / MPI LU Decomposition} \textbar\ \href{https://mauer4.github.io/project/parallel_fft/}{Project page}\\
+Implemented accelerated computing workloads in \gold{CUDA}, \gold{OpenMPI}, and \gold{C/C++}, including Cooley--Tukey FFT and blocked LU decomposition focused on dependency analysis, parallel scheduling, and performance.
+
+\section{Skills}
+\gold{Languages/Tools:} C, C++, Python, CUDA, OpenMPI, PyTorch, SystemC, SystemVerilog\\
+\gold{Systems:} Computer architecture, SoC design, IOMMU, DMA/RDMA, MMIO, PCIe, NoC, memory systems, coherent/non-coherent interconnects, low-power design\\
+\gold{AI/Performance:} Attention/transformers, LLM inference, bottleneck analysis, workload characterization, microarchitectural simulation, profiling, automation, technical writing
+
+\section{Education}
+\resumeSubheading{University of British Columbia --- Dean's List}{Vancouver, BC, Canada}{Bachelor of Applied Science, Computer Engineering}{Graduated: Dec 2024}
+GPA: 84\% (Top 15\%)\\
+\resumeSubheading{Langara College --- Dean's List}{Vancouver, BC, Canada}{Engineering Transfer Program}{2020--2021}
+GPA: 4.03/4.33 (Top 5\%)
+
+\section{Military Service}
+\textbf{IDF} \hfill \textit{2014 -- 2019}\\
+\textit{Nahal Infantry Officer}
+
+\end{document}

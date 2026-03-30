@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+
+\usepackage[
+  top=0.25in,
+  bottom=0.25in,
+  left=0.6in,
+  right=0.6in
+]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{setspace}
+
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setstretch{0.95}
+
+\definecolor{sectionbg}{HTML}{EFEFEF}
+\definecolor{gold}{HTML}{B8860B}
+\newcommand{\gold}[1]{\textcolor{gold}{#1}}
+\newcommand{\sectionbox}[1]{%
+  \colorbox{sectionbg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\large\bfseries #1}}%
+}
+\titleformat{\section}{\normalfont}{}{0em}{\sectionbox}[\titlerule]
+\titlespacing*{\section}{0pt}{0.4em}{0.2em}
+
+\setlist[itemize]{
+  noitemsep,
+  topsep=0pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{%
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\\
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE \textbf{Adin Mauer}}\\
+  RTL Design \textbar\ Performance Modeling \textbar\ HW/SW Co-Design\\
+  Vancouver, BC, Canada \textbar\ Phone: +1-604-445-1498\\
+  \href{mailto:Mauer4@gmail.com}{Mauer4@gmail.com} \textbar\ \href{https://github.com/mauer4}{github.com/mauer4} \textbar\ \href{https://www.linkedin.com/in/adin-mauer-4774821a1/}{linkedin.com/in/adin-mauer} \textbar\ \href{https://mauer4.github.io/}{mauer4.github.io}
+\end{center}
+
+\section{Summary}
+Hardware engineer with experience in \gold{SoC architecture}, \gold{performance modeling}, \gold{IOMMU} and memory-system behavior, and \gold{low-power HW/SW co-design}. Reason about \gold{I/O performance bottlenecks} across coherent and non-coherent protocols, ordering constraints, \gold{DMA/MMIO/RDMA}, and \gold{CPU/GPU/NIC} communication patterns. At AMD, work on \gold{IOMMU performance modeling} with \gold{SystemC timing mechanics}, architecture-level bottleneck analysis, and correlation of model results with RTL behavior. Strong foundation in \gold{computer architecture}, \gold{C/C++}, \gold{Python automation}, and \gold{ChampSim}-based OoO modeling.
+
+\section{Relevant Work Experience}
+\textbf{AMD Canada}\\
+\textit{RTL Engineer II (Full-Time)} \hfill \textit{Jan 2025 -- present}\\
+\textit{Co-Op (Full-Time Student)} \hfill \textit{Jan -- Aug 2023}
+\begin{itemize}[leftmargin=*]
+  \resumeItem{Performance modeling: Develop and analyze \gold{IOMMU} performance models, including work with \gold{SystemC} timing mechanics, to study throughput/latency behavior, identify bottlenecks, and support architecture decisions for high-performance I/O paths.}
+  \resumeItem{Correlation and analysis: Conduct architecture-level \gold{performance studies} using internal simulators; build \gold{Python} tooling to parse results, visualize behavior, and correlate model outputs with \gold{RTL} implementation details.}
+  \resumeItem{Memory and interconnect behavior: Contribute to \gold{cache}, \gold{PCIe}, and memory-system design discussions, including \gold{PCIe performance modeling} and documentation of state-of-the-art approaches relevant to SoC data movement.}
+  \resumeItem{IOMMU and DMA datapaths: Design and implement performance-critical \gold{IOMMU} datapaths in \gold{SystemVerilog} to support high-throughput \gold{DMA/RDMA} flows.}
+  \resumeItem{NoC and high-performance I/O: Work on high-performance, low-power, critical-path \gold{NoC IP} in the I/O subsystem and enable \gold{PCIe}, \gold{UALink}, and \gold{Infinity Fabric (IFOE)} interfaces with attention to buffering, ordering, back-pressure, and throughput constraints.}
+  \resumeItem{Low-power tradeoffs: Perform \gold{synthesis} analysis for area, timing, and power; implement \gold{clock-gating} and power-aware features in \gold{PCIe I/O IP}.}
+  \resumeItem{Cross-functional execution: Document analyses and design tradeoffs, collaborate across architecture, design, and verification, and build an AI-assisted documentation tool.}
+\end{itemize}
+
+\section{Projects}
+\textbf{ChampSim OoO Performance Modeling}\\
+Use \gold{ChampSim} for \gold{cycle-accurate / cycle-detailed out-of-order} studies including pointer-chasing vs. streaming analysis, cache replacement policy and branch predictor training traces, and \gold{matmul} behavior; analyze RAW dependencies, MSHR behavior, memory-level parallelism, and IPC/runtime bottlenecks.\\
+\textbf{FPGA-Accelerated LED Cube with Real-Time Pose Estimation} \textbar\ \href{https://www.youtube.com/watch?v=kbrSmiwQhu4&ab_channel=AdinMauer}{Project video}\\
+1st place, 3rd-year Computer Engineering project. Designed custom FPGA hardware and a real-time vision pipeline under system-level performance constraints.
+
+\section{Skills}
+\gold{Languages/Modeling:} C, C++, Python, SystemC, SystemVerilog\\
+\gold{Architecture:} SoC architecture, IOMMU, DMA/RDMA, MMIO, cache and memory-system behavior, coherent and non-coherent interconnects, PCIe, NoC, low-power tradeoffs\\
+\gold{Performance:} Bottleneck analysis, workload characterization, microarchitectural simulation, correlation, automation, visualization, technical documentation
+
+\section{Education}
+\resumeSubheading{University of British Columbia --- Dean's List}{Vancouver, BC, Canada}{Bachelor of Applied Science, Computer Engineering}{Graduated: Dec 2024}
+GPA: 84\% (Top 15\%)\\
+\resumeSubheading{Langara College}{Vancouver, BC, Canada}{Engineering Transfer Program}{2020--2021}
+GPA: 4.03/4.33
+
+\section{Military Service}
+\textbf{IDF} \hfill \textit{2014 -- 2019}\\
+\textit{Nahal Infantry Officer}
+
+\end{document}
